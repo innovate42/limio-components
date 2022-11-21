@@ -1,0 +1,13 @@
+{
+  "name": "@limio/component-component-builder",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "peerDependencies": {
+    "@limio/swr": "*",
+    "@sentry/browser": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-redux": "*"
+  },
+  "license": "SEE LICENSE IN LICENSE"
+}
