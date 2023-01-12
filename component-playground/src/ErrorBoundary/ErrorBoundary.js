@@ -27,21 +27,6 @@ DefaultError.defaultProps = {
   error: new Error("No error was provided.")
 }
 
-// error boundry hoc
-// eg export default withErrorBoundary(MyCmp, ErrorUI)
-// note i haven't test this works
-export function withErrorBoundary<T>(WrappedComponent: React.ComponentType<T>, ErrorUI: React.ComponentType<ErrorProps> = DefaultError) {
-  return class ErrorWrapper extends React.Component<T> {
-    render() {
-      return (
-        <ErrorBoundary ErrorUI={ErrorUI}>
-          <WrappedComponent {...this.props} />
-        </ErrorBoundary>
-      )
-    }
-  }
-}
-
 type Props = {|
   children: React.Node,
   ErrorUI: React.ComponentType<ErrorProps>

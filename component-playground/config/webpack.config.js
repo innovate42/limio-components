@@ -26,7 +26,6 @@ const ForkTsCheckerWebpackPlugin =
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin")
 
 const createEnvironmentHash = require("./webpack/persistentCache/createEnvironmentHash")
-const { includeProjectFiles } = require("@i42/shared/src/webpack/helpers.cjs")
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== "false"
@@ -283,8 +282,10 @@ module.exports = function (webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         "react-native": "react-native-web",
-        // Allows for better profiling with ReactDevTools
-        "@limio/design-system": path.resolve(__dirname, path.join("..", "..", "..", "packages", "design-system", designSystem)),
+        "@limio/design-system": path.resolve(__dirname, path.join("..", "packages", "design-system", designSystem)),
+        "@limio/sdk": path.resolve(__dirname, path.join("..", "packages", "limio", "sdk")),
+        "@limio/utils": path.resolve(__dirname, path.join("..", "packages", "limio", "utils")),
+        "@limio/ui": path.resolve(__dirname, path.join("..", "packages", "limio", "ui")),
         ...(isEnvProductionProfile && {
           "react-dom$": "react-dom/profiling",
           "scheduler/tracing": "scheduler/tracing-profiling"
@@ -366,7 +367,6 @@ module.exports = function (webpackEnv) {
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {
               test: /\.(js|mjs|jsx|ts|tsx)$/,
-              include: [paths.appSrc, includeProjectFiles()],
               loader: require.resolve("babel-loader"),
               options: {
                 rootMode: "upward",

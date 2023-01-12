@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { Auth } from "@i42/shared/src/shop/auth"
 
 var jwtDecode = require("jwt-decode")
 
@@ -58,31 +57,8 @@ const LoginDropDown = ({ onSetUser }) => {
   const [dropdown, setDropdown] = useState(false)
   const [message, setMessage] = useState(null)
 
-  useEffect(() => {
-    Auth.currentSession().then(session => {
-      const token = session.accessToken.jwtToken
-      const user = session.idToken.payload.email
-
-      setUsername(user)
-      onSetUser({ token, username: user })
-    })
-  }, [])
-
   const login = async () => {
-    try {
-      const cognitoUser = await Auth.signIn(username, password)
-      const token = cognitoUser.signInUserSession.accessToken.jwtToken
-      const user = cognitoUser.signInUserSession.idToken.payload.email
-
-      onSetUser({ token, username: user })
-
-      var decoded = jwtDecode(token)
-      setMessage(JSON.stringify(decoded))
-
-      setDropdown(false)
-    } catch (err) {
-      setMessage(err.message)
-    }
+    return {}
   }
 
   return (
