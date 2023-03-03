@@ -6,7 +6,6 @@ module.exports = function (api) {
 
     // watch up - gastby doesn't like inline pluings.  They need to be resolved from a file
     let config = {
-        plugins: ["lodash"],
         presets: ["@babel/preset-flow", "@babel/preset-typescript"],
         babelrcRoots: [".", "../../packages/*"]
     }
