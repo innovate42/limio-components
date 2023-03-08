@@ -1,0 +1,63 @@
+.BreadcrumbList {
+  align-items: left;
+  background-color: #f9f9f9;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  width: auto;
+}
+
+.BreadcrumbList .BreadcrumbListHeader {
+  font-size: 2rem;
+  margin: 0rem 1rem;
+  padding: 0.5rem;
+}
+
+.BreadcrumbList .BreadcrumbListWrapper {
+  justify-content: flex-start;
+}
+
+.BreadcrumbList .BreadcrumbListWrapper .Breadcrumbs {
+  margin: 0rem 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.BreadcrumbList .BreadcrumbListWrapper .Breadcrumbs .Breadcrumb {
+  display: block;
+  color: #0f494a;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.BreadcrumbList .BreadcrumbListWrapper .Breadcrumbs .breadcrumb__divider {
+  display: block;
+  color: #0f494a;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.BreadcrumbList .BreadcrumbListWrapper .Breadcrumbs .Breadcrumb p {
+  border-color: #0f494a;
+  display: inline-block;
+  line-height: 1.25;
+  margin-bottom: 0;
+}
+
+@media (max-width: 599px) {
+  .BreadcrumbList .BreadcrumbListWrapper .Breadcrumbs {
+    margin: 1.5rem 1rem;
+  }
+
+  .BreadcrumbList .BreadcrumbListWrapper .Breadcrumbs .Breadcrumb {
+    font-size: 0.5rem !important;
+    padding: 1.5rem;
+  }
+
+  .BreadcrumbList .BreadcrumbListWrapper .Breadcrumbs .breadcrumb__divider {
+    font-size: 0.5rem !important;
+    padding: 1.5rem;
+  }
+}

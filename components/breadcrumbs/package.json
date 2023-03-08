@@ -1,0 +1,90 @@
+{
+  "name": "@limio/component-breadcrumbs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "scripts": {
+    "build": "yarn component:webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "ramda": "^0.28.0",
+    "reactstrap": "^8.9.0"
+  },
+  "peerDependencies": {
+    "@limio/swr": "*",
+    "@sentry/browser": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-redux": "*",
+    "redux": "*"
+  },
+  "devDependencies": {
+    "@limio/test-harness-shop": "workspace:^"
+  },
+  "limioProps": [
+    {
+      "id": "linkUnderline",
+      "label": "Underline links?",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "id": "dividers",
+      "label": "Show dividers",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "dividerColor__limio_color",
+      "label": "Divider color",
+      "type": "color",
+      "default": "#000000"
+    },
+    {
+      "id": "header",
+      "label": "Breadcrumbs Header",
+      "type": "string",
+      "default": "My Account"
+    },
+    {
+      "id": "breadcrumbs",
+      "label": "Breadcrumbs",
+      "type": "list",
+      "fields": {
+        "text": {
+          "id": "text",
+          "label": "Breadcrumb text",
+          "type": "string"
+        },
+        "url": {
+          "id": "url",
+          "label": "Breadcrumb Link",
+          "type": "string"
+        }
+      },
+      "default": [
+        {
+          "text": "Manage My Account",
+          "url": "/mma"
+        },
+        {
+          "text": "Cancel",
+          "url": "/cancel"
+        },
+        {
+          "text": "Change Payment Method",
+          "url": "/change-payment"
+        }
+      ]
+    },
+    {
+      "id": "componentId",
+      "label": "Component Id",
+      "type": "string",
+      "default": "breadcrumbs-limio"
+    }
+  ]
+}
