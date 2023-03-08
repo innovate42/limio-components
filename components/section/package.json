@@ -1,0 +1,164 @@
+{
+  "name": "@limio/component-section",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "scripts": {
+    "build": "yarn component:webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "ramda": "^0.28.0",
+    "reactstrap": "^8.9.0"
+  },
+  "peerDependencies": {
+    "@limio/swr": "*",
+    "@sentry/browser": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-redux": "*",
+    "redux": "*"
+  },
+  "devDependencies": {
+    "@limio/sdk": "workspace:packages/limio-sdk"
+  },
+  "limioProps": [
+    {
+      "id": "bgColor__limio_color",
+      "label": "Box background color",
+      "type": "string",
+      "default": "#ECECEC"
+    },
+    {
+      "id": "wrapperBgColor__limio_color",
+      "label": "Wrapper background color",
+      "type": "string",
+      "default": "#FFFFFF"
+    },
+    {
+      "id": "image",
+      "label": "Image",
+      "type": "string",
+      "default": "",
+      "format": "uri",
+      "purpose": "image"
+    },
+    {
+      "id": "imageShape",
+      "label": "Image shape",
+      "type": "picklist",
+      "options": [
+        {
+          "id": "",
+          "label": "Default",
+          "value": ""
+        },
+        {
+          "id": "Rounded",
+          "label": "Rounded Corners",
+          "value": "Rounded"
+        },
+        {
+          "id": "Circle",
+          "label": "Circle",
+          "value": "Circle"
+        },
+        {
+          "id": "Circlular",
+          "label": "Circlular",
+          "value": "Circlular"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "id": "imagePosition",
+      "label": "Image position",
+      "type": "picklist",
+      "options": [
+        {
+          "id": "top",
+          "label": "Top",
+          "value": "top"
+        },
+        {
+          "id": "left",
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "id": "right",
+          "label": "Right",
+          "value": "right"
+        },
+        {
+          "id": "bottom",
+          "label": "Bottom",
+          "value": "bottom"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "id": "imageCaption__limio_richtext",
+      "label": "Image caption",
+      "type": "richtext",
+      "default": "Lorem ipsum dolor sit amet."
+    },
+    {
+      "id": "showButtons",
+      "label": "Show buttons",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "buttons",
+      "label": "Buttons",
+      "type": "list",
+      "fields": {
+        "buttonText": {
+          "id": "buttonText",
+          "label": "Button text",
+          "type": "string"
+        },
+        "buttonLocation": {
+          "id": "buttonLocation",
+          "label": "Button link",
+          "type": "string"
+        }
+      },
+      "default": [
+        {
+          "buttonText": "Learn More",
+          "buttonLocation": "https://limio.com"
+        }
+      ]
+    },
+    {
+      "id": "header",
+      "label": "Header",
+      "type": "string",
+      "default": "Lorem ipsum dolor sit amet."
+    },
+    {
+      "id": "text__limio_richtext",
+      "label": "Text",
+      "type": "richtext",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "id": "secondaryTextImage",
+      "label": "Secondary image",
+      "type": "string",
+      "default": ""
+    },
+    {
+      "id": "componentId",
+      "label": "Component Id",
+      "type": "string",
+      "default": "section-limio"
+    }
+  ]
+}

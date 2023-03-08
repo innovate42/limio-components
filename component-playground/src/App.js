@@ -10,20 +10,27 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import GroupedOffers from "../../components/grouped-offers";
 import Breadcrumbs from "../../components/breadcrumbs";
+import Section from "../../components/section";
 import { LimioProvider } from "@limio/sdk";
 import "./App.css";
 
 const props = {
-  linkUnderline: false,
-  dividers: true,
-  dividerColor__limio_color: "#000000",
-  header: "my Account",
-  breadcrumbs: [
-    { text: "Manage My Account", url: "/mma" },
-    { text: "Cancel", url: "/cancel" },
-    { text: "Change Payment Method", url: "/change-payment" },
+  bgColor__limio_color: "#ECECEC",
+  wrapperBgColor__limio_color: "#FFFFFF",
+  image: "https://s3-eu-west-1.amazonaws.com/limio-public/limiologo.png",
+  imageShape: "Rounded",
+  header: "Test",
+  text__limio_richtext: "Test",
+  reverse: "test",
+  imageCaption__limio_richtext: "test",
+  showButtons: true,
+  buttons: [
+    { buttonText: "test", buttonLocation: "http://limio.com" },
+    { buttonText: "test", buttonLocation: "https://limio.com" },
   ],
-  componentId: "breadcrumbs-limio",
+  imagePosition: "Right",
+  secondaryTextImage: "",
+  componentId: "test",
 };
 
 function createLocalStore(initialState) {
@@ -42,7 +49,7 @@ function App() {
   );
   const [key, setKey] = useState(0);
   const [selectedComponents, setSelectedComponents] = useState([
-    Breadcrumbs,
+    Section,
     GroupedOffers,
   ]);
 
