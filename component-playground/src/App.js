@@ -9,13 +9,22 @@ import { Header as PageHeader } from "./Header";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import GroupedOffers from "../../components/grouped-offers";
-import Header from "../../components/header";
-import Headings from "../../components/heading";
+import Breadcrumbs from "../../components/breadcrumbs";
 import { LimioProvider } from "@limio/sdk";
 import "./App.css";
 
-const logo = "https://s3-eu-west-1.amazonaws.com/limio-public/limiologo.png";
-const componentId = "header-limio";
+const props = {
+  linkUnderline: false,
+  dividers: true,
+  dividerColor__limio_color: "#000000",
+  header: "my Account",
+  breadcrumbs: [
+    { text: "Manage My Account", url: "/mma" },
+    { text: "Cancel", url: "/cancel" },
+    { text: "Change Payment Method", url: "/change-payment" },
+  ],
+  componentId: "breadcrumbs-limio",
+};
 
 function createLocalStore(initialState) {
   const store = createStore((x) => x, {});
@@ -33,8 +42,7 @@ function App() {
   );
   const [key, setKey] = useState(0);
   const [selectedComponents, setSelectedComponents] = useState([
-    Header,
-    Headings,
+    Breadcrumbs,
     GroupedOffers,
   ]);
 
@@ -65,17 +73,7 @@ function App() {
           <LimioProvider key={key}>
             {selectedComponents.map((Component, i) => (
               <Provider store={appStore}>
-                <Component
-                  key={i}
-                  logo={logo}
-                  componentId={componentId}
-                  heading={"Test"}
-                  headingColor__limio_color={"#444444"}
-                  headingWeight={"700"}
-                  subheading={"SubHeading Test"}
-                  subheadingColor__limio_color={"#444444"}
-                  subheadingWeight={"400"}
-                />
+                <Component key={i} {...props} />
               </Provider>
             ))}
           </LimioProvider>
