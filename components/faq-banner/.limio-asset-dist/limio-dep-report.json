@@ -1,0 +1,16 @@
+{
+  "advisories": {},
+  "dependencies": {
+    "css-loader": [
+      "5.0.1"
+    ],
+    "cssfilter": [
+      "0.0.10"
+    ],
+    "xss": [
+      "1.0.8"
+    ]
+  },
+  "name": "@limio/component-faq-banner",
+  "version": "1.0.0"
+}

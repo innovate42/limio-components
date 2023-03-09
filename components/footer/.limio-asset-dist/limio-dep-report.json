@@ -1,0 +1,13 @@
+{
+  "advisories": {},
+  "dependencies": {
+    "css-loader": [
+      "5.0.1"
+    ],
+    "cookie": [
+      "0.4.1"
+    ]
+  },
+  "name": "@limio/component-footer",
+  "version": "1.0.0"
+}

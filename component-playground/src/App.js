@@ -9,28 +9,23 @@ import { Header as PageHeader } from "./Header";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import GroupedOffers from "../../components/grouped-offers";
-import Breadcrumbs from "../../components/breadcrumbs";
-import Section from "../../components/section";
+import Footer from "../../components/footer";
 import { LimioProvider } from "@limio/sdk";
 import "./App.css";
 
 const props = {
-  bgColor__limio_color: "#ECECEC",
-  wrapperBgColor__limio_color: "#FFFFFF",
-  image: "https://s3-eu-west-1.amazonaws.com/limio-public/limiologo.png",
-  imageShape: "Rounded",
-  header: "Test",
-  text__limio_richtext: "Test",
-  reverse: "test",
-  imageCaption__limio_richtext: "test",
-  showButtons: true,
-  buttons: [
-    { buttonText: "test", buttonLocation: "http://limio.com" },
-    { buttonText: "test", buttonLocation: "https://limio.com" },
+  enableLogo: true,
+  logo: "https://s3-eu-west-1.amazonaws.com/limio-public/limiologo.png",
+  logoSize: "10",
+  logoMargin: "0em 0em 1.5em 0em",
+  contactFields: [
+    {
+      label: "Email:",
+      value: "support@limio.com",
+      url: "mailto:support@limio.com",
+    },
   ],
-  imagePosition: "Right",
-  secondaryTextImage: "",
-  componentId: "test",
+  twitterLink: "http://twitter.com/TryLimio",
 };
 
 function createLocalStore(initialState) {
@@ -49,7 +44,7 @@ function App() {
   );
   const [key, setKey] = useState(0);
   const [selectedComponents, setSelectedComponents] = useState([
-    Section,
+    Footer,
     GroupedOffers,
   ]);
 
