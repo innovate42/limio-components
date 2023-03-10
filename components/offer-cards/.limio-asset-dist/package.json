@@ -1,0 +1,205 @@
+{
+  "name": "offer_cards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "scripts": {
+    "build": "yarn component:webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@limio/sdk": "^1.0.1",
+    "ramda": "^0.28.0",
+    "react": "^17.0.1",
+    "xss": "^1.0.8"
+  },
+  "peerDependencies": {
+    "@limio/swr": "*",
+    "@sentry/browser": "*",
+    "i18next": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-redux": "*",
+    "redux": "*"
+  },
+  "limioProps": [
+    {
+      "id": "external_pricing_link",
+      "label": "External pricing link",
+      "type": "string",
+      "default": "/long-term"
+    },
+    {
+      "id": "external_pricing_text",
+      "label": "External pricing text",
+      "type": "string",
+      "default": "View multi-year pricing"
+    },
+    {
+      "id": "offerWidth",
+      "label": "Card width",
+      "type": "number",
+      "default": 3
+    },
+    {
+      "id": "offerOverflowLayout",
+      "label": "Card alignment",
+      "type": "picklist",
+      "options": [
+        {
+          "id": "stretch",
+          "label": "Stretch",
+          "value": "stretch"
+        },
+        {
+          "id": "center",
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "id": "start",
+          "label": "Start",
+          "value": "start"
+        },
+        {
+          "id": "end",
+          "label": "End",
+          "value": "end"
+        }
+      ],
+      "default": "stretch"
+    },
+    {
+      "id": "includedFeaturesTitle",
+      "label": "Features Title",
+      "type": "string",
+      "default": "Whats Included?"
+    },
+    {
+      "id": "ineligibleMessage",
+      "label": "Ineligible for trial message",
+      "type": "string",
+      "default": "You are not eligible for a trial offer. Please select a different offer to continue."
+    },
+    {
+      "id": "offerGrouping",
+      "label": "Group offers?",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "id": "showOfferImages",
+      "label": "Show images for offers?",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "id": "maxCards",
+      "label": "Max number of offer cards per row (leave blank if no limit)",
+      "type": "number",
+      "default": ""
+    },
+    {
+      "id": "cardAlignment",
+      "label": "Direction of offer card arrangement",
+      "type": "picklist",
+      "options": [
+        {
+          "id": "vertical",
+          "label": "Vertical",
+          "value": "vertical"
+        },
+        {
+          "id": "horizontal",
+          "label": "Horizontal",
+          "value": "horizontal"
+        }
+      ],
+      "default": "vertical"
+    },
+    {
+      "id": "alwaysMinimise",
+      "label": "Always minimise features?",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "id": "groupLabels",
+      "label": "Group labels",
+      "type": "list",
+      "fields": {
+        "name": {
+          "id": "id",
+          "label": "ID",
+          "type": "string"
+        },
+        "url": {
+          "id": "label",
+          "label": "URL",
+          "type": "string"
+        }
+      },
+      "default": [
+        {
+          "id": "digital",
+          "label": "Digital"
+        },
+        {
+          "id": "bundle",
+          "label": "Print + Digital"
+        }
+      ]
+    },
+    {
+      "id": "hideCardBreak",
+      "label": "Hide card break",
+      "type": "boolean",
+      "default": false
+    }
+  ],
+  "devDependencies": {
+    "@i42/shared": "workspace:packages/shared"
+  },
+  "limio": {
+    "workspaceDependencies": [
+      "packages/shared/src/ApplicationException/index.js",
+      "packages/shared/src/Currency/currency.json",
+      "packages/shared/src/helpers/cookie.js",
+      "packages/shared/src/helpers/string.js",
+      "packages/shared/src/shop/helpers/checks.js",
+      "packages/shared/src/shop/helpers/functions.js",
+      "packages/shared/src/shop/helpers/oauth.js",
+      "packages/shared/src/shop/offers/helpers.js",
+      "services/components/offer-cards/components/Offer.js",
+      "services/components/offer-cards/index.css",
+      "services/components/offer-cards/index.js"
+    ],
+    "packageDependencies": [
+      "base64-js",
+      "buffer",
+      "cookie",
+      "crypto-js",
+      "cssfilter",
+      "ieee754",
+      "luxon",
+      "path-browserify",
+      "xss",
+      "@fortawesome/free-solid-svg-icons"
+    ],
+    "watchDirs": [
+      "packages/shared/src/ApplicationException",
+      "packages/shared/src/Currency",
+      "packages/shared/src/helpers",
+      "packages/shared/src/shop/helpers",
+      "packages/shared/src/shop/offers",
+      "services/components/offer-cards/components",
+      "services/components/offer-cards"
+    ]
+  }
+}

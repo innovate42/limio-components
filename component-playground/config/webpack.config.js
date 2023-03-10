@@ -319,6 +319,14 @@ module.exports = function (webpackEnv) {
           __dirname,
           path.join("..", "packages", "design-system", designSystem)
         ),
+        "@limio/currency": path.resolve(
+          __dirname,
+          path.join("..", "packages", "limio", "currency")
+        ),
+        "@limio/resources": path.resolve(
+          __dirname,
+          path.join("..", "packages", "limio", "resources")
+        ),
         "@limio/sdk": path.resolve(
           __dirname,
           path.join("..", "packages", "limio", "sdk")

@@ -9,23 +9,34 @@ import { Header as PageHeader } from "./Header";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import GroupedOffers from "../../components/grouped-offers";
-import Footer from "../../components/footer";
+import OfferCards from "../../components/offer-cards";
 import { LimioProvider } from "@limio/sdk";
 import "./App.css";
 
 const props = {
-  enableLogo: true,
-  logo: "https://s3-eu-west-1.amazonaws.com/limio-public/limiologo.png",
-  logoSize: "10",
-  logoMargin: "0em 0em 1.5em 0em",
-  contactFields: [
+  external_pricing_link: "/long-term",
+  external_pricing_text: "View multi-year pricing",
+  offerWidth: 3,
+  offerOverflowLayout: "stretch",
+  ineligibleMessage:
+    "You are not eligible for a trial offer. Please select a different offer to continue.",
+  includedFeaturesTitle: "Whats Included?",
+  groupLabels: [
     {
-      label: "Email:",
-      value: "support@limio.com",
-      url: "mailto:support@limio.com",
+      id: "digital",
+      label: "Digital",
+    },
+    {
+      id: "bundle",
+      label: "Print + Digital",
     },
   ],
-  twitterLink: "http://twitter.com/TryLimio",
+  maxCards: "",
+  showOfferImages: false,
+  offerGrouping: false,
+  alwaysMinimise: false,
+  hideCardBreak: false,
+  cardAlignment: "vertical",
 };
 
 function createLocalStore(initialState) {
@@ -44,7 +55,7 @@ function App() {
   );
   const [key, setKey] = useState(0);
   const [selectedComponents, setSelectedComponents] = useState([
-    Footer,
+    OfferCards,
     GroupedOffers,
   ]);
 

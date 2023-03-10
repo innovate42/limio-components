@@ -28,9 +28,17 @@ const FaqBanner = (props: Props): React.Node => {
     btnBgColor__limio_color,
     btnBorderColor__limio_color,
   } = props;
-  //   const {
-  //     downArrowImg, headline, subline, faqItems = [], componentId, showButtonBackgroundColor, btnBgColor__limio_color, btnBorderColor__limio_color
-  //   } = useComponentStaticProps();
+  // const {
+  //   bgColor__limio_color,
+  //   downArrowImg,
+  //   headline,
+  //   subline,
+  //   faqItems.
+  //   componentId ,
+  //   showButtonBackgroundColo: ,
+  //   btnBgColor__limio_color,
+  //   btnBorderColor__limio_color,
+  // } = useComponentStaticProps();
   const [openAccordions, setOpenAccordions] = useState([]);
   const [btnOnhover, setBtnOnHover] = useState(-1);
   const [onKeyDown, setOnKeyDown] = useState(-1);

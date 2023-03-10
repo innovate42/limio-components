@@ -24,6 +24,18 @@ export const ArrowIcon = ({ color }) => (
   </svg>
 );
 
+type Props = {
+  header: string,
+  subheader: string,
+  mobileSwipe: boolean,
+  showSwipeArrows: boolean,
+  arrowColor__limio_color: string,
+  squareTheme: Boolean,
+  imageFit: string,
+  features: Array,
+  componentId: string,
+};
+
 export const Features = ({
   header,
   subHeader,
@@ -43,9 +55,6 @@ export const Features = ({
   });
 
   const threshold = 50;
-  // const sendAnalytic = buttonLink => {
-  //   sendGoogleAnalyticsEvent("Checkout", buttonLink === "{{redirectUrl}}" ? "Back to Product" : "Leave Page via Features Button", appConfigMode, state.order)
-  // }
 
   const handleNext = () => {
     if (mobileSwipe) {
