@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import { StaticImage } from "@limio/sdk/components";
+import { StaticImage } from "@limio/sdk/src/components/";
 // import { useComponentStaticProps } from "./componentStaticProps";
 
 const bannerStyle = (bgColor) => ({
