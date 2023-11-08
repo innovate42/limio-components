@@ -1,6 +1,5 @@
 import React from "react";
 import "./index.css";
-import { useComponentStaticProps } from "./componentStaticProps";
 
 const headingStyle = (color, weight) => ({
   color,
@@ -30,16 +29,8 @@ export default function Headings({
   subheadingColor__limio_color,
   subheadingWeight,
   componentId,
-}) {
-  //   const {
-  //     heading,
-  //     headingColor__limio_color,
-  //     headingWeight,
-  //     subheading,
-  //     subheadingColor__limio_color,
-  //     subheadingWeight,
-  //     componentId,
-  //   } = useComponentStaticProps();
+}: Props) {
+
   return (
     <div className="Headings" id={componentId}>
       <div className="HeadingsWrapper">

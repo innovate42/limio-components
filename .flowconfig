@@ -1,0 +1,54 @@
+[ignore]
+.*/malformed_package_json/package\.json
+
+[version]
+0.178.1
+
+[include]
+
+[libs]
+flow-typed
+
+[lints]
+
+[options]
+module.name_mapper='^@limio\/design-system$' -> '<PROJECT_ROOT>/component-playground/packages/design-system/default/index.js'
+module.name_mapper='^@limio\/design-system\/\(.*\)$' -> '<PROJECT_ROOT>/component-playground/packages/design-system/default/\1'
+module.name_mapper='^@limio\/currency\/\(.*\)$' -> '<PROJECT_ROOT>/component-playground/packages/limio/currency/\1'
+module.name_mapper='^@limio\/data\/\(.*\)$' -> '<PROJECT_ROOT>/component-playground/packages/limio/data/\1'
+module.name_mapper='^@limio\/resources\/\(.*\)$' -> '<PROJECT_ROOT>/component-playground/packages/limio/resources/\1'
+module.name_mapper='^@limio\/sdk$' -> '<PROJECT_ROOT>/component-playground/packages/limio/sdk/index.js'
+module.name_mapper='^@limio\/sdk\/\(.*\)$' -> '<PROJECT_ROOT>/component-playground/packages/limio/sdk/\1'
+module.name_mapper='^@limio\/shop$' -> '<PROJECT_ROOT>/component-playground/packages/limio/shop/index.js'
+module.name_mapper='^@limio\/shop\/\(.*\)$' -> '<PROJECT_ROOT>/component-playground/packages/limio/shop/\1'
+module.name_mapper='^@limio\/types$' -> '<PROJECT_ROOT>/component-playground/packages/limio/types/index.js'
+module.name_mapper='^@limio\/types\/\(.*\)$' -> '<PROJECT_ROOT>/component-playground/packages/limio/types/\1'
+module.name_mapper='^@limio\/ui\/\(.*\)$' -> '<PROJECT_ROOT>/component-playground/packages/limio/ui/\1'
+module.name_mapper='^@limio\/utils\/\(.*\)$' -> '<PROJECT_ROOT>/component-playground/packages/limio/utils/\1'
+module.name_mapper='^@limio\/\(.*\)$' -> '<PROJECT_ROOT>/flow-typed/@limio.js'
+
+module.name_mapper='^@i42\/\(.*\)$' -> '<PROJECT_ROOT>/flow-typed/@i42.js'
+module.name_mapper='^@fortawesome\/\(.*\)$' -> '<PROJECT_ROOT>/component-playground/node_modules/@fortawesome\/\1'
+module.name_mapper='dot-prop' -> '<PROJECT_ROOT>/component-playground/node_modules/dot-prop/'
+module.name_mapper='js-cookie' -> '<PROJECT_ROOT>/component-playground/node_modules/js-cookie/'
+module.name_mapper='loglevel' -> '<PROJECT_ROOT>/component-playground/node_modules/loglevel/'
+module.name_mapper='luxon' -> '<PROJECT_ROOT>/component-playground/node_modules/luxon/'
+module.name_mapper='ramda' -> '<PROJECT_ROOT>/component-playground/node_modules/ramda/'
+module.name_mapper='react' -> '<PROJECT_ROOT>/component-playground/node_modules/react/'
+module.name_mapper='react-redux' -> '<PROJECT_ROOT>/component-playground/node_modules/react-redux/'
+module.name_mapper='styled-components' -> '<PROJECT_ROOT>/component-playground/node_modules/styled-components/'
+module.name_mapper='@testing-library' -> '<PROJECT_ROOT>/component-playground/node_modules/@testing-library/'
+
+; https://flow.org/en/docs/config/options/#toc-module-file-ext
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.mjs
+module.file_ext=.cjs
+module.file_ext=.json
+module.file_ext=.scss
+module.file_ext=.less
+
+[strict]
+
+; README
+; flowtyped doesn't support styled-components@6 and above

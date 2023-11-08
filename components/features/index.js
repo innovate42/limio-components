@@ -1,10 +1,8 @@
 // @flow
 import React, { useState } from "react";
 import { Button } from "@limio/design-system";
-import "./index.css";
-//import { sendGoogleAnalyticsEvent } from "@i42/shared/src/shop/helpers/analytics"
-// import { useAppConfig } from "@i42/shared/src/components/helpers.js";
 import { StaticImage } from "@limio/sdk/src/components/";
+import "./index.css";
 
 export const ArrowIcon = ({ color }) => (
   <svg
@@ -46,7 +44,7 @@ export const Features = ({
   arrowColor__limio_color,
   componentId,
   squareTheme,
-}) => {
+}: Props) => {
   const [featureIndex, setFeatureIndex] = useState(0);
   const [position, setPosition] = useState({
     startX: 0,

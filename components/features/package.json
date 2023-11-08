@@ -3,12 +3,7 @@
   "version": "0.0.6",
   "homepage": "https://bit.dev/limio/landing/features",
   "main": "./index.js",
-  "devDependencies": {
-    "@i42/shared": "workspace:packages/shared",
-    "@limio/sdk": "workspace:packages/limio-sdk"
-  },
   "peerDependencies": {
-    "@limio/swr": "*",
     "@sentry/browser": "*",
     "react": "*",
     "react-dom": "*",

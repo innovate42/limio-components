@@ -1,6 +1,6 @@
+// @flow
 import React, { useState } from "react";
 import "./index.css";
-// import { useComponentStaticProps } from "./componentStaticProps";
 
 type Props = {
   bgColor__limio_color: String,
@@ -28,17 +28,7 @@ const FaqBanner = (props: Props): React.Node => {
     btnBgColor__limio_color,
     btnBorderColor__limio_color,
   } = props;
-  // const {
-  //   bgColor__limio_color,
-  //   downArrowImg,
-  //   headline,
-  //   subline,
-  //   faqItems.
-  //   componentId ,
-  //   showButtonBackgroundColo: ,
-  //   btnBgColor__limio_color,
-  //   btnBorderColor__limio_color,
-  // } = useComponentStaticProps();
+
   const [openAccordions, setOpenAccordions] = useState([]);
   const [btnOnhover, setBtnOnHover] = useState(-1);
   const [onKeyDown, setOnKeyDown] = useState(-1);

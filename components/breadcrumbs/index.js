@@ -1,8 +1,7 @@
 //@flow
 import React from "react";
-import "./index.css";
 import BreadcrumbItem from "./components/BreadcrumbItem";
-import { useComponentStaticProps } from "./componentStaticProps";
+import "./index.css";
 
 type Props = {
   linkUnderline: boolean,
@@ -20,8 +19,6 @@ type BreadcrumbItemProps = {
 };
 
 export default function Breadcrumbs(props: Props) {
-  // const { breadcrumbs, componentId, header } = useComponentStaticProps();
-
   const { breadcrumbs, componentId, header } = props;
 
   function isLast(index) {

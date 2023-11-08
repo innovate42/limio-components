@@ -1,20 +1,84 @@
 // @flow
 import * as React from "react";
+import type { OrderItem, Subscription } from "@limio/types"
 import type {
-  PageContext,
+  AddToBasket,
+  CampaignInfo,
+  LimioComponentContext,
   LimioContext as LimioContextType,
+  CatalogItemOffer,
+  User,
 } from "../../../../types";
 import { groupedOffers } from "../../data/offers";
+import { basketItems } from "../../data/basket";
+import { docUser } from "../../data/user";
 
-const LimioContext = React.createContext<LimioContextType>();
-export const ComponentContext = React.createContext<T>();
+const LimioContext = React.createContext<LimioContextType>({});
+export const ComponentContext: LimioComponentContext = React.createContext<LimioComponentContext>({});
 
-export function useLimio(): LimioContextType {
-  const context = React.useContext(LimioContext);
+// Selection of LimioContextShop properties
+type UseCampaign = {
+  campaign: CampaignInfo,
+  offers: CatalogItemOffer[],
+};
+
+export function useCampaign(): UseCampaign {
+  const context: LimioContextType = React.useContext(LimioContext);
   if (context === undefined) {
-    throw new Error("useLimio must be used within a LimioProvider");
+    throw new Error("useBasket must be used within a LimioProvider");
   }
-  return context;
+  const { campaign, offers } = context.shop;
+  return { campaign, offers };
+}
+
+// Selection of LimioContextShop properties
+type UseBasket = {
+  addToBasket: AddToBasket,
+  basketItems: OrderItem[],
+};
+
+export function useBasket(): UseBasket {
+  const context: LimioContextType = React.useContext(LimioContext);
+  if (context === undefined) {
+    throw new Error("useBasket must be used within a LimioProvider");
+  }
+  const { basketItems, addToBasket } = context.shop;
+  return { basketItems, addToBasket };
+}
+
+// Selection of LimioContextShop properties
+type UseLimioContext = {
+  isInPageBuilder?: boolean
+};
+
+export function useLimioContext(): UseLimioContext {
+  const context: LimioContextType = React.useContext(LimioContext);
+  if (context === undefined) {
+    throw new Error("useLimioContext must be used within a LimioProvider");
+  }
+  const { pageBuilder__limio: isInPageBuilder } = context;
+  return { isInPageBuilder };
+}
+
+// Selection of LimioContextShop properties
+type UseSubscriptions = {
+  subscriptions?: Subscription[]
+}
+
+export function useSubscriptions(): UseSubscriptions {
+  const context: LimioContextType = React.useContext(LimioContext);
+  if (context === undefined) {
+    throw new Error("useSubscriptions must be used within a LimioProvider");
+  }
+  return { subscriptions: docUser.subscriptions };
+}
+
+export function useUser(): User {
+  const context: LimioContextType = React.useContext(LimioContext);
+  if (context === undefined) {
+    throw new Error("useUser must be used within a LimioProvider");
+  }
+  return docUser;
 }
 
 type LimioProviderProps = {
@@ -23,11 +87,11 @@ type LimioProviderProps = {
 };
 
 export function LimioProvider({
-  children,
-  value = dummyContext,
-}: LimioProviderProps): React.Node {
+                                children, // $FlowIssue[prop-missing]
+                                value = dummyContext,
+                              }: LimioProviderProps): React.Node {
   return (
-    <LimioContext.Provider value={value}>{children}</LimioContext.Provider>
+      <LimioContext.Provider value={value}>{children}</LimioContext.Provider>
   );
 }
 
@@ -48,6 +112,7 @@ export function useComponentProps<T>(defaultProps: $Shape<T>): T {
 }
 
 const dummyContext = {
+  pageBuilder__limio: false,
   shop: {
     campaign: {
       name: "Dummy Campaign",
@@ -58,29 +123,11 @@ const dummyContext = {
     },
     offers: groupedOffers,
     tag: "/tags/limio",
-    location: { pathname: "/dummy" },
-    basketItems: [],
-    addToBasket: () => {
-      // eslint-disable-next-line no-console
-      console.log("Item added to basket");
+    location: { pathname: "/default" },
+    basketItems: basketItems,
+    addToBasket: (offer) => {
+      console.log("Item added to basket:", offer);
     },
   },
-  user: {
-    attributes: {
-      aud: "3kde1g4qurqbdmf7p81n6568m0",
-      auth_time: 1610643100,
-      "cognito:username": "dummy_user",
-      email: "dummy@limio.com",
-      email_verified: true,
-      event_id: "743826f5-075c-4c36-8bb2-bf343be46f09",
-      exp: 1611848843,
-      iat: 1611845243,
-      iss: "https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_AVrsbOxSU",
-      sub: "d183e0ec-8baf-4320-b847-c78fad0b1df8",
-      token_use: "id",
-    },
-    loaded: true,
-    token:
-      "eyJraWQiOiJrdHFNMjE0WnlZRlhRVklEMGRCUTJ3Y1NRUThtMytJU1QwUHoyc0YyUGVZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJkMTgzZTBlYy04YmFmLTQzMjAtYjg0Ny1jNzhmYWQwYjFkZjgiLCJldmVudF9pZCI6Ijc0MzgyNmY1LTA3NWMtNGMzNi04YmIyLWJmMzQzYmU0NmYwOSIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2MTA2NDMxMDAsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS1jZW50cmFsLTEuYW1hem9uYXdzLmNvbVwvZXUtY2VudHJhbC0xX0FWcnNiT3hTVSIsImV4cCI6MTYxMTg0ODg0MywiaWF0IjoxNjExODQ1MjQzLCJqdGkiOiIxNGZlMmVmMi1lYTM5LTQ3ZjItYmNlYS00YzkwOWJjMGQzNmMiLCJjbGllbnRfaWQiOiIza2RlMWc0cXVycWJkbWY3cDgxbjY1NjhtMCIsInVzZXJuYW1lIjoiZDE4M2UwZWMtOGJhZi00MzIwLWI4NDctYzc4ZmFkMGIxZGY4In0.coUsZ637mhna85v0uFtWVKOgG084xOlihyXABx5fmOcJBWXl9tJWgUDwH_7p5VYa_hCFf9mUzS-BPn7TgApBN99Hf6EXbTfWyD28yjynaNDhLu_yBie6g_FxVI_ovhsz-vdKZ8kaW5pUvbqQxnfhK-UmdMhCs4-CGldpNvYTWQqQT7epyI0luMtWht3BLhlyAndHhcCmoO59dLCCejvODl7tmBas2C1Po-UOU-MqQ3S4M5WQ_FEwAWdBK9laTfVqF2wOkMGqapDfAPFGrH0lDDld5USTJCeZOTqkx7RE6pk2xONVNNxwVTiNJN0C2CKbWv97UL2HG1h41PrC9UQ6ec",
-  },
+  user: docUser
 };

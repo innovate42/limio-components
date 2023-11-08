@@ -1,0 +1,7 @@
+/.git
+/.vscode
+/flow-typed
+**/.limio-asset-dist
+npm-debug.log
+package-lock.json
+yarn.lock

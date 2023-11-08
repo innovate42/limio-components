@@ -10,7 +10,6 @@ import { useLimio } from "@limio/sdk";
 import { getCookie } from "@limio/utils/cookie";
 import countriesJson from "@limio/resources/countries.json";
 import "./index.css";
-import { useComponentStaticProps } from "./componentStaticProps";
 
 const Footer = ({
   enableLogo,
@@ -30,24 +29,6 @@ const Footer = ({
   navigationAlignment,
   componentId,
 }: FooterProps) => {
-  // const {
-  //   enableLogo,
-  //   logo,
-  //   logoSize,
-  //   contactFields = [],
-  //   copyrightText,
-  //   facebookLink,
-  //   twitterLink,
-  //   instagramLink,
-  //   privacyLink,
-  //   poweredByLink,
-  //   showJourneyCountryPicker,
-  //   navigation,
-  //   navigationDivider,
-  //   navigationPosition,
-  //   navigationAlignment,
-  //   componentId,
-  // } = useComponentStaticProps();
 
   const [currentCountrySelection, setCurrentCountrySelection] = useState({
     countryCode: "",

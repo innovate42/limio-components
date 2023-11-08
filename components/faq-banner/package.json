@@ -13,11 +13,7 @@
     "ramda": "^0.28.0",
     "reactstrap": "^8.9.0"
   },
-  "devDependencies": {
-    "@limio/test-harness-shop": "workspace:^"
-  },
   "peerDependencies": {
-    "@limio/swr": "*",
     "@sentry/browser": "*",
     "react": "*",
     "react-dom": "*",

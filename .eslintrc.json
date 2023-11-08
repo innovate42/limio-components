@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ],
+  "plugins": [],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "17.0.2",
+      "flowVersion": "0.178.1"
+    }
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "globals": {},
+  "rules": {
+    "react/prop-types": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "(useEffectOnce|useCallbackOnce)"
+      }
+    ]
+  }
+}

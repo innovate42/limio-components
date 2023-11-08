@@ -6,7 +6,6 @@ import { getCookie } from "@limio/utils/cookie";
 import { groupOffers } from "@limio/utils/offers";
 import type { Group } from "@limio/types/offers";
 import OfferGroup from "./components/OfferGroup.js";
-import { useComponentStaticProps } from "./componentStaticProps";
 import "./index.css";
 
 type Props = {
@@ -34,16 +33,7 @@ export function GroupedOffers({
   buttonUrl,
   preselectFirstOfferInGroup,
 }: Props): React.Node {
-  // const {  ineligibleHeading,
-  //   ineligibleMessage,
-  //   componentId,
-  //   fullPriceUrl,
-  //   fullPriceLabel,
-  //   groupLabels = [],
-  //   bestValueText,
-  //   buttonText,
-  //   buttonUrl,
-  //   preselectFirstOfferInGroup} = useComponentStaticProps();
+
   const {
     shop: { offers },
   } = useLimio();

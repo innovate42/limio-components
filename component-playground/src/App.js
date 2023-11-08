@@ -1,8 +1,5 @@
 // @flow
 import React, { useState } from "react";
-import { ComponentSelector } from "./ComponentSelector";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 import { ErrorBoundary } from "./ErrorBoundary";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Header as PageHeader } from "./Header";
@@ -65,22 +62,7 @@ function App() {
         onSetUser={setUser}
         endpoint={endpoint}
         setEndpoint={setEndpoint}
-      >
-        <ComponentSelector
-          onSelect={setSelectedComponents}
-          components={[]}
-          selectedComponents={selectedComponents}
-        />
-        <button
-          className="btn"
-          onClick={() => {
-            setKey(key + 1);
-          }}
-        >
-          <FontAwesomeIcon icon={faSyncAlt} />
-        </button>
-      </PageHeader>
-
+      />
       <div>
         <ErrorBoundary>
           <LimioProvider key={key}>

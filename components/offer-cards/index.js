@@ -6,9 +6,8 @@ import * as R from "ramda";
 import { groupOffers } from "@limio/utils/offers";
 import { checkActiveOffers } from "@limio/utils/offers";
 import Offer from "./components/Offer.js";
-import "./index.css";
 import { useSelector } from "react-redux";
-import { useComponentStaticProps } from "./componentStaticProps.js";
+import "./index.css";
 
 type Props = {
   external_pricing_link: string,
@@ -39,19 +38,7 @@ export const OfferCards = ({
   alwaysMinimise,
   cardAlignment = "vertical",
 }: Props) => {
-  // const {
-  //   external_pricing_link,
-  //   external_pricing_text,
-  //   offerWidth,
-  //   offerOverflowLayout,
-  //   ineligibleMessage,
-  //   includedFeaturesTitle,
-  //   groupLabels,
-  //   maxCards,
-  //   showOfferImages,
-  //   offerGrouping,
-  //   alwaysMinimise,
-  // } = useComponentStaticProps();
+
   const {
     shop: shopContext,
     user: { subscriptions = [] },
