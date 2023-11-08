@@ -331,6 +331,14 @@ module.exports = function (webpackEnv) {
           __dirname,
           path.join("..", "packages", "limio", "sdk")
         ),
+        "@limio/internal-checkout-sdk": path.resolve(
+            __dirname,
+            path.join("..", "packages", "limio", "internal-checkout-sdk")
+        ),
+        "@limio/shop": path.resolve(
+            __dirname,
+            path.join("..", "packages", "limio", "shop")
+        ),
         "@limio/utils": path.resolve(
           __dirname,
           path.join("..", "packages", "limio", "utils")
