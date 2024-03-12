@@ -1,10 +1,9 @@
 // @flow
 import * as React from "react";
 import { useMemo, useState } from "react";
-import { useLimio } from "@limio/sdk";
+import { useCampaign } from "@limio/sdk";
 import { getCookie } from "@limio/utils/cookie";
 import { groupOffers } from "@limio/utils/offers";
-import type { Group } from "@limio/types/offers";
 import OfferGroup from "./components/OfferGroup.js";
 import "./index.css";
 
@@ -14,7 +13,10 @@ type Props = {
   componentId: string,
   fullPriceUrl: string,
   fullPriceLabel: string,
-  groupLabels: Group[],
+  groupLabels: Array<{
+    id: string,
+    label: string
+  }>,
   bestValueText: string,
   buttonText: string,
   buttonUrl: string,
@@ -34,9 +36,7 @@ export function GroupedOffers({
   preselectFirstOfferInGroup,
 }: Props): React.Node {
 
-  const {
-    shop: { offers },
-  } = useLimio();
+  const { offers } = useCampaign()
   const offerEligibility = getCookie("limio-invalid");
 
   // i'm pretty sure offers is awalys defined
@@ -60,8 +60,10 @@ export function GroupedOffers({
   const [selectedGroup, setSelectedGroup] = useState(
     preselectFirstOfferInGroup
       ? offerGroups.map((group) => group.groupId)
-      : [offerGroups[0].groupId]
+      : [offerGroups[0]?.groupId]
   );
+
+  console.log(offers)
 
   return (
     <div

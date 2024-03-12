@@ -6,7 +6,7 @@ import CountryPicker from "./components/CountryPicker";
 import ContactFields from "./components/ContactFields";
 import Logo from "./components/Logo";
 import SocialLinks from "./components/SocialLinks";
-import { useLimio } from "@limio/sdk";
+import { useLimioContext } from "@limio/sdk";
 import { getCookie } from "@limio/utils/cookie";
 import countriesJson from "@limio/resources/countries.json";
 import "./index.css";
@@ -37,10 +37,10 @@ const Footer = ({
   });
   const [journeyCountries, setJourneyCountries] = useState([]);
 
-  const { pageBuilder__limio } = useLimio();
+  const { isInPageBuilder } = useLimioContext();
 
   useEffect(() => {
-    const limioCountry = !pageBuilder__limio
+    const limioCountry = !isInPageBuilder
       ? getCookie("limio-country")
       : "GB";
 
@@ -52,10 +52,10 @@ const Footer = ({
       });
     }
 
-    const cookieJourney = !pageBuilder__limio
+    const cookieJourney = !isInPageBuilder
       ? getCookie("limio-journey")
       : "/myjourney";
-    const countriesCookie = !pageBuilder__limio
+    const countriesCookie = !isInPageBuilder
       ? getCookie("limio-journey-countries") || "[]"
       : '["GB", "US"]';
     const cookieJourneyCountries = JSON.parse(countriesCookie);
@@ -69,7 +69,7 @@ const Footer = ({
         }))
       );
     }
-  }, [pageBuilder__limio]);
+  }, [isInPageBuilder]);
 
   return (
     <div className="FooterOuter" id={componentId}>

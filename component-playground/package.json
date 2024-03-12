@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@babel/core": "^7.19.3",
-    "@economist/design-system": "^5.13.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^6.1.2",
     "@fortawesome/free-regular-svg-icons": "^6.1.2",
@@ -24,9 +23,7 @@
     "@welldone-software/why-did-you-render": "^6.2.1",
     "babel-jest": "^28.1.3",
     "babel-loader": "^8.2.3",
-    "cookie": "^0.4.1",
     "babel-plugin-named-asset-import": "^0.3.8",
-    "reactstrap": "^8.9.0",
     "babel-preset-gatsby": "^0.11.0",
     "babel-preset-react-app": "^10.0.1",
     "bfj": "^7.0.2",
@@ -34,6 +31,7 @@
     "browserslist": "^4.18.1",
     "camelcase": "^6.2.1",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
+    "cookie": "^0.4.1",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.2.0",
     "dotenv": "^10.0.0",
@@ -66,6 +64,7 @@
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.2",
     "react-refresh": "^0.11.0",
+    "reactstrap": "^8.9.0",
     "redux": "^4.0.5",
     "resolve": "^1.20.0",
     "resolve-url-loader": "^4.0.0",
@@ -82,16 +81,16 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "scripts": {
-    "start": "PORT=8100 node scripts/start.js",
-    "start:dev": "PORT=8100 node scripts/start.js",
-    "start:which": "PORT=8100 node scripts/start.js --which",
-    "start:econ": "PORT=8100 node scripts/start.js --economist",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "limio": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:storybook/recommended",
+      "plugin:storybook/recommended"
     ]
   },
   "browserslist": {
@@ -108,11 +107,23 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
+    "@chromatic-com/storybook": "^1.2.18",
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-interactions": "^8.0.0",
+    "@storybook/addon-links": "^8.0.0",
+    "@storybook/addon-onboarding": "^8.0.0",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.2",
+    "@storybook/blocks": "^8.0.0",
+    "@storybook/react": "^8.0.0",
+    "@storybook/react-webpack5": "^8.0.0",
+    "@storybook/test": "^8.0.0",
     "@types/ramda": "^0.27.64",
+    "eslint-plugin-storybook": "^0.8.0",
     "flow-bin": "^0.178.1",
     "jest-environment-jsdom": "^29.2.1",
     "less": "^4.1.2",
-    "less-loader": "^10.2.0"
+    "less-loader": "^10.2.0",
+    "storybook": "^8.0.0"
   },
   "jest": {
     "roots": [

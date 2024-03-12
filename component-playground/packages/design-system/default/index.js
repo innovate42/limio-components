@@ -9,9 +9,7 @@ import { Skeleton } from "@limio/ui/Skeleton"
 
 type InputProps = {
   type: string,
-  onChange: (SyntheticInputEvent<HTMLInputElement>) => void,
-  error: string,
-  ...any
+  error: string
 }
 
 export function Button({ minor, ...props }): React.Node {

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { sanitizeString } from "@limio/utils/string";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { useLimio } from "@limio/sdk";
+import { useBasket } from "@limio/sdk";
 import { formatDisplayPrice } from "@limio/utils/string";
 
 const Offer = ({
@@ -39,9 +39,7 @@ const Offer = ({
     : [];
 
   const [featuresOpen, setFeaturesOpen] = useState(false);
-  const {
-    shop: { addToBasket },
-  } = useLimio();
+  const { addToBasket } = useBasket();
 
   const cardStyles = maxCards
     ? {

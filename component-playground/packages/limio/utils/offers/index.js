@@ -17,7 +17,7 @@ export type Group = {
 
 export function sortOffers(
   offersIn: Array<CatalogItem<Offer>>,
-  sorting: ?{ [key: string]: number }
+  sorting: { [key: string]: number }
 ): Array<CatalogItem<Offer>> {
   // clone the array as otherwise the array is sorted in place which is unexpected
   let offers = [...offersIn];

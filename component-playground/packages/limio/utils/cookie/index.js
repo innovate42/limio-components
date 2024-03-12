@@ -13,7 +13,7 @@ export const getCookie = (name: string): string => {
     return cookie
 }
 
-export const getCookieValue = (cookiesString: string, name: string): ?string => {
+export const getCookieValue = (cookiesString: string, name: string): string => {
     if (!cookiesString) {
         return undefined
     }

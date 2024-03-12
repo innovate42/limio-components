@@ -27,7 +27,7 @@ export function useCampaign(): UseCampaign {
   if (context === undefined) {
     throw new Error("useBasket must be used within a LimioProvider");
   }
-  const { campaign, offers } = context.shop;
+  const { campaign, offers } = dummyContext.shop;
   return { campaign, offers };
 }
 
@@ -42,7 +42,7 @@ export function useBasket(): UseBasket {
   if (context === undefined) {
     throw new Error("useBasket must be used within a LimioProvider");
   }
-  const { basketItems, addToBasket } = context.shop;
+  const { basketItems, addToBasket } = dummyContext.shop;
   return { basketItems, addToBasket };
 }
 
@@ -56,7 +56,7 @@ export function useLimioContext(): UseLimioContext {
   if (context === undefined) {
     throw new Error("useLimioContext must be used within a LimioProvider");
   }
-  const { pageBuilder__limio: isInPageBuilder } = context;
+  const { pageBuilder__limio: isInPageBuilder } = dummyContext;
   return { isInPageBuilder };
 }
 

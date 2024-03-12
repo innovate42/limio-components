@@ -3,18 +3,14 @@ import React, { useState } from "react";
 import "./index.css";
 
 type Props = {
-  bgColor__limio_color: String,
   downArrowImg: String,
   headline: String,
   subline: String,
   faqItems: Array<{
     question: String,
-    answer__limio_richtext: String,
+    answer: String,
   }>,
-  componentId: String,
-  showButtonBackgroundColor: boolean,
-  btnBgColor__limio_color: String,
-  btnBorderColor__limio_color: String,
+  componentId: String
 };
 
 const FaqBanner = (props: Props): React.Node => {
@@ -24,9 +20,6 @@ const FaqBanner = (props: Props): React.Node => {
     subline,
     faqItems = [],
     componentId,
-    showButtonBackgroundColor,
-    btnBgColor__limio_color,
-    btnBorderColor__limio_color,
   } = props;
 
   const [openAccordions, setOpenAccordions] = useState([]);
@@ -62,15 +55,6 @@ const FaqBanner = (props: Props): React.Node => {
             onMouseLeave={() => setBtnOnHover(-1)}
             onFocus={() => setOnKeyDown(i)}
             onBlur={() => setOnKeyDown(-1)}
-            style={
-              (showButtonBackgroundColor && btnOnhover === i) ||
-              (showButtonBackgroundColor && onKeyDown === i)
-                ? {
-                    background: `${btnBgColor__limio_color}`,
-                    borderColor: `${btnBorderColor__limio_color}`,
-                  }
-                : { background: "#ffffff", border: "none" }
-            }
           >
             <p className="Question">{item.question}</p>
             <img
@@ -86,7 +70,7 @@ const FaqBanner = (props: Props): React.Node => {
             className="Answer"
             data-testid="answer"
             dangerouslySetInnerHTML={{
-              __html: item.answer__limio_richtext,
+              __html: item.answer,
             }}
           />
         </dd>

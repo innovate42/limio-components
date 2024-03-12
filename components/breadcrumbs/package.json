@@ -34,7 +34,7 @@
       "default": true
     },
     {
-      "id": "dividerColor__limio_color",
+      "id": "dividerColor",
       "label": "Divider color",
       "type": "color",
       "default": "#000000"

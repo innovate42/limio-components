@@ -33,24 +33,6 @@
       "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit."
     },
     {
-      "id": "mobileSwipe",
-      "label": "Mobile swipe or stack?",
-      "type": "boolean",
-      "default": true
-    },
-    {
-      "id": "showSwipeArrows",
-      "label": "Show mobile swipe arrows?",
-      "type": "boolean",
-      "default": true
-    },
-    {
-      "id": "arrowColor__limio_color",
-      "label": "Mobile swipe arrow color",
-      "type": "color",
-      "default": "#4444444"
-    },
-    {
       "id": "squareTheme",
       "label": "Square Theme?",
       "type": "boolean",

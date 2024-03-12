@@ -13,8 +13,7 @@ type ResponsiveImage = {
 
 type Props = {
   src: string | ResponsiveImage,
-  loading?: "eager" | "lazy",
-  ...
+  loading?: "eager" | "lazy"
 };
 
 // will look at how we can make this static in the future.

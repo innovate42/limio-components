@@ -7,7 +7,7 @@ type Props = {
   isLast: boolean,
   props: {
     dividers: boolean,
-    dividerColor__limio_color: string,
+    dividerColor: string,
     linkUnderline: boolean,
   },
 };
@@ -26,7 +26,7 @@ const formatUrl = (url) => {
 const BreadcrumbItem = ({
   breadcrumb,
   isLast,
-  props: { dividerColor__limio_color, dividers, linkUnderline },
+  props: { dividerColor, dividers, linkUnderline },
 }: Props) => {
   return (
     <>
@@ -37,7 +37,7 @@ const BreadcrumbItem = ({
       </a>
       {dividers && !isLast ? (
         <span
-          style={{ color: dividerColor__limio_color }}
+          style={{ color: dividerColor }}
           className="breadcrumb__divider"
         >
           {"/"}

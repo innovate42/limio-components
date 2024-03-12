@@ -7,7 +7,7 @@ type Props = {
   linkUnderline: boolean,
   header: string,
   dividers: boolean,
-  dividerColor__limio_color: string,
+  dividerColor: string,
   dividerWeight: string,
   breadcrumbs: Array<BreadcrumbItemProps>,
   componentId: string,

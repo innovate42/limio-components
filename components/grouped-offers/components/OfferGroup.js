@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import { useState } from "react";
+import { useBasket } from "@limio/sdk";
 import * as R from "ramda";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -104,10 +105,10 @@ type Props = {
   buttonText: string,
   buttonUrl: string,
   mobileDescriptionHeading?: string,
-  thumbnail: ?string,
+  thumbnail: string,
   preselectFirstOfferInGroup: boolean,
   selectedGroup: Array<string>,
-  setSelectedGroup: (Array<string>) => void,
+  setSelectedGroup: Function
 };
 
 function OfferGroup({
@@ -124,10 +125,7 @@ function OfferGroup({
   selectedGroup,
   setSelectedGroup,
 }: Props): React.Node {
-  const { shop } = {
-    shop: { addToBasket: () => console.log("Add to basket!") },
-  };
-  const { addToBasket } = shop;
+  const { addToBasket } = useBasket();
 
   const [firstOffer = {}] = offers;
   const description =
