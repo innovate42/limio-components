@@ -83,6 +83,8 @@
   "scripts": {
     "test": "node scripts/test.js",
     "limio": "storybook dev -p 6006",
+    "limio:create": "node ./scripts/create-component.js",
+    "limio:update": "node ./scripts/update-storybook.js",
     "build-storybook": "storybook build"
   },
   "eslintConfig": {

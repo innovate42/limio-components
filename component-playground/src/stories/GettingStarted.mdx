@@ -42,71 +42,55 @@ export const RightArrow = () => <svg
     Limio Components is a repository which provides a library of open source Limio Shop Components and a Component Playground to edit these components and build new Custom Components with a set of tools to access Limio Subscription and User data.
   </div>
   <div className='sb-section-title'>
-    ## Create a Custom Component
+    ## Quickstart Guide
 
-    Limio components are React components. Anything that you can package up into a React component can be used in Limio.
+    Limio components are React components. Anything that you can package up into a React component can be used in Limio. This guide will walk you through the steps to create your first Limio Custom Component using the playground, powered by Storybook. Follow these instructions to get started.
 
-    ### Limio Component Guidelines
+    ### Prerequisites
 
-    This is a list of requirements & notes on anything that you should/should not do with your component:
+    Before you begin, ensure you have `yarn` installed on your system. If you're new to `yarn`, it's a package manager that doubles as a project manager. You can install it by following the instructions on the [Yarn Documentation](https://classic.yarnpkg.com/en/docs/install) page.
 
-    * Your component module must be exported as the default export from your entry file.
-    * You can structure your component across many files in multiple directories or just in a single file.
-    ( Only .css files are supports for styling.
-    * Only a small number of external packages are currently available for use in uploaded components right now. If there is a specific package that you need to use, please contact support and we will try our best to accommodate.
-    * Use limioProps in your package.json to make your component customisable.
+    #### Step 1: Generating Your Component
 
-    Let's use this simple component as an example:
+    To create a new component, open your terminal, navigate to your project directory, and run the following command:
 
-    ```javascript
-    import * as React from "react";
-    import "./banner.css";
-
-    const CTABanner = ({
-      headline,
-      subline,
-      cta_text,
-      cta_href,
-      terms_summary,
-      detailed_terms_href,
-      image_href,
-    }) => {
-      return (
-        <section className="CTABanner">
-          <article className="Container">
-            <header>
-              <h1 className="Headline">{headline}</h1>
-              <h2 className="Subline">{subline}</h2>
-
-              <a className="CTAButton" href={cta_href} color="#191414">
-                <span>{cta_text}</span>
-              </a>
-
-              <div className="Terms">
-                <p>
-                  {terms_summary}{" "}
-                  {detailed_terms_href && (
-                    <a href={detailed_terms_href}>Terms apply.</a>
-                  )}
-                </p>
-              </div>
-            </header>
-            <img src={image_href} alt="headphones" />
-          </article>
-        </section>
-      );
-    };
-
-    export default CTABanner;
+    ```bash
+    yarn limio:create <componentDir> <componentName>
     ```
 
-    <div className="sb-image-container lg">
-      <img src={"https://user-images.githubusercontent.com/11695131/212106500-45dfdfe5-fb0b-4e48-b264-ca0d7a7f362b.png"} alt="Limio" />
-    </div>
+    Replace `<componentDir>` with your desired component directory name (e.g., offer-cards), and `<componentName>` with the name of your component (e.g., OfferCards). This naming convention is crucial for the organization and readability of your project.
 
-    The fields marketers can configure components with are set in the component package.json file, inside an array with the key limioProps. You can see these in the example below.
+    ##### What Happens Next?
+    Upon running the command, the following files and directories will be created:
 
-    When the component is dragged into a page builder these fields will be populated in a menu for the marketer to configure how they like and these values are then always passed into the component when rendering it.
+    * **Storybook File**: `./component-playground/src/stories/[componentDir].stories.js` <br />
+    This file is where you'll define your component's stories for Storybook. Stories are a way to present your components in different states and with different sets of data.
+
+    * **Component Entry Point**: `./components/[componentDir]/index.js` <br />
+    The main file of your component where you'll export your React component.
+
+    * **Component Package JSON**: `./components/[componentDir]/package.json` <br />
+    Contains your component's dependencies and Limio Props. This file is essential for managing your component's needs and integrating with the Limio ecosystem.
+
+    ##### Component Development Guidelines
+    As you develop your custom component, please keep the following guidelines in mind:
+
+    * **Modular Structure**: You can structure your component across many files in multiple directories or just in a single file. This flexibility allows you to organize your component in a way that best suits your development style.
+    * **Styling**: Only .css files are supported for styling. Ensure that your component's visual design is implemented using CSS.
+    * **External Packages**: External packages can be added to your `package.json` file and will be loaded as part of the component at build time once in Limio. Please just remember to keep the `"react": "*"` dependency so that your component and Limio use the same version of React.
+
+    ##### Step 2: Viewing Your Component in Storybook
+    After creating your component, you can immediately see it in action within the Limio Component Playground. To do so:
+
+    1. Navigate to the Storybook sidebar.
+    2. Locate your new component by its directory name.
+    3. Click on it to view your component.
+
+    As you make changes to your React component, Storybook will automatically refresh, allowing you to observe live updates. This feature is incredibly useful for developing and fine-tuning your components in real-time.
+
+    Congratulations! You've successfully created a custom component for Limio. Continue to explore the capabilities of the Limio Component Playground and Storybook to enhance your components further. If you have any questions or need assistance, refer to the Limio Documentation or reach out to the Limio community.
+
+    Happy coding!
   </div>
 
   <div className='sb-section-title'>
