@@ -1,13 +1,10 @@
 // @flow
 import React from "react";
-import { Button } from "@limio/design-system";
 import { StaticImage } from "@limio/sdk/src/components";
-import "./index.css";
 
 type Props = {
   header: string,
   subheader: string,
-  squareTheme: Boolean,
   imageFit: string,
   features: Array<{
     image: string,
@@ -24,76 +21,44 @@ export const Features = ({
   header,
   subHeader,
   features = [],
-  imageFit,
-  componentId,
-  squareTheme,
+  imageFit
 }: Props) => {
 
   return (
-    <div
-      className={`Features ${squareTheme ? "square-theme" : ""}`}
-      id={componentId}
-    >
-      <div className={`FeaturesWrapper`}>
-        {header && (
-          <h2
-            data-limio-prop="header"
-            className={`FeaturesHeader ${subHeader ? " mainHeader" : ""}`}
-          >
-            {header}
-          </h2>
-        )}
-        {subHeader && (
-          <h3 data-limio-prop="subHeader" className="FeaturesHeader subHeader">
-            {subHeader}
-          </h3>
-        )}
-        <div
-          className={`FeaturesContainer`}
-          data-testid="FeaturesContainer"
-        >
+      <section className="bg-white dark:bg-gray-900">
+        <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+          <div className="max-w-screen-md mb-8 lg:mb-16">
+            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{header}</h2>
+            <p className="text-gray-500 sm:text-xl dark:text-gray-400">{subHeader}</p>
+          </div>
+          <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
           {features.map((feature, i) => (
-            <div
-              className="Feature"
-              key={feature.image + feature.header + i}
-            >
+              <div>
               {feature.image !== "" ? (
-                <StaticImage
-                  src={feature.image}
-                  alt={feature.header}
-                  style={{ objectFit: imageFit }}
-                />
+                  <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                    <StaticImage
+                      src={feature.image}
+                      alt={feature.header}
+                      style={{ objectFit: imageFit }}
+                    />
+                  </div>
               ) : null}
-              <div className="FeatureTextWrapper">
-                {feature.header && (
-                  <h3 dangerouslySetInnerHTML={{ __html: feature.header }} />
-                )}
-                {feature.text && (
-                  <p dangerouslySetInnerHTML={{ __html: feature.text }} />
+                <h3 class="mb-2 text-xl font-bold dark:text-white">{feature.header}</h3>
+                <p className="text-gray-500 dark:text-gray-400">{feature.text}</p>
+                {feature.showButton && feature.buttonLink && (
+                    <a onClick={() => (window.location = feature.buttonLink + window.location.search)}>
+                      <button type="button"
+                              className="mt-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                              text={feature.buttonText}>
+                        {feature.buttonText}
+                      </button>
+                    </a>
                 )}
               </div>
-              {feature.showButton && feature.buttonLink && (
-                <a
-                  onClick={() =>
-                    (window.location =
-                      feature.buttonLink + window.location.search)
-                  }
-                >
-                  <Button
-                    className="feature-button"
-                    minor
-                    type="link-with-arrow"
-                    text={feature.buttonText}
-                  >
-                    {feature.buttonText}
-                  </Button>
-                </a>
-              )}
-            </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

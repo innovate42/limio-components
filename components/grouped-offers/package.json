@@ -26,52 +26,16 @@
   },
   "limioProps": [
     {
-      "id": "ineligibleHeading",
-      "label": "Ineligible for trial heading",
+      "id": "heading",
+      "label": "Heading",
       "type": "string",
-      "default": "Pick another offer"
+      "default": "Subscribe today"
     },
     {
-      "id": "ineligibleMessage",
-      "label": "Ineligible for trial message",
+      "id": "subheading",
+      "label": "Heading",
       "type": "string",
-      "default": "You’ve already used your free trial."
-    },
-    {
-      "id": "fullPriceUrl",
-      "label": "Full Price URL",
-      "type": "string",
-      "default": "/full-price"
-    },
-    {
-      "id": "fullPriceLabel",
-      "label": "Full Price Label",
-      "type": "string",
-      "default": "Click here"
-    },
-    {
-      "id": "bestValueText",
-      "label": "Best value offer label",
-      "type": "string",
-      "default": "Best value"
-    },
-    {
-      "id": "buttonText",
-      "label": "External button next",
-      "type": "string",
-      "default": "View multi-year offers"
-    },
-    {
-      "id": "buttonUrl",
-      "label": "External button url",
-      "type": "string",
-      "default": "/multi"
-    },
-    {
-      "id": "preselectFirstOfferInGroup",
-      "label": "Preselect first offer in each group",
-      "type": "boolean",
-      "default": false
+      "default": "Join today for instant access."
     },
     {
       "id": "groupLabels",

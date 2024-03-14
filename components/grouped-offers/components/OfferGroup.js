@@ -71,12 +71,13 @@ function OfferOption({
       {!offer.hidden && (
         <>
           <div className="offer-option-button">
-            <CustomInput
-              aria-label={display_name__limio}
-              type="radio"
-              checked={selected}
-              onChange={() => onClick()}
-            />
+            <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
+              <input id="bordered-radio-1" type="radio" value="" name="bordered-radio"
+                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+                <label htmlFor="bordered-radio-1"
+                       className="w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default
+                  radio</label>
+            </div>
           </div>
           <div className="offer-option-container">
             <div className="offer-option-heading">
@@ -154,7 +155,8 @@ function OfferGroup({
   };
 
   return (
-    <div className={`offer-group-container ${bestValue ? "best-value" : ""}`}>
+      <div className="flex flex-col p-6 max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+
       {bestValue && (
         <div className="best-value-group">{bestValueText || "Best value"}</div>
       )}

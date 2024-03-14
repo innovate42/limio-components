@@ -11,157 +11,24 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
     "ramda": "^0.28.0",
-    "react": "^17.0.1",
     "xss": "^1.0.8"
   },
   "peerDependencies": {
-    "@sentry/browser": "*",
-    "i18next": "*",
-    "react": "*",
-    "react-dom": "*",
-    "react-redux": "*",
-    "redux": "*"
+    "react": "*"
   },
   "limioProps": [
     {
-      "id": "external_pricing_link",
-      "label": "External pricing link",
+      "id": "heading",
+      "label": "Heading",
       "type": "string",
-      "default": "/long-term"
+      "default": "Subscribe today"
     },
     {
-      "id": "external_pricing_text",
-      "label": "External pricing text",
+      "id": "subheading",
+      "label": "Heading",
       "type": "string",
-      "default": "View multi-year pricing"
-    },
-    {
-      "id": "offerWidth",
-      "label": "Card width",
-      "type": "number",
-      "default": 3
-    },
-    {
-      "id": "offerOverflowLayout",
-      "label": "Card alignment",
-      "type": "picklist",
-      "options": [
-        {
-          "id": "stretch",
-          "label": "Stretch",
-          "value": "stretch"
-        },
-        {
-          "id": "center",
-          "label": "Center",
-          "value": "center"
-        },
-        {
-          "id": "start",
-          "label": "Start",
-          "value": "start"
-        },
-        {
-          "id": "end",
-          "label": "End",
-          "value": "end"
-        }
-      ],
-      "default": "stretch"
-    },
-    {
-      "id": "includedFeaturesTitle",
-      "label": "Features Title",
-      "type": "string",
-      "default": "Whats Included?"
-    },
-    {
-      "id": "ineligibleMessage",
-      "label": "Ineligible for trial message",
-      "type": "string",
-      "default": "You are not eligible for a trial offer. Please select a different offer to continue."
-    },
-    {
-      "id": "offerGrouping",
-      "label": "Group offers?",
-      "type": "boolean",
-      "default": false
-    },
-    {
-      "id": "showOfferImages",
-      "label": "Show images for offers?",
-      "type": "boolean",
-      "default": false
-    },
-    {
-      "id": "maxCards",
-      "label": "Max number of offer cards per row (leave blank if no limit)",
-      "type": "number",
-      "default": ""
-    },
-    {
-      "id": "cardAlignment",
-      "label": "Direction of offer card arrangement",
-      "type": "picklist",
-      "options": [
-        {
-          "id": "vertical",
-          "label": "Vertical",
-          "value": "vertical"
-        },
-        {
-          "id": "horizontal",
-          "label": "Horizontal",
-          "value": "horizontal"
-        }
-      ],
-      "default": "vertical"
-    },
-    {
-      "id": "alwaysMinimise",
-      "label": "Always minimise features?",
-      "type": "boolean",
-      "default": false
-    },
-    {
-      "id": "groupLabels",
-      "label": "Group labels",
-      "type": "list",
-      "fields": {
-        "name": {
-          "id": "id",
-          "label": "ID",
-          "type": "string"
-        },
-        "url": {
-          "id": "label",
-          "label": "URL",
-          "type": "string"
-        }
-      },
-      "default": [
-        {
-          "id": "digital",
-          "label": "Digital"
-        },
-        {
-          "id": "bundle",
-          "label": "Print + Digital"
-        }
-      ]
-    },
-    {
-      "id": "hideCardBreak",
-      "label": "Hide card break",
-      "type": "boolean",
-      "default": false
+      "default": "Join today for instant access."
     }
-  ],
-  "devDependencies": {
-    "@i42/shared": "workspace:packages/shared"
-  }
+  ]
 }

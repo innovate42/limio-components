@@ -12,29 +12,11 @@ export default {
     "autodocs"
   ],
   argTypes: {
-    ineligibleHeading: {
+    heading: {
       control: "text"
     },
-    ineligibleMessage: {
+    subheading: {
       control: "text"
-    },
-    fullPriceUrl: {
-      control: "text"
-    },
-    fullPriceLabel: {
-      control: "text"
-    },
-    bestValueText: {
-      control: "text"
-    },
-    buttonText: {
-      control: "text"
-    },
-    buttonUrl: {
-      control: "text"
-    },
-    preselectFirstOfferInGroup: {
-      control: "boolean"
     },
     groupLabels: [
       {
@@ -58,14 +40,8 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {
   args: {
-    ineligibleHeading: "Pick another offer",
-    ineligibleMessage: "You’ve already used your free trial.",
-    fullPriceUrl: "/full-price",
-    fullPriceLabel: "Click here",
-    bestValueText: "Best value",
-    buttonText: "View multi-year offers",
-    buttonUrl: "/multi",
-    preselectFirstOfferInGroup: false,
+    heading: "Subscribe today",
+    subheading: "Join today for instant access.",
     groupLabels: [
       {
         "id": "digital",

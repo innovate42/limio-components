@@ -1,175 +1,64 @@
 // @flow
-import React, { useState } from "react";
+import React from "react";
 import { sanitizeString } from "@limio/utils/string";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useBasket } from "@limio/sdk";
 import { formatDisplayPrice } from "@limio/utils/string";
 
-const Offer = ({
-  offer,
-  maxCards,
-  external_pricing_link_default,
-  external_pricing_text_default,
-  showOfferImages,
-  width,
-  alignItems,
-  ineligibleMessage,
-  hideCardBreak,
-  includedFeaturesTitle,
-  cardAlignment,
-  alwaysMinimise,
-}) => {
+const formatBulletPoints = (string) => {
+    const sanitised = sanitizeString(string)
+
+    const features = document.createElement("div")
+    features.innerHTML = sanitised
+
+    return [].slice.call(features.children).map(feature => (
+        <li className="flex items-center space-x-3">
+            <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"></path>
+            </svg>
+            <span>{feature.innerText}</span>
+        </li>
+    ))
+}
+
+const Offer = ({ offer }) => {
   const {
     display_name__limio,
     display_price__limio,
     display_equivalent_price,
-    detailed_display_price__limio,
     cta_text__limio,
     offer_features__limio,
-    external_pricing_link,
-    external_pricing_text,
-    best_value__limio,
-    display_description__limio,
     price__limio,
   } = offer.data.attributes;
 
-  const offerImage = offer.data.attachments
-    ? offer.data.attachments.find((x) => x.type.includes("image"))
-    : [];
+    const { addToBasket } = useBasket();
 
-  const [featuresOpen, setFeaturesOpen] = useState(false);
-  const { addToBasket } = useBasket();
-
-  const cardStyles = maxCards
-    ? {
-        flexGrow: 1,
-        flexShrink: 0,
-        width: `calc(${parseInt(100 / maxCards) - 1}% - 40px)`,
-        maxWidth: `calc(${parseInt(100 / maxCards) - 1}% - 40px)`,
-        alignSelf: alignItems,
-        marginBottom: "1em",
-      }
-    : { width: `${width * 100}px`, alignSelf: alignItems };
-
-  return (
-    <div
-      data-testid="offer"
-      className={`offer_cards__card ${best_value__limio ? "best_value" : ""} ${
-        alwaysMinimise ? "always_minimise" : ""
-      }`}
-      key={offer.path + "/child"}
-      style={cardStyles}
-      // eslint-disable-next-line react/no-unknown-property -- No idea if this should be here
-      text={ineligibleMessage}
-    >
-      {/* Top right pill for best value offer */}
-      {best_value__limio && (
-        <p data-testid="best_value" className="offer_cards__best_value">
-          {display_description__limio || "Best Value"}
-        </p>
-      )}
-
-      <div className={`offer_cards__content ${cardAlignment}`}>
-        {showOfferImages && (
-          <div className={"offer_cards__image"}>
-            <img src={offerImage.url} alt={""} />
-          </div>
-        )}
-        <div className="offer_cards__text">
-          <h2 data-testid="heading" className="offer_cards__heading">
-            {display_name__limio}
-          </h2>
-
-          <div
-            data-testid="display_price"
-            className="offer_cards__price"
-            dangerouslySetInnerHTML={{
-              __html: sanitizeString(
-                formatDisplayPrice(display_price__limio, [
-                  {
-                    currencyCode: price__limio[0].currencyCode,
-                    value: price__limio[0].value,
-                  },
-                ])
-              ),
-            }}
-          />
-          <p data-testid="equivalent_price" className="offer_cards__equivalent">
-            {display_equivalent_price}
-          </p>
-          <div
-            data-testid="detailed_display_price"
-            className="offer_cards__detailed_price"
-            dangerouslySetInnerHTML={{
-              __html: sanitizeString(
-                formatDisplayPrice(detailed_display_price__limio, [
-                  {
-                    currencyCode: price__limio[0].currencyCode,
-                    value: price__limio[0].value,
-                  },
-                ])
-              ),
-            }}
-          />
-
-          {/* Wrapped features and cta in div as the order needs to flip on mobile */}
-          <div className="offer_cards__button_features_wrapper">
-            <button
-              data-testid="cta"
-              className="offer_cards__button ds-button"
-              onClick={() => addToBasket(offer)}
-            >
-              {cta_text__limio || "Subscribe"}
+    return (
+        <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+          <h3 className="mb-4 text-2xl font-semibold">{display_name__limio}</h3>
+            <div className="flex justify-center items-baseline my-4">
+              <span className="mr-2 text-3xl font-extrabold"
+                    dangerouslySetInnerHTML={{ __html: sanitizeString(formatDisplayPrice(display_price__limio, [{currencyCode: price__limio[0].currencyCode, value: price__limio[0].value,}])) }}
+              />
+            </div>
+            <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400 mb-4">
+                {display_equivalent_price}
+            </p>
+            <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400 mb-6"
+               dangerouslySetInnerHTML={{ __html: sanitizeString(formatDisplayPrice(display_price__limio, [{currencyCode: price__limio[0].currencyCode, value: price__limio[0].value,}])) }}
+            />
+              <ul role="list" className="mb-8 space-y-4 text-left">
+                  {offer_features__limio && formatBulletPoints(offer_features__limio)}
+              </ul>
+            <button type="button"
+                    onClick={() => addToBasket(offer)}
+                    className="mt-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                {cta_text__limio}
             </button>
 
-            <div className="offer_cards__included_wrapper">
-              {/* Rule for stacked view only */}
-              {offer_features__limio && (
-                <>
-                  <hr className="offer_cards__feature_rule ds-rule" />
-                  <button
-                    data-testid="whats_included_toggle"
-                    onClick={() => setFeaturesOpen(!featuresOpen)}
-                    className={`offer_cards_included ${
-                      featuresOpen ? "open" : "closed"
-                    }`}
-                  >
-                    <p>{includedFeaturesTitle}</p>
-                    <FontAwesomeIcon icon={faChevronDown} />
-                  </button>
-                  <div
-                    data-testid="features"
-                    className="offer_cards__features"
-                    dangerouslySetInnerHTML={{
-                      __html: sanitizeString(offer_features__limio),
-                    }}
-                  />
-                  {/* Rule for stacked view only */}
-                  <hr className="offer_cards__feature_rule ds-rule" />
-                </>
-              )}
-            </div>
-          </div>
         </div>
-      </div>
-
-      {/* Rule for 3 card row view */}
-      {!hideCardBreak && <hr className="offer_cards__end_rule ds-rule" />}
-
-      {(external_pricing_text || external_pricing_text_default) && (
-        <div className="offer_cards__end">
-          <a
-            data-testid="external_link"
-            className="offer_cards__cta ds-pagination__nav-link"
-            href={external_pricing_link || external_pricing_link_default}
-            target="_top"
-          >
-            {external_pricing_text || external_pricing_text_default}
-          </a>
-        </div>
-      )}
-    </div>
   );
 };
 

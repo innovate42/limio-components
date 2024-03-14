@@ -27,86 +27,12 @@
   },
   "limioProps": [
     {
-      "id": "bgColor__limio_color",
-      "label": "Box background color",
-      "type": "string",
-      "default": "#ECECEC"
-    },
-    {
-      "id": "wrapperBgColor__limio_color",
-      "label": "Wrapper background color",
-      "type": "string",
-      "default": "#FFFFFF"
-    },
-    {
       "id": "image",
       "label": "Image",
       "type": "string",
-      "default": "",
+      "default": "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1156184/860406_495342.png",
       "format": "uri",
       "purpose": "image"
-    },
-    {
-      "id": "imageShape",
-      "label": "Image shape",
-      "type": "picklist",
-      "options": [
-        {
-          "id": "",
-          "label": "Default",
-          "value": ""
-        },
-        {
-          "id": "Rounded",
-          "label": "Rounded Corners",
-          "value": "Rounded"
-        },
-        {
-          "id": "Circle",
-          "label": "Circle",
-          "value": "Circle"
-        },
-        {
-          "id": "Circlular",
-          "label": "Circlular",
-          "value": "Circlular"
-        }
-      ],
-      "default": ""
-    },
-    {
-      "id": "imagePosition",
-      "label": "Image position",
-      "type": "picklist",
-      "options": [
-        {
-          "id": "top",
-          "label": "Top",
-          "value": "top"
-        },
-        {
-          "id": "left",
-          "label": "Left",
-          "value": "left"
-        },
-        {
-          "id": "right",
-          "label": "Right",
-          "value": "right"
-        },
-        {
-          "id": "bottom",
-          "label": "Bottom",
-          "value": "bottom"
-        }
-      ],
-      "default": "left"
-    },
-    {
-      "id": "imageCaption__limio_richtext",
-      "label": "Image caption",
-      "type": "richtext",
-      "default": "Lorem ipsum dolor sit amet."
     },
     {
       "id": "showButtons",
@@ -141,13 +67,13 @@
       "id": "header",
       "label": "Header",
       "type": "string",
-      "default": "Lorem ipsum dolor sit amet."
+      "default": "Commerce tool for subscription companies"
     },
     {
-      "id": "text__limio_richtext",
+      "id": "text",
       "label": "Text",
       "type": "richtext",
-      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      "default": "From checkout to retention experience compliance, companies around the world use Limio to simplify their subscription stack"
     },
     {
       "id": "secondaryTextImage",

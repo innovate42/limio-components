@@ -1,129 +1,47 @@
 import React from "react";
-import "./index.css";
-import { StaticImage } from "@limio/sdk/src/components/";
-// import { useComponentStaticProps } from "./componentStaticProps";
-
-const bannerStyle = (bgColor) => ({
-  backgroundColor: `${bgColor}`,
-});
-
-const wrapperStyle = (wrapperBgColor) => ({
-  backgroundColor: `${wrapperBgColor}`,
-});
-
-const textContainerStyle = (image) => ({
-  width: !image ? "100%" : "60%",
-  marginTop: !image ? "3rem" : null,
-});
 
 type Props = {
-  bgColor__limio_color: string,
-  wrapperBgColor__limio_color: string,
-  componentId: string,
   image: string,
-  imageShape: string,
-  imagePosition: string,
-  imageCaption__limio_richtext: string,
   showButtons: boolean,
   buttons: Array<{
     buttonText: string,
     buttonLocation: string,
   }>,
   header: string,
-  text__limio_richtext: string,
-  secondaryTextImage: string,
+  text: string,
   componentId: string,
 };
 
 export default function Section(props: Props): React.Node {
-  //   const {
-  //     bgColor__limio_color,
-  //     wrapperBgColor__limio_color,
-  //     image,
-  //     imageShape,
-  //     header,
-  //     text__limio_richtext,
-  //     reverse,
-  //     imageCaption__limio_richtext,
-  //     showButtons,
-  //     buttons,
-  //     imagePosition,
-  //     secondaryTextImage,
-  //     componentId,
-  //   } = useComponentStaticProps();
 
   const {
-    bgColor__limio_color,
-    wrapperBgColor__limio_color,
     image,
-    imageShape,
     header,
-    text__limio_richtext,
-    reverse,
-    imageCaption__limio_richtext,
+    text,
     showButtons,
     buttons,
-    imagePosition,
-    secondaryTextImage,
     componentId,
   } = props;
 
   return (
-    <div
-      className="Section"
-      id={componentId}
-      style={bannerStyle(bgColor__limio_color)}
-    >
-      <div
-        className={`SectionWrapper ${imagePosition}`}
-        style={wrapperStyle(wrapperBgColor__limio_color, reverse)}
-      >
-        {image && (
-          <div className="ImageContainer">
-            <StaticImage src={image} className={`Image ${imageShape}`} />
-            {imageCaption__limio_richtext && (
-              <div
-                className="ImageCaption"
-                dangerouslySetInnerHTML={{
-                  __html: imageCaption__limio_richtext,
-                }}
-              />
-            )}
+      <section className="bg-white dark:bg-gray-900" id={componentId}>
+        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+          <div className="mr-auto place-self-center lg:col-span-7">
+            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">{header}</h1>
+            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">{text}</p>
+            {
+              (showButtons && buttons.length > 0) && buttons.map(button => (
+                  <a href={button.buttonLocation}
+                     className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                    {button.buttonText}
+                  </a>
+              ))
+            }
           </div>
-        )}
-        <div className="BodyContainer">
-          <div className="TextContainer" style={textContainerStyle(image)}>
-            {secondaryTextImage?.length > 0 && (
-              <div className="ImageContainer TextImage ">
-                <img src={secondaryTextImage} className="Image" />
-              </div>
-            )}
-            {header && (
-              <h2 className="Header" data-limio-prop="header">
-                {header}
-              </h2>
-            )}
-            {text__limio_richtext && (
-              <div
-                className="Text"
-                data-limio-prop="text__limio_richtext"
-                dangerouslySetInnerHTML={{
-                  __html: text__limio_richtext,
-                }}
-              />
-            )}
+          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img src={image} alt="mockup"/>
           </div>
-          {showButtons && (
-            <div className="ButtonsContainer">
-              {buttons.map(({ buttonText, buttonLocation }, index) => (
-                <a key={index} href={buttonLocation}>
-                  <button>{buttonText}</button>
-                </a>
-              ))}
-            </div>
-          )}
         </div>
-      </div>
-    </div>
-  );
+      </section>
+  )
 }

@@ -6,40 +6,13 @@ export default {
   title: "Components/Section",
   component: Section,
   parameters: {
-    "layout": "fullscreen"
+    "layout": "centered"
   },
   tags: [
     "autodocs"
   ],
   argTypes: {
-    bgColor__limio_color: {
-      control: "text"
-    },
-    wrapperBgColor__limio_color: {
-      control: "text"
-    },
     image: {
-      control: "text"
-    },
-    imageShape: {
-      control: "select",
-      options: [
-        "",
-        "Rounded",
-        "Circle",
-        "Circlular"
-      ]
-    },
-    imagePosition: {
-      control: "select",
-      options: [
-        "top",
-        "left",
-        "right",
-        "bottom"
-      ]
-    },
-    imageCaption__limio_richtext: {
       control: "text"
     },
     showButtons: {
@@ -58,7 +31,7 @@ export default {
     header: {
       control: "text"
     },
-    text__limio_richtext: {
+    text: {
       control: "text"
     },
     secondaryTextImage: {
@@ -73,12 +46,7 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {
   args: {
-    bgColor__limio_color: "#ECECEC",
-    wrapperBgColor__limio_color: "#FFFFFF",
-    image: "",
-    imageShape: "",
-    imagePosition: "left",
-    imageCaption__limio_richtext: "Lorem ipsum dolor sit amet.",
+    image: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1156184/860406_495342.png",
     showButtons: true,
     buttons: [
       {
@@ -86,8 +54,8 @@ export const Primary = {
         "buttonLocation": "https://limio.com"
       }
     ],
-    header: "Lorem ipsum dolor sit amet.",
-    text__limio_richtext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    header: "Commerce tool for subscription companies",
+    text: "From checkout to retention experience compliance, companies around the world use Limio to simplify their subscription stack",
     secondaryTextImage: "",
     componentId: "section-limio"
   }

@@ -12,12 +12,13 @@ function getAbsolutePath(value) {
 const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
-    getAbsolutePath("@storybook/addon-webpack5-compiler-swc"),
-    getAbsolutePath("@storybook/addon-onboarding"),
-    getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@chromatic-com/storybook"),
-    getAbsolutePath("@storybook/addon-interactions"),
+      getAbsolutePath("@storybook/addon-webpack5-compiler-swc"),
+      getAbsolutePath("@storybook/addon-onboarding"),
+      getAbsolutePath("@storybook/addon-links"),
+      getAbsolutePath("@storybook/addon-essentials"),
+      getAbsolutePath("@chromatic-com/storybook"),
+      getAbsolutePath("@storybook/addon-interactions"),
+      "@storybook/addon-styling-webpack"
   ],
   framework: {
     name: getAbsolutePath("@storybook/react-webpack5"),

@@ -1,14 +1,8 @@
 //@flow
 import React from "react";
 import BreadcrumbItem from "./components/BreadcrumbItem";
-import "./index.css";
 
 type Props = {
-  linkUnderline: boolean,
-  header: string,
-  dividers: boolean,
-  dividerColor: string,
-  dividerWeight: string,
   breadcrumbs: Array<BreadcrumbItemProps>,
   componentId: string,
 };
@@ -19,31 +13,19 @@ type BreadcrumbItemProps = {
 };
 
 export default function Breadcrumbs(props: Props) {
-  const { breadcrumbs, componentId, header } = props;
+  const { breadcrumbs, componentId } = props;
 
   function isLast(index) {
     return index === breadcrumbs.length - 1;
   }
 
   return (
-    <div className="BreadcrumbList" id={componentId}>
-      {header?.length > 0 && (
-        <span className="BreadcrumbListHeader">{header}</span>
-      )}
-      <div className="BreadcrumbListWrapper">
-        <div className="Breadcrumbs">
-          {breadcrumbs.map((breadcrumb, i) => {
-            return (
-              <BreadcrumbItem
-                key={JSON.stringify(breadcrumb)}
-                breadcrumb={breadcrumb}
-                isLast={isLast(i)}
-                props={props}
-              />
-            );
-          })}
-        </div>
-      </div>
-    </div>
+      <nav className="flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb" id={componentId}>
+        <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+          {
+            breadcrumbs.map((breadcrumb, index) => <BreadcrumbItem key={JSON.stringify(breadcrumb)} breadcrumb={breadcrumb} isLast={isLast(index)} isFirst={index === 0}/>)
+          }
+        </ol>
+      </nav>
   );
 }

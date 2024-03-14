@@ -18,19 +18,6 @@ export default {
     subHeader: {
       control: "text"
     },
-    squareTheme: {
-      control: "boolean"
-    },
-    imageFit: {
-      control: "select",
-      options: [
-        "cover",
-        "contain",
-        "scale-down",
-        "right",
-        "top"
-      ]
-    },
     features: [
       {
         image: {
@@ -64,8 +51,6 @@ export const Primary = {
   args: {
     header: "Lorem ipsum dolor sit amet",
     subHeader: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit.",
-    squareTheme: false,
-    imageFit: "cover",
     features: [
       {
         "image": "https://campaigns.scdn.co/images/midyear-prem-benefit0.png",
@@ -87,14 +72,6 @@ export const Primary = {
         "image": "https://campaigns.scdn.co/images/midyear-prem-benefit2.png",
         "header": "Play any song.",
         "text": "Even on mobile.",
-        "showButton__limio_boolean": false,
-        "buttonText": "Click here",
-        "buttonLink": "https://www.limio.com"
-      },
-      {
-        "image": "https://campaigns.scdn.co/images/midyear-prem-benefit3.png",
-        "header": "Unlimited skips.",
-        "text": "Just hit next.",
         "showButton__limio_boolean": false,
         "buttonText": "Click here",
         "buttonLink": "https://www.limio.com"

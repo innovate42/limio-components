@@ -33,45 +33,6 @@
       "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit."
     },
     {
-      "id": "squareTheme",
-      "label": "Square Theme?",
-      "type": "boolean",
-      "default": false
-    },
-    {
-      "id": "imageFit",
-      "label": "Image shape",
-      "type": "picklist",
-      "options": [
-        {
-          "id": "cover",
-          "label": "Cover",
-          "value": "cover"
-        },
-        {
-          "id": "contain",
-          "label": "Contain",
-          "value": "contain"
-        },
-        {
-          "id": "scale-down",
-          "label": "Scale down",
-          "value": "scale-down"
-        },
-        {
-          "id": "right",
-          "label": "Right",
-          "value": "right"
-        },
-        {
-          "id": "top",
-          "label": "Top",
-          "value": "top"
-        }
-      ],
-      "default": "cover"
-    },
-    {
       "id": "features",
       "label": "Features",
       "type": "list",
@@ -133,14 +94,6 @@
           "showButton__limio_boolean": false,
           "buttonText": "Click here",
           "buttonLink": "https://www.limio.com"
-        },
-        {
-          "image": "https://campaigns.scdn.co/images/midyear-prem-benefit3.png",
-          "header": "Unlimited skips.",
-          "text": "Just hit next.",
-          "showButton__limio_boolean": false,
-          "buttonText": "Click here",
-          "buttonLink": "https://www.limio.com"
         }
       ]
     },
@@ -150,8 +103,5 @@
       "type": "string",
       "default": "features-limio"
     }
-  ],
-  "dependencies": {
-    "@limio/sdk": "workspace:^"
-  }
+  ]
 }

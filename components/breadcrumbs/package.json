@@ -22,30 +22,6 @@
   },
   "limioProps": [
     {
-      "id": "linkUnderline",
-      "label": "Underline links?",
-      "type": "boolean",
-      "default": false
-    },
-    {
-      "id": "dividers",
-      "label": "Show dividers",
-      "type": "boolean",
-      "default": true
-    },
-    {
-      "id": "dividerColor",
-      "label": "Divider color",
-      "type": "color",
-      "default": "#000000"
-    },
-    {
-      "id": "header",
-      "label": "Breadcrumbs Header",
-      "type": "string",
-      "default": "My Account"
-    },
-    {
       "id": "breadcrumbs",
       "label": "Breadcrumbs",
       "type": "list",

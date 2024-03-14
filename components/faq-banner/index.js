@@ -1,9 +1,7 @@
 // @flow
 import React, { useState } from "react";
-import "./index.css";
 
 type Props = {
-  downArrowImg: String,
   headline: String,
   subline: String,
   faqItems: Array<{
@@ -14,78 +12,55 @@ type Props = {
 };
 
 const FaqBanner = (props: Props): React.Node => {
-  const {
-    downArrowImg,
-    headline,
-    subline,
-    faqItems = [],
-    componentId,
-  } = props;
+  const { headline, subline, faqItems = [], componentId } = props;
+  const [active, setActive] = useState()
 
-  const [openAccordions, setOpenAccordions] = useState([]);
-  const [btnOnhover, setBtnOnHover] = useState(-1);
-  const [onKeyDown, setOnKeyDown] = useState(-1);
-
-  function toggleOpenAccordion(accordionIndex) {
-    let newOpenAccordions = [...openAccordions];
-
-    openAccordions.includes(accordionIndex)
-      ? (newOpenAccordions = openAccordions.filter(
-          (item) => item !== accordionIndex
-        ))
-      : newOpenAccordions.push(accordionIndex);
-
-    setOpenAccordions(newOpenAccordions);
+  function isLast(index) {
+    return index === faqItems.length - 1;
   }
 
   // Took the map function for items outside the "HTML" section for better reading and understanding
   const retrieveFaqItems = faqItems.map((item, i) => {
-    const active = openAccordions.includes(i);
+    const expanded = active === i
+    const last = isLast(i)
 
     return (
-      <dl className="FaqItem" key={i}>
-        <dt>
-          <button
-            type="button"
-            className="AccordionItem"
-            aria-expanded={`${active ? "true" : "false"}`}
-            aria-controls={`faqAnswer${i + 1}`}
-            onClick={() => toggleOpenAccordion(i)}
-            onMouseEnter={() => setBtnOnHover(i)}
-            onMouseLeave={() => setBtnOnHover(-1)}
-            onFocus={() => setOnKeyDown(i)}
-            onBlur={() => setOnKeyDown(-1)}
-          >
-            <p className="Question">{item.question}</p>
-            <img
-              className={`Arrow ${active ? "active" : ""}`}
-              src={downArrowImg}
-              alt="down"
-            />
+      <>
+        <h2 id={`accordion-collapse-heading-${i}`}>
+          <button type="button"
+                  onClick={() => setActive(i)}
+                  className={(last && !expanded ? "rounded-b-xl " : "border-b-0 ") + (i === 0 ? "rounded-t-xl " : "") + "flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"}
+                  data-accordion-target={`#accordion-collapse-body-${i}`} aria-expanded="true"
+                  aria-controls={`accordion-collapse-body-${i}`}>
+            <span>{item.question}</span>
+            <svg data-accordion-icon className="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5 5 1 1 5"/>
+            </svg>
           </button>
-        </dt>
-        <dd className={`Panel ${active ? "active" : ""}`}>
-          <div
-            id={`faqAnswer${i + 1}`}
-            className="Answer"
-            data-testid="answer"
-            dangerouslySetInnerHTML={{
-              __html: item.answer,
-            }}
-          />
-        </dd>
-      </dl>
+        </h2>
+        <div id={`accordion-collapse-body-${i}`} className={expanded ? "" : "hidden"} aria-labelledby={`accordion-collapse-body-${i}`}>
+          <div className={(last ? "rounded-b-xl " : "border-b-0 ") + "p-5 text-gray-500 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"} dangerouslySetInnerHTML={{
+            __html: item.answer
+          }}/>
+        </div>
+      </>
     );
   });
 
   return (
-    <div className="FaqBanner" id={componentId}>
-      <div className="FaqWrapper">
-        <h2>{headline}</h2>
-        <p>{subline}</p>
-        <div className="AccordionContainer">{retrieveFaqItems}</div>
-      </div>
-    </div>
+      <section className="bg-white dark:bg-gray-900" id={componentId}>
+        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{headline}</h2>
+            <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">{subline}</p>
+          </div>
+          <div id="accordion-collapse" data-accordion="collapse">
+            {retrieveFaqItems}
+          </div>
+        </div>
+      </section>
   );
 };
 
