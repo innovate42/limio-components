@@ -1,0 +1,233 @@
+{
+  "name": "@limio/component-cancel-survey-next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "scripts": {
+    "build": "yarn component:webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@fortawesome/pro-solid-svg-icons": "^6.1.2",
+    "@limio/crypto": "workspace:^",
+    "@limio/internal-checkout-sdk": "workspace:^",
+    "@limio/shop": "workspace:^"
+  },
+  "peerDependencies": {
+    "@limio/swr": "*",
+    "@sentry/browser": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "@fortawesome/react-fontawesome": "^0.1.14"
+  },
+  "limioProps": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "string",
+      "default": "Before you go"
+    },
+    {
+      "id": "subtitle",
+      "label": "Subtitle",
+      "type": "string",
+      "default": "Please tell us why you want to cancel your subscription"
+    },
+    {
+      "id": "arrange",
+      "label": "Arrange",
+      "type": "picklist",
+      "options": [
+        {
+          "id": "horizontal",
+          "label": "Horizontal",
+          "value": "horizontal"
+        },
+        {
+          "id": "vertical",
+          "label": "Vertical",
+          "value": "vertical"
+        }
+      ],
+      "default": "horizontal"
+    },
+    {
+      "id": "reasons",
+      "label": "Reasons",
+      "type": "list",
+      "fields": {
+        "id": {
+          "id": "id",
+          "label": "Reason Id",
+          "type": "string"
+        },
+        "label": {
+          "id": "label",
+          "label": "Reason Label",
+          "type": "string"
+        },
+        "url": {
+          "id": "url",
+          "label": "Reason URL",
+          "type": "string"
+        },
+        "buttonImage": {
+          "id": "buttonImage",
+          "label": "Button Image",
+          "type": "string"
+        },
+        "straightToUrl__limio_boolean": {
+          "id": "straightToUrl__limio_boolean",
+          "label": "Straight to url",
+          "type": "boolean"
+        },
+        "showCta__limio_boolean": {
+          "id": "showCta__limio_boolean",
+          "label": "Show CTA?",
+          "type": "boolean"
+        },
+        "ctaText": {
+          "id": "ctaText",
+          "label": "CTA Text",
+          "type": "string"
+        },
+        "ctaImage": {
+          "id": "ctaImage",
+          "label": "CTA Image",
+          "type": "string"
+        },
+        "segments__limio_segments": {
+          "id": "segments__limio_segments",
+          "label": "Segments",
+          "type": "segments"
+        }
+      },
+      "default": [
+        {
+          "id": "expensive",
+          "label": "This subscription is too expensive",
+          "url": "/save",
+          "buttonImage": "",
+          "straightToUrl__limio_boolean": false,
+          "showCta__limio_boolean": true,
+          "ctaText": "We can offer you a discount.",
+          "ctaImage": "",
+          "segments__limio_segments": []
+        },
+        {
+          "id": "quantity",
+          "label": "I have too much",
+          "url": "mailto:support@limio.com",
+          "buttonImage": "",
+          "straightToUrl__limio_boolean": false,
+          "showCta__limio_boolean": true,
+          "ctaText": "We understand. Please contact us to talk about your options.",
+          "ctaImage": "",
+          "segments__limio_segments": []
+        },
+        {
+          "id": "dislike",
+          "label": "I did not like the membership benefits",
+          "url": "",
+          "buttonImage": "",
+          "straightToUrl__limio_boolean": false,
+          "showCta__limio_boolean": false,
+          "ctaText": "",
+          "ctaImage": "",
+          "segments__limio_segments": []
+        },
+        {
+          "id": "alternative",
+          "label": "I found an alternative",
+          "url": "",
+          "buttonImage": "",
+          "straightToUrl__limio_boolean": false,
+          "showCta__limio_boolean": false,
+          "ctaText": "",
+          "ctaImage": "",
+          "segments__limio_segments": []
+        },
+        {
+          "id": "other",
+          "label": "Other reasons",
+          "url": "",
+          "buttonImage": "",
+          "showCta__limio_boolean": false,
+          "ctaText": "",
+          "ctaImage": "",
+          "segments__limio_segments": []
+        }
+      ]
+    },
+    {
+      "id": "goBackUrl",
+      "label": "Go Back URL",
+      "type": "string",
+      "default": "/mma"
+    },
+    {
+      "id": "redirectUrl",
+      "label": "Redirect URL",
+      "type": "string",
+      "default": "/mma"
+    },
+    {
+      "id": "feedbackPlaceholder",
+      "label": "Feedback Placeholder",
+      "type": "string",
+      "default": "Tell us what you would have made your experience better"
+    },
+    {
+      "id": "confirmationTitle",
+      "label": "Confirmation Title",
+      "type": "string",
+      "default": "Are you sure you want to cancel?"
+    },
+    {
+      "id": "confirmationBody",
+      "label": "Confirmation Body",
+      "type": "string",
+      "default": "Your subscription will lapse at the end of your term and you will lose all benefits."
+    },
+    {
+      "id": "confirmationOk",
+      "label": "Confirmation Ok",
+      "type": "string",
+      "default": "OK"
+    },
+    {
+      "id": "confirmationCancel",
+      "label": "Confirmation Cancel",
+      "type": "string",
+      "default": "Cancel"
+    },
+    {
+      "id": "iconPrimary__limio_color",
+      "label": "Icon Primary Color",
+      "type": "color",
+      "default": "rgba(0,0,0,.3)"
+    },
+    {
+      "id": "iconSecondary__limio_color",
+      "label": "Icon Secondary Color",
+      "type": "color",
+      "default": "rgba(0,0,0,.1)"
+    },
+    {
+      "id": "backgroundColor__limio_color",
+      "label": "Background Color",
+      "type": "color",
+      "default": "#fff"
+    },
+    {
+      "id": "componentId",
+      "label": "Component Id",
+      "type": "string",
+      "default": "cancel-survey-limio"
+    }
+  ]
+}

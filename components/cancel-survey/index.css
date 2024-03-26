@@ -1,0 +1,229 @@
+/* .cancel-survey {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.cancel-survey .cancel-survey-title {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 1.5em;
+  padding: 1em;
+} */
+
+/* .cancel-survey .cancel-survey-subtitle {
+  display: flex;
+  width: 100%;
+  font-size: 1.25em;
+  justify-content: center;
+  padding: 0 0 1em;
+} */
+
+/* .cancel-survey .cancel-survey-selections {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+} */
+
+/* .cancel-survey .cancel-survey-selections .cancel-survey-selection {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  transition: 0.2s;
+  flex-grow: 1;
+  flex-shrink: 0;
+} */
+
+/* .cancel-survey
+  .cancel-survey-selections
+  .cancel-survey-selection.selected-selection {
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.05);
+} */
+/* 
+.cancel-survey .cancel-survey-selections .cancel-survey-selection:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.025);
+} */
+
+/* .cancel-survey
+  .cancel-survey-selections
+  .cancel-survey-selection
+  .cancel-survey-selection-icon {
+  display: flex;
+  width: 5em;
+  height: 5em;
+  margin: 1em auto;
+}
+
+.cancel-survey
+  .cancel-survey-selections
+  .cancel-survey-selection
+  .cancel-survey-selection-icon
+  svg {
+  width: 100%;
+  height: 100%;
+} */
+
+/* .cancel-survey
+  .cancel-survey-selections
+  .cancel-survey-selection
+  .cancel-survey-selection-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1em;
+  text-align: center;
+} */
+/* 
+.cancel-survey .cancel-form-container {
+  width: 100%;
+  padding: 2em;
+} */
+
+/* .cancel-survey .cancel-form-container .cancel-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+} */
+
+/* .cancel-survey .cancel-form-container .cancel-form .cancel-form-button {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  transition: 0.2s;
+} */
+
+/* .cancel-survey .cancel-form-container .cancel-form a {
+  color: currentColor;
+  text-decoration: none;
+} */
+
+/* .cancel-survey .cancel-form-container .cancel-form .cancel-form-button svg {
+  width: 4em;
+  height: 4em;
+  margin: 0 auto 1em;
+} */
+
+/* .cancel-survey .cancel-form-container .cancel-form .cancel-form-button:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 0.5em;
+} */
+
+/* .cancel-survey .cancel-form-container .cancel-button-group {
+  width: fit-content;
+  display: flex;
+  margin-left: auto;
+  color: #03a9f4;
+  transition: 0.2s;
+  flex-shrink: 1;
+  border-bottom: 1px solid transparent;
+} */
+
+/* .cancel-survey .cancel-form-container .cancel-button-group .cancel-form-button {
+  display: flex;
+  margin-left: 1em;
+  padding: 1em 0 0;
+} */
+
+/* .cancel-survey
+  .cancel-form-container
+  .cancel-button-group
+  .cancel-form-button:hover {
+  border-bottom: 1px solid #03a9f4;
+  cursor: pointer;
+}
+
+.cancel-survey
+  .cancel-form-container
+  .cancel-button-group
+  .cancel-form-button.cancel-button {
+  color: #f44336;
+}
+
+.cancel-survey
+  .cancel-form-container
+  .cancel-button-group
+  .cancel-form-button.cancel-button:hover {
+  border-color: #f44336;
+} */
+
+/* .cancel-survey.vertical .cancel-survey-selections {
+  flex-direction: column;
+}
+
+.cancel-survey.vertical .cancel-survey-selections .cancel-survey-selection {
+  width: 100%;
+  flex-direction: row;
+  padding: 1em;
+}
+
+.cancel-survey.vertical
+  .cancel-survey-selections
+  .cancel-survey-selection
+  .cancel-survey-selection-icon {
+  width: 3em;
+  height: 2em;
+  margin: 0;
+}
+
+.cancel-survey.vertical
+  .cancel-survey-selections
+  .cancel-survey-selection
+  .cancel-survey-selection-title {
+  margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  text-align: left;
+}
+
+.cancel-survey.vertical .cancel-form-container .cancel-button-group {
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+} */
+
+@media (max-width: 812px) {
+  .cancel-survey .cancel-survey-selections {
+    flex-direction: column;
+  }
+
+  .cancel-survey .cancel-survey-selections .cancel-survey-selection {
+    width: 100%;
+    flex-direction: row;
+    padding: 1em;
+  }
+
+  .cancel-survey
+    .cancel-survey-selections
+    .cancel-survey-selection
+    .cancel-survey-selection-icon {
+    width: 3em;
+    height: 2em;
+    margin: 0;
+  }
+
+  .cancel-survey
+    .cancel-survey-selections
+    .cancel-survey-selection
+    .cancel-survey-selection-title {
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    text-align: left;
+  }
+
+  .cancel-survey .cancel-form-container .cancel-button-group {
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+  }
+}

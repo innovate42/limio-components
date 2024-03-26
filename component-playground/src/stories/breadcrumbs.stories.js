@@ -6,7 +6,7 @@ export default {
   title: "Components/Breadcrumbs",
   component: Breadcrumbs,
   parameters: {
-    "layout": "centered"
+    "layout": "fullscreen"
   },
   tags: [
     "autodocs"
