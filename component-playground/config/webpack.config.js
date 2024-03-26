@@ -1,5 +1,3 @@
-"use strict";
-
 const fs = require("fs");
 const path = require("path");
 const webpack = require("webpack");
@@ -94,8 +92,8 @@ module.exports = function (webpackEnv) {
   const designSystem = process.argv.includes("--which")
     ? "which"
     : process.argv.includes("--economist")
-    ? "economist"
-    : "default";
+      ? "economist"
+      : "default";
   // Variable used for enabling profiling in Production
   // passed into alias object. Uses a flag if passed into the build command
   const isEnvProductionProfile =
@@ -131,6 +129,7 @@ module.exports = function (webpackEnv) {
         // package.json
         loader: require.resolve("postcss-loader"),
         options: {
+          implementation: require.resolve("postcss"),
           postcssOptions: {
             // Necessary for external CSS imports to work
             // https://github.com/facebook/create-react-app/issues/2677
@@ -223,13 +222,12 @@ module.exports = function (webpackEnv) {
       publicPath: paths.publicUrlOrPath,
       // Point sourcemap entries to original disk location (format as URL on Windows)
       devtoolModuleFilenameTemplate: isEnvProduction
-        ? (info) =>
+        ? info =>
             path
               .relative(paths.appSrc, info.absoluteResourcePath)
               .replace(/\\/g, "/")
         : isEnvDevelopment &&
-          ((info) =>
-            path.resolve(info.absoluteResourcePath).replace(/\\/g, "/")),
+          (info => path.resolve(info.absoluteResourcePath).replace(/\\/g, "/")),
     },
     cache: {
       type: "filesystem",
@@ -239,7 +237,7 @@ module.exports = function (webpackEnv) {
       buildDependencies: {
         defaultWebpack: ["webpack/lib/"],
         config: [__filename],
-        tsconfig: [paths.appTsConfig, paths.appJsConfig].filter((f) =>
+        tsconfig: [paths.appTsConfig, paths.appJsConfig].filter(f =>
           fs.existsSync(f)
         ),
       },
@@ -309,8 +307,8 @@ module.exports = function (webpackEnv) {
       // `web` extension prefixes have been added for better support
       // for React Native Web.
       extensions: paths.moduleFileExtensions
-        .map((ext) => `.${ext}`)
-        .filter((ext) => useTypeScript || !ext.includes("ts")),
+        .map(ext => `.${ext}`)
+        .filter(ext => useTypeScript || !ext.includes("ts")),
       alias: {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
@@ -332,12 +330,12 @@ module.exports = function (webpackEnv) {
           path.join("..", "packages", "limio", "sdk")
         ),
         "@limio/internal-checkout-sdk": path.resolve(
-            __dirname,
-            path.join("..", "packages", "limio", "internal-checkout-sdk")
+          __dirname,
+          path.join("..", "packages", "limio", "internal-checkout-sdk")
         ),
         "@limio/shop": path.resolve(
-            __dirname,
-            path.join("..", "packages", "limio", "shop")
+          __dirname,
+          path.join("..", "packages", "limio", "shop")
         ),
         "@limio/utils": path.resolve(
           __dirname,
@@ -346,6 +344,10 @@ module.exports = function (webpackEnv) {
         "@limio/ui": path.resolve(
           __dirname,
           path.join("..", "packages", "limio", "ui")
+        ),
+        "@limio/crypto": path.resolve(
+          __dirname,
+          path.join("..", "packages", "limio", "crypto")
         ),
         ...(isEnvProductionProfile && {
           "react-dom$": "react-dom/profiling",
@@ -699,7 +701,7 @@ module.exports = function (webpackEnv) {
             return manifest;
           }, seed);
           const entrypointFiles = entrypoints.main.filter(
-            (fileName) => !fileName.endsWith(".map")
+            fileName => !fileName.endsWith(".map")
           );
 
           return {
