@@ -14,6 +14,9 @@ type Props = {
 const FaqBanner = (props: Props): React.Node => {
   const { headline, subline, faqItems = [], componentId } = props;
   const [active, setActive] = useState()
+  const [userName, setUserName] = useState()
+
+ 
 
   function isLast(index) {
     return index === faqItems.length - 1;
