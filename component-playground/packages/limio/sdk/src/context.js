@@ -35,7 +35,12 @@ export function useCampaign(): UseCampaign {
 type UseBasket = {
   addToBasket: AddToBasket,
   basketItems: OrderItem[],
+  validateBasket
 };
+
+function validateBasket(){
+  console.log("Baket Validates")
+}
 
 export function useBasket(): UseBasket {
   const context: LimioContextType = React.useContext(LimioContext);
@@ -43,7 +48,7 @@ export function useBasket(): UseBasket {
     throw new Error("useBasket must be used within a LimioProvider");
   }
   const { basketItems, addToBasket } = dummyContext.shop;
-  return { basketItems, addToBasket };
+  return { basketItems, addToBasket, validateBasket };
 }
 
 // Selection of LimioContextShop properties
