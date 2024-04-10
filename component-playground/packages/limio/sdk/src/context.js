@@ -51,6 +51,8 @@ export function useBasket(): UseBasket {
   return { basketItems, addToBasket, validateBasket };
 }
 
+
+
 // Selection of LimioContextShop properties
 type UseLimioContext = {
   isInPageBuilder?: boolean

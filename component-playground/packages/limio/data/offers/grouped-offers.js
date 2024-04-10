@@ -102,7 +102,7 @@ export const groupedOffers = [
       ],
       attachments: [
         {
-          url: "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_630,w_1200,f_auto,q_auto/831985/Asset_3_ivtnda.png",
+          url: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1156184/860406_495342.png",
           type: "image/png",
           path: "/assets/Images/Limio Digital Print",
           name: "Limio Digital Print"
@@ -216,7 +216,7 @@ export const groupedOffers = [
       ],
       attachments: [
         {
-          url: "/public/6aba220a-cf9d-471f-a931-ef42cac9da39/Print-Digital-.png",
+          url: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1156184/860406_495342.png",
           type: "image/png",
           path: "/assets/Images/Limio Digital Print",
           name: "Limio Digital Print"
@@ -331,7 +331,7 @@ export const groupedOffers = [
       ],
       attachments: [
         {
-          url: "https://sandbox.dev.limio.com/public/21f7546d-c39b-4ad3-9e98-6139a014d891/Screenshot%202022-09-08%20at%2012.19.33.png",
+          url: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1156184/860406_495342.png",
           type: "image/png",
           path: "/assets/Images/Limio Digital Print",
           name: "Limio Digital Print"
@@ -353,6 +353,7 @@ export const groupedOffers = [
     type: "item",
     data: {
       attributes: {
+        allow_multibuy__limio: true,
         primary_color__limio: "#f47c24",
         secondary_color__limio: "#0e4f1b",
         tertiary_color__limio: "#020109",
@@ -446,7 +447,7 @@ export const groupedOffers = [
       ],
       attachments: [
         {
-          url: "/public/6aba220a-cf9d-471f-a931-ef42cac9da39/Print-Digital-.png",
+          url: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1156184/860406_495342.png",
           type: "image/png",
           path: "/assets/Images/Limio Digital Print",
           name: "Limio Digital Print"

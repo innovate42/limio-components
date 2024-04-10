@@ -1,0 +1,71 @@
+{
+  "name": "@limio/component-offers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "scripts": {
+    "build": "yarn component:webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@limio/shop": "workspace:^",
+    "query-string": "^6.13.8",
+    "ramda": "^0.27.2"
+  },
+  "devDependencies": {
+    "@limio/sdk": "workspace:^",
+    "xss": "^1.0.8"
+  },
+  "peerDependencies": {
+    "@limio/swr": "*",
+    "@sentry/browser": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "limioProps": [
+    {
+      "id": "mobileSwipe",
+      "label": "Mobile swipe or stack?",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "mobileArrows",
+      "label": "Mobile arrows?",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "mobileArrowsColor",
+      "label": "Mobile arrows color",
+      "type": "color",
+      "default": "#505050"
+    },
+    {
+      "id": "showLearnMore",
+      "label": "Show learn more",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "learnMoreText",
+      "label": "Learn more text",
+      "type": "string",
+      "default": "Learn more"
+    },
+    {
+      "id": "showImage",
+      "label": "Show image",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "componentId",
+      "label": "Component Id",
+      "type": "string",
+      "default": "offers-limio"
+    }
+  ]
+}
