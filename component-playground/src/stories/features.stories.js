@@ -56,7 +56,7 @@ export const Primary = {
         "image": "https://campaigns.scdn.co/images/midyear-prem-benefit0.png",
         "header": "Download Music.",
         "text": "Listen anywhere.",
-        "showButton__limio_boolean": false,
+        "showButton": false,
         "buttonText": "Click here",
         "buttonLink": "https://www.limio.com"
       },
@@ -64,7 +64,7 @@ export const Primary = {
         "image": "https://campaigns.scdn.co/images/midyear-prem-benefit1.png",
         "header": "Listen without ads.",
         "text": "Enjoy nonstop music.",
-        "showButton__limio_boolean": false,
+        "showButton": false,
         "buttonText": "Click here",
         "buttonLink": "https://www.limio.com"
       },
@@ -72,7 +72,7 @@ export const Primary = {
         "image": "https://campaigns.scdn.co/images/midyear-prem-benefit2.png",
         "header": "Play any song.",
         "text": "Even on mobile.",
-        "showButton__limio_boolean": false,
+        "showButton": false,
         "buttonText": "Click here",
         "buttonLink": "https://www.limio.com"
       }

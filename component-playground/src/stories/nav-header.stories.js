@@ -1,8 +1,5 @@
 import { fn } from '@storybook/test';
-// import NavHeader from '../../../components/nav-header';
-import NavHeader from "../../../components/nav-header"
-
-
+import NavHeader from './../../../components/nav-header';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
@@ -26,45 +23,21 @@ export default {
     },
     items: [
       {
-        label:{
+        label: {
           control: "text"
         },
-        href:{
+        href: {
           control: "text"
         },
-        button__limio_boolean:{
+        button__limio_boolean: {
           control: "boolean"
         },
-        login__limio_boolean:{
+        login__limio_boolean: {
           control: "boolean"
         }
       }
     ],
-    height:{
-      control: "number"
-    },
-    fixedTop:{
-      control: "boolean"
-    }, 
-    shadow:{
-      control: "boolean"
-    },
-    showBasket:{
-      control: "boolean"
-    },
-    showProfile:{
-      control: "boolean"
-    },
-    componentId:{
-      control: "text"
-    },
-    profileColor__limio_color:{
-      control: "text"
-    },
-    profileHref: {
-      control: "text"
-    },
-    basketColor__limio_color:{
+    componentId: {
       control: "text"
     }
   }
@@ -73,38 +46,29 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {
   args: {
-   logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/1156184/637770_576700.png",
+    logo: "https://sandbox.dev.limio.com/public/51ed4975-c2b9-47f3-bf20-70d7240564af/Limio-Original-White.png",
     logoHref: "/",
-    logoText: "Limio",
+    logoText: "",
     items: [
       {
-        label: "Premium",
-        href: "/uk/premium",
-        button__limio_boolean: false,
-        login__limio_boolean: false
+        "label": "Premium",
+        "href": "/uk/premium",
+        "button__limio_boolean": false,
+        "login__limio_boolean": false
       },
       {
-        label: "Help",
-        href: "/help",
-        button__limio_boolean: false,
-        login__limio_boolean: false
+        "label": "Help",
+        "href": "/help",
+        "button__limio_boolean": false,
+        "login__limio_boolean": false
       },
       {
-        label: "Download",
-        href: "/download",
-        button__limio_boolean: false,
-        login__limio_boolean: false
+        "label": "Download",
+        "href": "/download",
+        "button__limio_boolean": false,
+        "login__limio_boolean": false
       }
     ],
-    height: 1.25,
-    componentId: "faq-banner-limio",
-    fixedTop: true,
-    shadow: false,
-    showBasket: true,
-    showProfile: true,
-    componentId: "nav-header-limio",
-    profileColor__limio_color: "#A7A7A7",
-    profileHref: "/mma",
-    basketColor__limio_color: "#ffffff",
+    componentId: "nav-header-limio"
   }
 };

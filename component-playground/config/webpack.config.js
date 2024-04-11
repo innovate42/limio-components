@@ -339,10 +339,6 @@ module.exports = function (webpackEnv) {
             __dirname,
             path.join("..", "packages", "limio", "shop")
         ),
-        "@limio/shop-redux": path.resolve(
-          __dirname,
-          path.join("..", "packages", "limio", "shop-redux")
-      ),
         "@limio/utils": path.resolve(
           __dirname,
           path.join("..", "packages", "limio", "utils")

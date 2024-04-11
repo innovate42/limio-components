@@ -17,6 +17,12 @@ export default {
     },
     subheading: {
       control: "text"
+    },
+    showImage: {
+      control: "boolean"
+    },
+    componentId: {
+      control: "text"
     }
   }
 };
@@ -25,6 +31,8 @@ export default {
 export const Primary = {
   args: {
     heading: "Subscribe today",
-    subheading: "Join today for instant access."
+    subheading: "Join today for instant access.",
+    showImage: true,
+    componentId: "offers-limio"
   }
 };

@@ -8,15 +8,10 @@
     "@fortawesome/free-brands-svg-icons": "^6.1.2",
     "@fortawesome/free-regular-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
-    "@fortawesome/pro-duotone-svg-icons": "^6.1.2",
-    "@fortawesome/pro-light-svg-icons": "^6.1.2",
-    "@fortawesome/pro-regular-svg-icons": "^6.1.2",
-    "@fortawesome/pro-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@material-ui/core": "^4.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
     "@sentry/browser": "^7.15.0",
-    "@storybook/addon-viewport": "^8.0.6",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/dom": "^9.3.1",
     "@testing-library/jest-dom": "^5.17.0",
@@ -43,7 +38,6 @@
     "eslint-config-react-app": "^7.0.1",
     "eslint-webpack-plugin": "^3.2.0",
     "file-loader": "^6.2.0",
-    "flowbite-react": "^0.8.0",
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
@@ -51,7 +45,6 @@
     "jest-resolve": "^29.2.1",
     "jest-watch-typeahead": "^2.2.0",
     "jwt-decode": "^2.2.0",
-    "luxon": "^3.4.4",
     "mini-css-extract-plugin": "^2.4.5",
     "path-browserify": "^1.0.1",
     "postcss": "^8.4.4",
@@ -61,7 +54,6 @@
     "postcss-preset-env": "^7.0.1",
     "prompts": "^2.4.2",
     "prop-types": "^15.7.2",
-    "query-string": "^9.0.0",
     "ramda": "^0.28.0",
     "react": "^18.2.0",
     "react-app-polyfill": "^3.0.0",
@@ -77,21 +69,19 @@
     "semver": "^7.3.5",
     "source-map-loader": "^3.0.0",
     "style-loader": "^3.3.1",
-    "tailwindcss": "^3.4.3",
     "terser-webpack-plugin": "^5.2.5",
     "web-vitals": "^2.1.4",
     "webpack": "^5.69.1",
     "webpack-dev-server": "^4.7.4",
     "webpack-manifest-plugin": "^4.1.1",
-    "workbox-webpack-plugin": "^6.4.1",
-    "xss": "^1.0.15"
+    "workbox-webpack-plugin": "^6.4.1"
   },
   "scripts": {
     "test": "node scripts/test.js",
     "limio": "storybook dev -p 6006",
     "limio:create": "node ./scripts/create-component.js",
     "limio:update": "node ./scripts/update-storybook.js",
-    "limio:style": "npx tailwindcss -i ./packages/design-system/default/input.css -o ./packages/design-system/default/style.css --watch",
+    "limio:style": "npx tailwindcss -i ./packages/design-system/default/input.css -o ../components/source/style/style.css --watch",
     "build-storybook": "storybook build"
   },
   "eslintConfig": {
@@ -122,6 +112,7 @@
     "@storybook/addon-links": "^8.0.0",
     "@storybook/addon-onboarding": "^8.0.0",
     "@storybook/addon-styling-webpack": "^0.0.6",
+    "@storybook/addon-viewport": "^8.0.7",
     "@storybook/addon-webpack5-compiler-swc": "^1.0.2",
     "@storybook/blocks": "^8.0.0",
     "@storybook/react": "^8.0.0",
@@ -134,7 +125,7 @@
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
     "storybook": "^8.0.0",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.1"
   },
   "jest": {
     "roots": [
