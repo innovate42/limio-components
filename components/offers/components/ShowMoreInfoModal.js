@@ -4,8 +4,6 @@ import { sanitizeString } from "@limio/utils/string";
 import { formatDisplayPrice } from "@limio/utils/string";
 import { Modal } from "flowbite-react";
 
-
-
 export function ShowMoreInfoModal(props): React.Node {
 
 const {showMoreInfoModal, setShowMoreInfoModal, item, formatBulletPoints, showImage} = props

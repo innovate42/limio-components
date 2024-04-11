@@ -18,7 +18,7 @@ export const Offers = props => {
     redirect_url = search["redirect_url"] || ""
   }
 
-const renderPriceCards = groupItems => {
+const renderPriceCards = () => {
     if (offers.length === 0) {
       return <div className="no-offers mb-5">No offers to display...</div>
     }
@@ -42,8 +42,8 @@ const renderPriceCards = groupItems => {
   }
 
   return (
-    <div id="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-      <div className="container mb-2">
+    <div id="bg-white dark:bg-gray-900">
+      <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
             <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
               {renderPriceCards()}
             </div>

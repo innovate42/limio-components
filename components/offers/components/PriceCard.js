@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { ShowMoreInfoModal } from "./ShowMoreInfoModal"
 import { AddToBasketButton } from "./AddToBasketButton"
 import { sanitizeString } from "@limio/utils/string";
