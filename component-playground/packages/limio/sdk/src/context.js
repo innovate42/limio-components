@@ -12,6 +12,7 @@ import type {
 import { groupedOffers } from "../../data/offers";
 import { basketItems } from "../../data/basket";
 import { docUser } from "../../data/user";
+import { order, paidSchedule } from "../../data/useCheckout/index"
 
 const LimioContext = React.createContext<LimioContextType>({});
 export const ComponentContext: LimioComponentContext = React.createContext<LimioComponentContext>({});
@@ -118,6 +119,14 @@ export function useComponentProps<T>(defaultProps: $Shape<T>): T {
   return componentProps;
 }
 
+
+export function useCheckout() {
+  const useCheckoutSelector = () => dummyState
+
+  return { useCheckoutSelector }
+}
+
+
 const dummyContext = {
   pageBuilder__limio: false,
   shop: {
@@ -138,3 +147,8 @@ const dummyContext = {
   },
   user: docUser
 };
+
+const dummyState = {
+  order: order,
+  paidSchedule: paidSchedule
+}

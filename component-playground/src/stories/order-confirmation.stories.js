@@ -1,10 +1,10 @@
 import { fn } from '@storybook/test';
-import OfferCards from './../../../components/offer-cards';
+import OrderConfirmation from './../../../components/order-confirmation';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
-  title: "Components/Offer Cards",
-  component: OfferCards,
+  title: "Components/Order Confirmation",
+  component: OrderConfirmation,
   parameters: {
     "layout": "fullscreen"
   },
@@ -12,10 +12,13 @@ export default {
     "autodocs"
   ],
   argTypes: {
-    heading: {
+    title: {
       control: "text"
     },
-    subheading: {
+    message: {
+      control: "text"
+    },
+    messageTitle: {
       control: "text"
     }
   }
@@ -24,7 +27,8 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {
   args: {
-    heading: "Subscribe today",
-    subheading: "Join today for instant access."
+    title: "Order complete",
+    message: "Thank you for your order. You will receive an email confirmation shortly.",
+    messageTitle: "Thank you for subscribing"
   }
 };

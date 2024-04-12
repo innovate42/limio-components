@@ -1,5 +1,5 @@
 import { fn } from '@storybook/test';
-import Footer from '../../../components/footer';
+import Footer from './../../../components/footer';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
@@ -12,68 +12,40 @@ export default {
     "autodocs"
   ],
   argTypes: {
-    enableLogo: {
-      control: "boolean"
-    },
     logo: {
       control: "text"
     },
-    logoSize: {
-      control: "text"
-    },
     contactFields: [
-    {
-      label:{
-        control: "text"
-      },
-      href:{
-        value: "text"
-      },
-      url:{
-        control: "text"
-      },
-    }
-    ],
-    copyrightText: {
-      control: "text"
-    },
-    poweredByLink:{
-      control: "text"
-    },
-    facebookLink:{  
-      control: "text"
-    },
-    twitterLink:{
-      control: "text"
-    },
-    instagramLink:{ 
-      control: "text"
-    },
-    privacyLink:{
-      control: "text"
-    },
-    navigation: [
       {
-        label:{
-          control: "text"
-        },
-        url:{
-          control: "text"
-        },
-        }
-    ],
-    navigationDivider:{
-      control: "text"
-    },
-    navigationPosition:[
-      {
-        id: {
-          control: "text"
-        },
         label: {
           control: "text"
         },
         value: {
+          control: "text"
+        },
+        url: {
+          control: "text"
+        }
+      }
+    ],
+    copyrightText: {
+      control: "text"
+    },
+    facebookLink: {
+      control: "text"
+    },
+    twitterLink: {
+      control: "text"
+    },
+    instagramLink: {
+      control: "text"
+    },
+    navigation: [
+      {
+        label: {
+          control: "text"
+        },
+        url: {
           control: "text"
         }
       }
@@ -84,29 +56,41 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {
   args: {
-    enableLogo: true,
     logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/1156184/637770_576700.png",
-    logoSize: "10",
-    copyrightText: "© 2021 Limio",
-    facebookLink: "https://facebook.com",
-    twitterLink: "https://twitter.com/",
-    instagramLink: "https://www.instagram.com/",
-    privacyLink: "https://www.limio.com/privacy",
-    navigation:[
+    contactFields: [
       {
-        label: "Home",
-        url: "/"
+        "label": "Email:",
+        "value": "support@limio.com",
+        "url": "mailto:support@limio.com"
       },
       {
-        label: "Gift",
-        url: "/gift"
+        "label": "Telephone:",
+        "value": "020 1234 1234",
+        "url": "tel:020 1234 1234"
       },
       {
-        label: "Manage My Account",
-        url: "/mma"
+        "label": "Address:",
+        "value": "Leather Market, Weston Street, London, SE1 3ER",
+        "url": ""
       }
     ],
-    navigationDivider: "-",
-    navigationPosition: "bottom"
+    copyrightText: "Copyright © 2019 Limio",
+    facebookLink: "",
+    twitterLink: "",
+    instagramLink: "",
+    navigation: [
+      {
+        "label": "Home",
+        "url": "/"
+      },
+      {
+        "label": "Gift",
+        "url": "/gift"
+      },
+      {
+        "label": "Manage My Account",
+        "url": "/mma"
+      }
+    ]
   }
 };

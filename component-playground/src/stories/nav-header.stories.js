@@ -21,6 +21,15 @@ export default {
     logoText: {
       control: "text"
     },
+    height: {
+      control: "number"
+    },
+    fixedTop: {
+      control: "boolean"
+    },
+    shadow: {
+      control: "boolean"
+    },
     items: [
       {
         label: {
@@ -37,6 +46,30 @@ export default {
         }
       }
     ],
+    showProfile: {
+      control: "boolean"
+    },
+    profileColor__limio_color: {
+      control: "color"
+    },
+    profileHref: {
+      control: "text"
+    },
+    showBasket: {
+      control: "boolean"
+    },
+    basketColor__limio_color: {
+      control: "color"
+    },
+    menu_button__limio_color: {
+      control: "color"
+    },
+    menuButtonIconUrl: {
+      control: "text"
+    },
+    menuButtonText: {
+      control: "text"
+    },
     componentId: {
       control: "text"
     }
@@ -46,9 +79,12 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {
   args: {
-    logo: "https://sandbox.dev.limio.com/public/51ed4975-c2b9-47f3-bf20-70d7240564af/Limio-Original-White.png",
+    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/1156184/637770_576700.png",
     logoHref: "/",
     logoText: "",
+    height: 1.25,
+    fixedTop: true,
+    shadow: false,
     items: [
       {
         "label": "Premium",
@@ -69,6 +105,14 @@ export const Primary = {
         "login__limio_boolean": false
       }
     ],
+    showProfile: true,
+    profileColor__limio_color: "#A7A7A7",
+    profileHref: "/mma",
+    showBasket: false,
+    basketColor__limio_color: "#A7A7A7",
+    menu_button__limio_color: "rgba(0,0,0,.5)",
+    menuButtonIconUrl: "",
+    menuButtonText: "",
     componentId: "nav-header-limio"
   }
 };
