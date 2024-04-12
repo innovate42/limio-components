@@ -2357,42 +2357,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/pro-duotone-svg-icons@npm:^6.1.2":
-  version: 6.5.1
-  resolution: "@fortawesome/pro-duotone-svg-icons@npm:6.5.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Fpro-duotone-svg-icons%2F-%2F6.5.1%2Fpro-duotone-svg-icons-6.5.1.tgz"
-  dependencies:
-    "@fortawesome/fontawesome-common-types": "npm:6.5.1"
-  checksum: 10/7b6c996485c1a00d5a82fb80ff4f362c3cb921e5bcf595f80fef2441353cef23013c3f2ebc27aa2121ce972a0db7839bd1b44b8b0d32e05dd1756da3f8f5ceda
-  languageName: node
-  linkType: hard
-
-"@fortawesome/pro-light-svg-icons@npm:^6.1.2":
-  version: 6.5.1
-  resolution: "@fortawesome/pro-light-svg-icons@npm:6.5.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Fpro-light-svg-icons%2F-%2F6.5.1%2Fpro-light-svg-icons-6.5.1.tgz"
-  dependencies:
-    "@fortawesome/fontawesome-common-types": "npm:6.5.1"
-  checksum: 10/0f03fb5c18551e1c7e1761d82579485c8b56ad8a73f194f0381f0adeaeb0788c27ed02dd07f98f728e991d0c331c3bf4f10525a1091d217c88a345b5487e3767
-  languageName: node
-  linkType: hard
-
-"@fortawesome/pro-regular-svg-icons@npm:^6.1.2":
-  version: 6.5.1
-  resolution: "@fortawesome/pro-regular-svg-icons@npm:6.5.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Fpro-regular-svg-icons%2F-%2F6.5.1%2Fpro-regular-svg-icons-6.5.1.tgz"
-  dependencies:
-    "@fortawesome/fontawesome-common-types": "npm:6.5.1"
-  checksum: 10/47a0c2374f33f90a00dea70d2c48e4546ffb9ba9a1ed2a143036a8da1b6ca3bc576048ebf709a15145b0d369e3bbef9f2cf4275d007d660fe76cd7a0bd6ce2ac
-  languageName: node
-  linkType: hard
-
-"@fortawesome/pro-solid-svg-icons@npm:^6.1.2":
-  version: 6.5.1
-  resolution: "@fortawesome/pro-solid-svg-icons@npm:6.5.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Fpro-solid-svg-icons%2F-%2F6.5.1%2Fpro-solid-svg-icons-6.5.1.tgz"
-  dependencies:
-    "@fortawesome/fontawesome-common-types": "npm:6.5.1"
-  checksum: 10/2fd29cb59cc72154486df543d00f0867bb2aac825b5060d891ce17befe9ffc38ba9b4e189855b2cd4760c61a68de4c9439915bb3b25ed208bf254ef502bf2dcb
-  languageName: node
-  linkType: hard
-
 "@fortawesome/react-fontawesome@npm:^0.1.14":
   version: 0.1.19
   resolution: "@fortawesome/react-fontawesome@npm:0.1.19::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Freact-fontawesome%2F-%2F0.1.19%2Freact-fontawesome-0.1.19.tgz"
@@ -2461,10 +2425,6 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": "npm:^6.1.2"
     "@fortawesome/free-regular-svg-icons": "npm:^6.1.2"
     "@fortawesome/free-solid-svg-icons": "npm:^6.1.2"
-    "@fortawesome/pro-duotone-svg-icons": "npm:^6.1.2"
-    "@fortawesome/pro-light-svg-icons": "npm:^6.1.2"
-    "@fortawesome/pro-regular-svg-icons": "npm:^6.1.2"
-    "@fortawesome/pro-solid-svg-icons": "npm:^6.1.2"
     "@fortawesome/react-fontawesome": "npm:^0.1.14"
     "@material-ui/core": "npm:^4.12.3"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.5.4"
@@ -2474,7 +2434,7 @@ __metadata:
     "@storybook/addon-links": "npm:^8.0.0"
     "@storybook/addon-onboarding": "npm:^8.0.0"
     "@storybook/addon-styling-webpack": "npm:^0.0.6"
-    "@storybook/addon-viewport": "npm:^8.0.6"
+    "@storybook/addon-viewport": "npm:^8.0.7"
     "@storybook/addon-webpack5-compiler-swc": "npm:^1.0.2"
     "@storybook/blocks": "npm:^8.0.0"
     "@storybook/react": "npm:^8.0.0"
@@ -2509,7 +2469,6 @@ __metadata:
     eslint-webpack-plugin: "npm:^3.2.0"
     file-loader: "npm:^6.2.0"
     flow-bin: "npm:^0.178.1"
-    flowbite-react: "npm:^0.8.0"
     fs-extra: "npm:^10.0.0"
     html-webpack-plugin: "npm:^5.5.0"
     identity-obj-proxy: "npm:^3.0.0"
@@ -2530,7 +2489,6 @@ __metadata:
     postcss-preset-env: "npm:^7.0.1"
     prompts: "npm:^2.4.2"
     prop-types: "npm:^15.7.2"
-    query-string: "npm:^9.0.0"
     ramda: "npm:^0.28.0"
     react: "npm:^18.2.0"
     react-app-polyfill: "npm:^3.0.0"
@@ -2547,7 +2505,7 @@ __metadata:
     source-map-loader: "npm:^3.0.0"
     storybook: "npm:^8.0.0"
     style-loader: "npm:^3.3.1"
-    tailwindcss: "npm:^3.4.3"
+    tailwindcss: "npm:^3.4.1"
     terser-webpack-plugin: "npm:^5.2.5"
     web-vitals: "npm:^2.1.4"
     webpack: "npm:^5.69.1"
@@ -4164,6 +4122,15 @@ __metadata:
   dependencies:
     memoizerific: "npm:^1.11.3"
   checksum: 10/02d46fa97a819b1e00d0017043fbdcbe02652f8bed0d7f441dec02f162c36d7a3150e223068193db026003b68622eacc77b3c04b4f80455ac6152a54d027f314
+  languageName: node
+  linkType: hard
+
+"@storybook/addon-viewport@npm:^8.0.7":
+  version: 8.0.8
+  resolution: "@storybook/addon-viewport@npm:8.0.8"
+  dependencies:
+    memoizerific: "npm:^1.11.3"
+  checksum: 10/6bd3102a9b684d562a53a2c696f7ec54ae43a8afceb660f59eb0cceeb30e5352a88cc11634429c712b7a4528a8c0001f98586009b258ed5f919df2e0f05fa60f
   languageName: node
   linkType: hard
 
@@ -20254,7 +20221,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.4.3":
+"tailwindcss@npm:^3.4.1, tailwindcss@npm:^3.4.3":
   version: 3.4.3
   resolution: "tailwindcss@npm:3.4.3"
   dependencies:
