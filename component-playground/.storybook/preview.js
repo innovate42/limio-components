@@ -1,5 +1,5 @@
 /** @type { import('@storybook/react').Preview } */
-import { INITIAL_VIEWPORTS} from "@storybook/addon-viewport"
+import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 import '../packages/design-system/default/style.css'
 const preview = {
   parameters: {
@@ -10,7 +10,10 @@ const preview = {
       },
     },
     viewport: {
-      viewports: INITIAL_VIEWPORTS,
+      viewports: {
+        ...INITIAL_VIEWPORTS,
+        ...MINIMAL_VIEWPORTS,
+      }
     },
   },
 };

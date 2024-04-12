@@ -10,15 +10,9 @@
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
-    "@limio/components": "workspace:^",
-    "@limio/internal-checkout-sdk": "workspace:^",
-    "@limio/sdk": "workspace:^",
-    "@limio/shop": "workspace:^",
-    "ramda": "^0.27.2",
     "reactstrap": "^8.9.0"
   },
   "peerDependencies": {
-    "@limio/shop-redux": "workspace:^",
     "@sentry/browser": "*",
     "react": "*"
   },
@@ -29,7 +23,7 @@
       "type": "string",
       "format": "uri",
       "purpose": "image",
-      "default": "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/1156184/637770_576700.png"
+      "default": "https://sandbox.dev.limio.com/public/51ed4975-c2b9-47f3-bf20-70d7240564af/Limio-Original-White.png"
     },
     {
       "id": "logoHref",
@@ -42,24 +36,6 @@
       "label": "Logo Text",
       "type": "string",
       "default": ""
-    },
-    {
-      "id": "height",
-      "label": "Height",
-      "type": "number",
-      "default": 1.25
-    },
-    {
-      "id": "fixedTop",
-      "label": "Fixed to top?",
-      "type": "boolean",
-      "default": true
-    },
-    {
-      "id": "shadow",
-      "label": "Shadow?",
-      "type": "boolean",
-      "default": false
     },
     {
       "id": "items",
@@ -107,54 +83,6 @@
           "login__limio_boolean": false
         }
       ]
-    },
-    {
-      "id": "showProfile",
-      "label": "Show profile?",
-      "type": "boolean",
-      "default": true
-    },
-    {
-      "id": "profileColor__limio_color",
-      "label": "Profile icon color",
-      "type": "color",
-      "default": "#A7A7A7"
-    },
-    {
-      "id": "profileHref",
-      "label": "Profile icon link",
-      "type": "string",
-      "default": "/mma"
-    },
-    {
-      "id": "showBasket",
-      "label": "Show basket icon?",
-      "type": "boolean",
-      "default": false
-    },
-    {
-      "id": "basketColor__limio_color",
-      "label": "Basket icon color",
-      "type": "color",
-      "default": "#A7A7A7"
-    },
-    {
-      "id": "menu_button__limio_color",
-      "label": "Menu button color",
-      "type": "color",
-      "default": "rgba(0,0,0,.5)"
-    },
-    {
-      "id": "menuButtonIconUrl",
-      "label": "Menu Button Icon url",
-      "type": "string",
-      "default": ""
-    },
-    {
-      "id": "menuButtonText",
-      "label": "Menu Button Text",
-      "type": "string",
-      "default": ""
     },
     {
       "id": "componentId",

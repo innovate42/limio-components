@@ -2,8 +2,8 @@
 import * as React from "react";
 import { useMemo, useState } from "react";
 import { useCampaign, useBasket } from "@limio/sdk";
-import { groupOffers } from "@limio/utils/offers";
-import { sanitizeString, formatDisplayPrice } from "@limio/utils/string";
+import { groupOffers } from "../source/utils/offers";
+import { sanitizeString, formatDisplayPrice } from "../source/utils/string";
 
 type Props = {
   componentId: string,

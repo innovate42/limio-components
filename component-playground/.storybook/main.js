@@ -18,7 +18,7 @@ const config = {
       getAbsolutePath("@storybook/addon-essentials"),
       getAbsolutePath("@chromatic-com/storybook"),
       getAbsolutePath("@storybook/addon-interactions"),
-      getAbsolutePath("@storybook/addon-viewport"),
+      "@storybook/addon-viewport",
       "@storybook/addon-styling-webpack"
   ],
   framework: {
@@ -60,10 +60,6 @@ const config = {
           __dirname,
           path.join("..", "packages", "limio", "shop")
       ),
-      "@limio/shop-redux": path.resolve(
-        __dirname,
-        path.join("..", "packages", "limio", "shop-redux")
-    ),
       "@limio/utils": path.resolve(
           __dirname,
           path.join("..", "packages", "limio", "utils")

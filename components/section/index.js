@@ -1,4 +1,5 @@
 import React from "react";
+import "../source/style/style.css"
 
 type Props = {
   image: string,
@@ -39,7 +40,7 @@ export default function Section(props: Props): React.Node {
             }
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <img src={image} alt="mockup"/>
+            <img className="object-scale-down max-h-full drop-shadow-md rounded-md m-auto" src={image} alt=""/>
           </div>
         </div>
       </section>
