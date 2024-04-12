@@ -1,6 +1,7 @@
 //@flow
 import React from "react";
 import BreadcrumbItem from "./components/BreadcrumbItem";
+import "../source/style/style.css"
 
 type Props = {
   breadcrumbs: Array<BreadcrumbItemProps>,
