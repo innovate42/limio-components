@@ -107,3 +107,34 @@ export function groupOffers(
 
     return groupedOffers;
 }
+
+
+export function getPeriodForOffer(offer) {
+    if (!offer) {
+      return ""
+    }
+  
+    const hasRecurringCharge = offer.data?.attributes?.price__limio?.some(charge => charge.type === "recurring")
+    const usesExternalPrice = !!offer.data?.attributes?.price__limio?.[0]?.use_external_price
+  
+    const term = offer.data?.attributes?.term__limio
+    let period: string = ""
+  
+    // One off purchases
+    if (!hasRecurringCharge || usesExternalPrice) {
+      return "N/A"
+    }
+  
+    if (status && status === "cancelled") {
+      return "Cancelled"
+    }
+  
+    if (term) {
+      const { type, length } = term
+      if (type && length) {
+        period = `${length} ${length > 1 ? type : type?.substr(0, type?.length - 1)}`
+      }
+    }
+  
+    return period
+  }
