@@ -34,8 +34,8 @@ console.log("billingDetails", billingDetails)
     <div className="flex flex-col">
       <h2 className="dark:text-white text-1xl md:text-3xl font-bold"> {title}</h2>
       <div className="flex flex-col items-center mt-4 md:mt-8">
-        <h3 className="dark:text-white text-2xl md:text-5xl font-semibold ">{messageTitle}</h3>
-        <h4 className="text-gray-500  dark:text-gray-400 text-lg md:text-2xl m-4 md:m-8 font-light">{message}</h4>
+        <h3 className=" mb-5 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{messageTitle}</h3>
+        <h4 className="mb-4 font-light text-gray-500 sm:text-xl dark:text-gray-400">{message}</h4>
       </div>
       <div className="py-4">
         <h4 className="dark:text-white text-base md:text-lg font-semibold">Order Summary</h4>
