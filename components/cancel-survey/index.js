@@ -6,6 +6,15 @@ import { ConfirmDialog } from "./components/ConfirmDialog.js";
 import { sendOrder } from "@limio/shop/src/shop/helpers/postRequests.js"
 
 type Props = {
+  title: String,
+  subtitle: String,
+  reasons: Array<Object>,
+  feedbackPlaceholder: String,
+  redirectUrl: String,
+  confirmationTitle: String,
+  confirmationBody: String,
+  confirmationOk: String,
+  confirmationCancel: String
 }
 
 function CancelSurvey({title, subtitle, reasons, feedbackPlaceholder, redirectUrl, confirmationTitle, confirmationBody, confirmationOk, confirmationCancel }: Props): React.Node {
