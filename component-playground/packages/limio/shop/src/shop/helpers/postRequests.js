@@ -5,6 +5,6 @@ function wait(ms) {
 
 export async function sendOrder(order){
     console.log("order", order)
-    await wait(9000)
+    await wait(2000)
     return {}
 }
