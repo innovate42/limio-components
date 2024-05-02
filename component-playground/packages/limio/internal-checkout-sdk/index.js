@@ -1,4 +1,6 @@
 import { basketItems } from "../data/basket";
+import {addresses} from "../data/address";
+
 
 function useCheckout() {
   const basket = {
@@ -86,4 +88,22 @@ function useCheckout() {
   return { useCheckoutSelector }
 }
 
-export { useCheckout }
+
+function useLimioUserSubscriptionAddresses(subId) {
+
+  return { addresses: addresses }
+
+
+
+  // if (!subId) {
+  //   throw new Error("expecting a sub id")
+  // }
+
+  // const { data, revalidate } = useAuthModeFetch<GetSubscriptionRelationshipsMmaResponse<Address>>(`/api/mma/subscriptions/${subId}/related/address`, {
+  //   suspense: true
+  // })
+
+  // return { addresses: data.items, revalidate }
+}
+
+export { useCheckout, useLimioUserSubscriptionAddresses }

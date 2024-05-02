@@ -106,8 +106,8 @@ const renderForm = () => {
         />}
         <div className="border border-gray-100 rounded-lg shadow dark:border-gray-600 p-10">
         <div className="flex flex-col items-center">
-          <h2 className="dark:text-white md:text-5xl tracking-tight font-extrabold text-gray-900 sm:my-4">{title}</h2>
-          <h3 className="font-light text-gray-500 sm:text-xl dark:text-gray-400">{subtitle}</h3>
+          <h2 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:my-4">{title}</h2>
+          <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">{subtitle}</p>
         </div>
         <div className="space-y-8 md:grid md:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 my-8" >
           {reasons &&

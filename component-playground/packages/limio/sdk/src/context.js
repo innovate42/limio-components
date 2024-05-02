@@ -11,7 +11,7 @@ import type {
 } from "../../../../types";
 import { groupedOffers } from "../../data/offers";
 import { basketItems } from "../../data/basket";
-import { docUser } from "../../data/user";
+import { user } from "../../data/user";
 import { order, paidSchedule } from "../../data/useCheckout/index"
 import { useSub } from "../../data/userSubscription/userSub";
 
@@ -89,7 +89,7 @@ export function useUser(): User {
   if (context === undefined) {
     throw new Error("useUser must be used within a LimioProvider");
   }
-  return docUser;
+  return user;
 }
 
 type LimioProviderProps = {
@@ -148,7 +148,7 @@ const dummyContext = {
       console.log("Item added to basket:", offer);
     },
   },
-  user: docUser,
+  user: user,
   subscriptions: useSub,
 };
 

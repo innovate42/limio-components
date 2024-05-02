@@ -1,5 +1,6 @@
 // @flow
 import * as R from "ramda";
+import { DateTime } from "luxon"
 import type {
     LimioObject,
     CatalogItem,
@@ -109,7 +110,10 @@ export function groupOffers(
 }
 
 
-export function getPeriodForOffer(offer) {
+
+
+
+  export function getPeriodForOffer(offer){
     if (!offer) {
       return ""
     }
@@ -118,7 +122,7 @@ export function getPeriodForOffer(offer) {
     const usesExternalPrice = !!offer.data?.attributes?.price__limio?.[0]?.use_external_price
   
     const term = offer.data?.attributes?.term__limio
-    let period: string = ""
+    let period = ""
   
     // One off purchases
     if (!hasRecurringCharge || usesExternalPrice) {
@@ -137,4 +141,32 @@ export function getPeriodForOffer(offer) {
     }
   
     return period
+  }
+
+  export function checkActiveOffers(offers = [], includeFuture = false) {
+    const sortedOffers = offers.sort((a, b) => new Date(a.data.start) - new Date(b.data.start))
+    const currentDate = DateTime.utc().toISO()
+    // currentDate takes in the current date and time i.e. 2021-12-15T22:42:08.588Z
+    let currentActiveOffers = sortedOffers.filter(relatedOffer => !relatedOffer.data?.end || DateTime.fromISO(relatedOffer.data?.end).toString() >= currentDate)
+    //The end date is currently in the format 2021-12-15
+    //Its a current active offer if there is no end date in the offer data or the currentDate is > or = to the end date (2021-12-15T00:00:00.000+00:00)
+  
+    if (!includeFuture) {
+      currentActiveOffers = currentActiveOffers.filter(relatedOffer => relatedOffer.data?.start <= currentDate) // Offer might be future dated for next term etc.
+    }
+  
+    return currentActiveOffers
+  }
+  
+  export function getCurrentOffer(userSubscription) {
+    if (!userSubscription) {
+      return undefined
+    }
+  
+    const activeOffers = checkActiveOffers(userSubscription?.offers)
+  
+    // discount
+    const currentOffer = activeOffers.find(offer => offer.data.record_subtype !== "discount")
+    const offer = currentOffer?.data?.offer || userSubscription?.data?.offer
+    return offer
   }
