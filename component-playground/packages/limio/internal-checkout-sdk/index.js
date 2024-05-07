@@ -1,6 +1,6 @@
 import { basketItems } from "../data/basket";
 import {addresses} from "../data/address";
-
+import { paymentMethods } from "../data/paymentMethods";
 
 function useCheckout() {
   const basket = {
@@ -90,20 +90,23 @@ function useCheckout() {
 
 
 function useLimioUserSubscriptionAddresses(subId) {
-
-  return { addresses: addresses }
-
-
-
-  // if (!subId) {
-  //   throw new Error("expecting a sub id")
-  // }
-
-  // const { data, revalidate } = useAuthModeFetch<GetSubscriptionRelationshipsMmaResponse<Address>>(`/api/mma/subscriptions/${subId}/related/address`, {
-  //   suspense: true
-  // })
-
-  // return { addresses: data.items, revalidate }
+  const revalidate = () => {
+    console.log("addresses revalidated")
+  }
+  return { addresses: addresses, revalidate }
 }
 
-export { useCheckout, useLimioUserSubscriptionAddresses }
+
+const useLimioUserSubscriptionPaymentMethods  = (subId) => {
+  const revalidate = () => {
+    console.log("payment method revalidated")
+  }
+
+  return  { payment_methods: paymentMethods, revalidate }
+
+}
+
+export { useCheckout, useLimioUserSubscriptionAddresses, useLimioUserSubscriptionPaymentMethods }
+
+
+

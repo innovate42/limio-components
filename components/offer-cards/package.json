@@ -29,6 +29,18 @@
       "label": "Heading",
       "type": "string",
       "default": "Join today for instant access."
+    },
+    {
+      "id": "showImage",
+      "label": "Show image",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "componentId",
+      "label": "Component Id",
+      "type": "string",
+      "default": "offers-limio"
     }
   ]
 }

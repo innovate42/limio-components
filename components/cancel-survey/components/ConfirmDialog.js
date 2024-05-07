@@ -1,6 +1,7 @@
+import { set } from "core-js/core/dict";
 import * as React from "react";
 
-export const ConfirmDialog = ({heading, body, confirmText, cancelText, onCancel, onConfirm, redirectUrl}) => {
+export const ConfirmDialog = ({heading, body, confirmText, cancelText, onCancel, onConfirm, redirectUrl, setSelectedReason}) => {
     const [loading, setLoading] = React.useState(false)
     
     

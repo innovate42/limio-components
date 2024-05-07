@@ -12,6 +12,10 @@ function Footer({
   instagramLink,
   navigation,
 }): React.Node {
+ 
+ 
+  const currentYear = new Date().getFullYear()
+
   return (
     <div className="flex p-2 sm:p-4 dark:bg-gray-900">
       <div className="w-full flex flex-col">
@@ -25,7 +29,7 @@ function Footer({
       
       <div className="flex flex-col sm:flex-row sm:justify-center mt-2 pt-2 sm:mt-8 sm:pt-8 border-t border-gray-300">
       <div className="flex w-full sm:w-1/2  justify-center sm:justify-start">
-           <p className="text-gray-900 dark:text-white">{copyrightText}</p>
+           <p className="text-gray-900 dark:text-white">{copyrightText.replace("2019", currentYear)}</p>
            </div>
       <SocialLinks facebookLink={facebookLink} twitterLink={twitterLink} instagramLink={instagramLink} />
           

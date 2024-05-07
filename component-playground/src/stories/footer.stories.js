@@ -56,7 +56,7 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {
   args: {
-    logo: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/1156184/637770_576700.png",
+    logo: "https://sandbox.dev.limio.com/public/51ed4975-c2b9-47f3-bf20-70d7240564af/Limio-Original-White.png",
     contactFields: [
       {
         "label": "Email:",

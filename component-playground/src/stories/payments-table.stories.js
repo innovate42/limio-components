@@ -1,10 +1,10 @@
 import { fn } from '@storybook/test';
-import OfferCards from './../../../components/offer-cards';
+import PaymentsTable from './../../../components/payments-table';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
-  title: "Components/Offer Cards",
-  component: OfferCards,
+  title: "Components/Payments Table",
+  component: PaymentsTable,
   parameters: {
     "layout": "fullscreen"
   },
@@ -12,16 +12,19 @@ export default {
     "autodocs"
   ],
   argTypes: {
-    heading: {
+    goBackHeading: {
       control: "text"
     },
-    subheading: {
+    goBackLink: {
       control: "text"
     },
-    showImage: {
-      control: "boolean"
+    cancelLink: {
+      control: "text"
     },
-    componentId: {
+    switchLink: {
+      control: "text"
+    },
+    changePaymentLink: {
       control: "text"
     }
   }
@@ -30,9 +33,10 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {
   args: {
-    heading: "Subscribe today",
-    subheading: "Join today for instant access.",
-    showImage: true,
-    componentId: "offers-limio"
+    goBackHeading: "Return",
+    goBackLink: "/",
+    cancelLink: "/cancel",
+    switchLink: "/switch",
+    changePaymentLink: "/change-payment"
   }
 };

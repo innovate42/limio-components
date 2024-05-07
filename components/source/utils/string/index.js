@@ -50,3 +50,10 @@ export function formatDisplayPrice(string: string, offerPrice): string {
 
     return formattedString;
 }
+
+export function capitaliseFirstLetter(string?: string): string {
+    if (!string) {
+      return ""
+    }
+    return string.charAt(0).toUpperCase() + string.slice(1)
+}  

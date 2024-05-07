@@ -15,6 +15,9 @@ export default {
     goBackHeading: {
       control: "text"
     },
+    goBackLink: {
+      control: "text"
+    },
     cancelLink: {
       control: "text"
     },
@@ -31,6 +34,7 @@ export default {
 export const Primary = {
   args: {
     goBackHeading: "Return",
+    goBackLink: "/",
     cancelLink: "/cancel",
     switchLink: "/switch",
     changePaymentLink: "/change-payment"

@@ -103,6 +103,7 @@ const renderForm = () => {
         confirmText={confirmationOk}
         cancelText={confirmationCancel}
         redirectUrl={redirectUrl}
+        setSelectedReason={setSelectedReason}
         />}
         <div className="border border-gray-100 rounded-lg shadow dark:border-gray-600 p-10">
         <div className="flex flex-col items-center">

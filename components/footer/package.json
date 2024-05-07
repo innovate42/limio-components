@@ -26,7 +26,7 @@
       "type": "string",
       "format": "uri",
       "purpose": "image",
-      "default": "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/1156184/637770_576700.png"
+      "default": "https://sandbox.dev.limio.com/public/51ed4975-c2b9-47f3-bf20-70d7240564af/Limio-Original-White.png"
     },
     {
       "id": "contactFields",

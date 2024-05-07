@@ -3,26 +3,28 @@ import * as React from "react";
 import "../source/style/style.css";
 import { useSubscriptions} from "@limio/sdk"
 import { SubscriptionInfo } from "./components/SubscriptionInfo.js";
-import { EditAddress } from "./components/EditAddress.js";
+
 
 
 type Props = {
+  goBackHeading: string,
+  goBackLink: string,
+  cancelLink: string,
+  switchLink: string,
+  changePaymentLink: string
 }
 
-function OrdersTable({goBackHeading,cancelLink, switchLink, changePaymentLink  }: Props): React.Node {
+function OrdersTable({goBackHeading, goBackLink, cancelLink, switchLink, changePaymentLink  }: Props): React.Node {
   const {subscriptions} = useSubscriptions()
 const userSubscriptions = subscriptions.subscriptions
-
-
-
-
-
 
   return (
     <div className="bg-white dark:bg-gray-900">
     <div className="max-w-screen-xl mx-auto py-20 px-8">
       <div className="flex justify-end ">
-    <button className="mt-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 w-full md:w-1/4">{goBackHeading}</button>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#9cafa3" className="h-6 w-6" onClick={() => (window.location.href = goBackLink)}>
+      <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+      </svg>
     </div>
     <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Subscriptions</p>
     {
