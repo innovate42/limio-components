@@ -93,7 +93,8 @@ export const groupedOffers = [
           type: "item",
           attributes: {
             product_code__limio: "TE.DIGITALPREM",
-            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>"
+            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>",
+            "has_delivery__limio": true,
           },
           created: "2020-09-11T10:36:21+00:00",
           modified: "2020-10-08T14:09:58+00:00",
@@ -207,7 +208,8 @@ export const groupedOffers = [
           type: "item",
           attributes: {
             product_code__limio: "TE.DIGITALPREM",
-            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>"
+            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>",
+            "has_delivery__limio": true,
           },
           created: "2020-09-11T10:36:21+00:00",
           modified: "2020-10-08T14:09:58+00:00",
@@ -322,7 +324,8 @@ export const groupedOffers = [
           type: "item",
           attributes: {
             product_code__limio: "TE.DIGITALPREM",
-            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>"
+            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>",
+            "has_delivery__limio": true,
           },
           created: "2020-09-11T10:36:21+00:00",
           modified: "2020-10-08T14:09:58+00:00",
@@ -438,7 +441,8 @@ export const groupedOffers = [
           type: "item",
           attributes: {
             product_code__limio: "TE.DIGITALPREM",
-            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>"
+            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>",
+            "has_delivery__limio": true,
           },
           created: "2020-09-11T10:36:21+00:00",
           modified: "2020-10-08T14:09:58+00:00",

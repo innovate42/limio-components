@@ -21,34 +21,34 @@ export const EditAddress = ({setEditAddress, handleAddressFieldChange, handleSub
           :
         <div className="w-3/4">
         <div className="mb-4 w-full flex flex-col">
-        <label for="firstName" className="block text-gray-700 dark:text-white  mb-2">First name:</label>
+        <label htmlFor="firstName" className="block text-gray-700 dark:text-white  mb-2">First name:</label>
         <input type="text" id="firstName" name="firstName"  value={newAddress.firstName} className="w-full   px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dark:text-black"
         onChange={(e) => handleAddressFieldChange(e)}
         />
         {formErrors.firstName && <p className="text-red-500 text-xs mt-1">{formErrors.firstName}</p>}
         </div>
         <div className="mb-4 w-full flex flex-col">
-        <label for="lastName" className="block text-gray-700 dark:text-white  mb-2">Last name</label>
+        <label htmlFor="lastName" className="block text-gray-700 dark:text-white  mb-2">Last name</label>
         <input type="text" id="lastName" name="lastName" className="w-full  px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dark:text-black"
         onChange={(e) => handleAddressFieldChange(e)}
         />
         {formErrors.lastName && <p className="text-red-500 text-xs mt-1">{formErrors.lastName}</p>}
         </div>
         <div className="mb-4 w-full flex flex-col">
-        <label for="address1" className="block text-gray-700 dark:text-white  mb-2">Address line 1</label>
+        <label htmlFor="address1" className="block text-gray-700 dark:text-white  mb-2">Address line 1</label>
         <input type="text" id="address1" name="address1" className="w-full  px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dark:text-black"
         onChange={(e) => handleAddressFieldChange(e)}
         />
         {formErrors.address1 && <p className="text-red-500 text-xs mt-1">{formErrors.address1}</p>}
         </div>
         <div className="mb-4 w-full flex flex-col">
-        <label for="address2" className="block text-gray-700 dark:text-white  mb-2">Address line 2</label>
+        <label htmlFor="address2" className="block text-gray-700 dark:text-white  mb-2">Address line 2</label>
         <input type="text" id="address2" name="address2" className="w-full  px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dark:text-black"
         onChange={(e) => handleAddressFieldChange(e)}
         />
         </div>
         <div className="mb-4 w-full flex flex-col">
-        <label for="city" className="block text-gray-700 dark:text-white  mb-2">City</label>
+        <label htmlFor="city" className="block text-gray-700 dark:text-white  mb-2">City</label>
         <input type="text" id="city" name="city" className="w-full  px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dark:text-black"
         onChange={(e) => handleAddressFieldChange(e)}
         />
@@ -56,13 +56,13 @@ export const EditAddress = ({setEditAddress, handleAddressFieldChange, handleSub
         </div>
         <div className="flex  w-full flex-col md:flex-row justify-items-start mb-4">
         <div className="mb-4 sm:mr-1 w-full flex flex-col">
-        <label for="county" className="block text-gray-700 dark:text-white  mb-2">County</label>
+        <label htmlFor="county" className="block text-gray-700 dark:text-white  mb-2">County</label>
         <input type="text" id="county" name="county" className="w-full  px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dark:text-black"
         onChange={(e) => handleAddressFieldChange(e)}
         />
         </div>
         <div className="mb-4 w-full flex flex-col">
-        <label for="postalCode" className="block text-gray-700 dark:text-white  mb-2">Post code</label>
+        <label htmlFor="postalCode" className="block text-gray-700 dark:text-white  mb-2">Post code</label>
         <input type="text" id="postalCode" name="postalCode" className="w-full  px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dark:text-black"
         onChange={(e) => handleAddressFieldChange(e)}
         />
