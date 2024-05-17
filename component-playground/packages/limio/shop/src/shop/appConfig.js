@@ -40,7 +40,7 @@ function getConfig(){
                 order_complete_hook: {},
                 shop_domains: [
                     {
-                        tenant_id: "tim",
+                        tenant_id: "user",
                         host: "localhost:8107",
                         type: "shop"
                     }

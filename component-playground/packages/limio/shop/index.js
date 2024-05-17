@@ -52,7 +52,7 @@ function getState(){
                     order_complete_hook: {},
                     shop_domains: [
                         {
-                            tenant_id: "tim",
+                            tenant_id: "user",
                             host: "localhost:8107",
                             type: "shop"
                         }
@@ -169,7 +169,7 @@ function getState(){
                                 display_description__limio: "Published Offer"
                             },
                             team: "users",
-                            user: "tim+local+test@limio.com",
+                            user: "user@limio.com",
                             record_type: "offer",
                             productBundles: [
                                 {
@@ -239,7 +239,7 @@ function getState(){
                 iat: 1712242590,
                 exp: 1712245987,
                 sub: "id-f8ac1477f11de7a06f6be66a303d7f58",
-                email: "timothy+20@limio.com",
+                email: "user@limio.com",
                 email_verified: true,
                 userSubscriptionType: "New"
             },
@@ -342,7 +342,7 @@ function getState(){
                                 display_description__limio: "Published Offer"
                             },
                             team: "users",
-                            user: "tim+local+test@limio.com",
+                            user: "user@limio.com",
                             record_type: "offer",
                             productBundles: [
                                 {

@@ -25,10 +25,10 @@ function useCheckout() {
         }
       },
       billingDetails: {
-        address1: "Test Street",
-        city: "Test City",
-        region: "Test Region",
-        postalCode: "Test Postcode",
+        address1: "Unit 13.1.1, THE LEATHER MARKET, 11-13 Weston Stt",
+        city: "London",
+        region: "",
+        postalCode: "SE1 3ER",
       }
     },
     paidSchedule: {

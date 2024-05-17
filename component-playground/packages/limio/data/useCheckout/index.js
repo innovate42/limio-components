@@ -153,12 +153,12 @@ export const order = {
     }
   ],
   "userDetails": {
-    "issuer": "https://jazzhr-dev-shop.prod.limio.com",
+    "issuer": "https://limio.prod.limio.com",
     "iat": 1701360815,
     "exp": 1701364322,
     "sub": "id-6ae656cad1ec0ec5910e0dd5c0c06a60",
     "email_verified": false,
-    "https://jazzhr-dev-shop.prod.limio.com/aut": {
+    "https://limio.prod.limio.com/aut": {
       "iss": "https://api.jobbonjovi.com",
       "sub": "289167"
     },
@@ -167,7 +167,7 @@ export const order = {
   "customerDetails": {
     "firstName": "s",
     "lastName": "s",
-    "email": "s@s.com",
+    "email": "user@limio.com",
     "marketingPrefs": {}
   },
   "recipientDetails": {
@@ -191,7 +191,7 @@ export const order = {
   },
   "tracking": {
     "campaign": "/pages2/Acquisition",
-    "tag": "/tags/jazzhr",
+    "tag": "/tags/limio",
     "offers": [
       "/offers2/Hero Plan - Annual"
     ],

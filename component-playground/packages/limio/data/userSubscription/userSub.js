@@ -315,7 +315,7 @@ export const useSub =
                           "autoRenew__limio": true,
                           "offer_type__limio": "standard"
                       },
-                      "user": "tim+local+test@limio.com",
+                      "user": "user@limio.com",
                       "record_type": "offer",
                       "productBundles": [
                           {
@@ -712,7 +712,7 @@ export const useSub =
                                   "autoRenew__limio": true,
                                   "offer_type__limio": "standard"
                               },
-                              "user": "tim+local+test@limio.com",
+                              "user": "user@limio.com",
                               "record_type": "offer",
                               "productBundles": [
                                   {
@@ -1181,7 +1181,7 @@ export const useSub =
                       "autoRenew__limio": true,
                       "offer_type__limio": "standard"
                   },
-                  "user": "tim+local+test@limio.com",
+                  "user": "user@limio.com",
                   "record_type": "offer",
                   "productBundles": [
                       {
@@ -1578,7 +1578,7 @@ export const useSub =
                               "autoRenew__limio": true,
                               "offer_type__limio": "standard"
                           },
-                          "user": "tim+local+test@limio.com",
+                          "user": "user@limio.com",
                           "record_type": "offer",
                           "productBundles": [
                               {

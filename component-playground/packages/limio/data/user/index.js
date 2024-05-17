@@ -5,7 +5,7 @@ export const user = {
         "iat": 1714557816,
         "exp": 1714560757,
         "sub": "id-7517e7eec4014083a8d228e18fadaf13",
-        "email": "timothy+order-table-3@limio.com",
+        "email": "user@limio.com",
         "email_verified": true,
         "https://localhost:8003/aut": {
             "iss": "https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_sOwGXw5Qw",
@@ -329,7 +329,7 @@ export const user = {
                             "autoRenew__limio": true,
                             "offer_type__limio": "standard"
                         },
-                        "user": "tim+local+test@limio.com",
+                        "user": "user@limio.com",
                         "record_type": "offer",
                         "productBundles": [
                             {
@@ -726,7 +726,7 @@ export const user = {
                                     "autoRenew__limio": true,
                                     "offer_type__limio": "standard"
                                 },
-                                "user": "tim+local+test@limio.com",
+                                "user": "user@limio.com",
                                 "record_type": "offer",
                                 "productBundles": [
                                     {
@@ -837,7 +837,7 @@ export const user = {
                     "updated": "2024-04-30T10:38:49.620Z",
                     "reference": "6MASTCM3NV30",
                     "mode": "production",
-                    "process_hash": "tim/production/limio/pending-external",
+                    "process_hash": "limio/production/limio/pending-external",
                     "process_key": "pending-external/2024-05-30T00:00:00.000/limio/schedule-d6573acb0eff174565cefdbf70c5d573"
                 },
                 {
@@ -1195,7 +1195,7 @@ export const user = {
                             "autoRenew__limio": true,
                             "offer_type__limio": "standard"
                         },
-                        "user": "tim+local+test@limio.com",
+                        "user": "uer@limio.com",
                         "record_type": "offer",
                         "productBundles": [
                             {
@@ -1592,7 +1592,7 @@ export const user = {
                                     "autoRenew__limio": true,
                                     "offer_type__limio": "standard"
                                 },
-                                "user": "tim+local+test@limio.com",
+                                "user": "user@limio.com",
                                 "record_type": "offer",
                                 "productBundles": [
                                     {
