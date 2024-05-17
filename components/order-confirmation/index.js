@@ -25,8 +25,7 @@ const dateFormat = getAppConfigValue(["shop", "default_date_format"])
 
 
 
-
-const { termStartDate, termEndDate } = getTermDates(order, paymentMethod, subscriptions.subscriptions[0].data) 
+const { termStartDate, termEndDate } = getTermDates(order, paymentMethod, subscriptions[0].data) 
 const today = DateTime.local().toISO()
 const {customerDetails, billingDetails} = order
 
@@ -43,9 +42,9 @@ const {customerDetails, billingDetails} = order
       <div className="py-4">
         <h4 className="dark:text-white text-base md:text-lg font-semibold">Order Summary</h4>
       </div>
-      <table className=" bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white flex flex-col md:flex-row justify-evenly py-8">
-     {order.orderItems.map((orderItem) => 
-     <>
+      <table className=" bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white">
+     {order.orderItems.map((orderItem, i) => 
+     <tbody key={`${order.id}-${i}`} className="flex flex-col md:flex-row justify-evenly py-8">
           <tr className="dark:text-white text-left flex flex-row md:flex-col ">
             <th className="px-4 py-2 w-40 md:w-auto  text-sm ">Description</th>
             <td className="px-4 py-2  text-sm">{orderItem.offer.data.attributes.group__limio}</td>
@@ -78,13 +77,14 @@ const {customerDetails, billingDetails} = order
             <th className="px-4 py-2 w-40 md:w-auto text-sm">Confirmation email</th>
             <td className="px-4 py-2  text-sm">{customerDetails.email}</td>
           </tr>
-          </>
+          </tbody>
 )}
       </table>
       <div className="py-4">
         <h4 className="dark:text-white text-base md:text-lg font-semibold">Customer Details</h4>
       </div>
-      <table className=" bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white flex flex-col md:flex-row justify-start py-8">
+      <table className=" bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white ">
+        <tbody className="flex flex-col md:flex-row justify-start py-8">
       <tr className="dark:text-white text-left flex flex-row md:flex-col">
             <th className="px-4 py-2 w-40 md:w-auto text-sm">Email Address</th>
             <td className="px-4 py-2  text-sm">{customerDetails.email}</td>
@@ -96,6 +96,7 @@ const {customerDetails, billingDetails} = order
             <td className="px-4 py-2  text-sm">{billingDetails.region}</td>
             <td className="px-4 py-2  text-sm">{billingDetails.postalCode}</td>
           </tr>
+          </tbody>
       </table>
       <div>
 

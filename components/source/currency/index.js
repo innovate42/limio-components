@@ -4,7 +4,7 @@ const localeData = require("./locale-data.json")
 
 export function formatCurrency(amount, currency, locale ) {
 
-  console.log(amount, currency, locale)
+
     if (typeof amount === "undefined" || typeof currency === "undefined" || amount === null || currency === null) {
       return ""
     }

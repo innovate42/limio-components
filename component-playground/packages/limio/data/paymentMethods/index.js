@@ -15,7 +15,7 @@ export const paymentMethods =[
                     "CreditCardExpirationMonth": 5,
                     "CreditCardExpirationYear": 2030,
                     "CreditCardType": "Visa",
-                    "CreditCardHolderName": "Tim Frame",
+                    "CreditCardHolderName": "Test User",
                     "PaymentMethodStatus": "Active",
                     "Active": false,
                     "Type": "CreditCard",

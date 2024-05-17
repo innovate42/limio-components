@@ -19,14 +19,14 @@ export function NavHeader({ logo, logoHref, logoText, items, componentId }) {
                 >
                     <span className="sr-only">Open main menu</span>
                     <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
                     </svg>
                 </button>
                 <div className={expanded ? "w-full" : "hidden w-full"} id="navbar-hamburger">
                     <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
                         {
-                            items.map(({href, label}) => (
-                                <li>
+                            items.map(({href, label}, i) => (
+                                <li key={`${label}-${i}`}>
                                     <a href={href} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{label}</a>
                                 </li>
                             ))

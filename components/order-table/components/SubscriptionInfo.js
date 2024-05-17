@@ -116,7 +116,8 @@ mutateCacheById(`/api/mma/subscriptions`)
     return(
       <div>
         <p className="dark:text-white font-extralight mb-2 text-sm">{`${status[0].toUpperCase()}${status.slice(1)}`}</p>
-        <table className=" bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white flex flex-col md:flex-row justify-evenly">
+        <table className=" bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white flex">
+          <tbody className="flex flex-col md:flex-row justify-evenly py-8">
         <tr className="dark:text-white text-left flex flex-row md:flex-col ">
                 <th className="px-4 py-2 w-40 md:w-auto  text-sm ">Product</th>
                 <td className="px-4 py-2  text-sm">{productName}</td>
@@ -155,6 +156,7 @@ mutateCacheById(`/api/mma/subscriptions`)
             onClick={() => setEditAddress(true)}
             >Edit Address</button>
               </tr>}
+              </tbody>
         </table>
         
        {editAddress && <EditAddress setEditAddress={setEditAddress} handleAddressFieldChange={handleAddressFieldChange} handleSubmit={handleSubmit} newAddress={newAddress} formErrors={formErrors} loading={loading}/>}

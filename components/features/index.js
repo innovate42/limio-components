@@ -33,7 +33,7 @@ export const Features = ({
           </div>
           <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
           {features.map((feature, i) => (
-              <div>
+              <div key={`${header}-${i}`}>
               {feature.image !== "" ? (
                   <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                     <StaticImage
@@ -43,7 +43,7 @@ export const Features = ({
                     />
                   </div>
               ) : null}
-                <h3 class="mb-2 text-xl font-bold dark:text-white">{feature.header}</h3>
+                <h3 className="mb-2 text-xl font-bold dark:text-white">{feature.header}</h3>
                 <p className="text-gray-500 dark:text-gray-400">{feature.text}</p>
                 {feature.showButton && feature.buttonLink && (
                     <a onClick={() => (window.location = feature.buttonLink + window.location.search)}>

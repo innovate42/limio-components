@@ -119,6 +119,7 @@ const renderForm = () => {
             return (
               <div className="flex flex-col items-center border border-gray-100 rounded-lg shadow dark:border-gray-600  dark:bg-gray-800 p-8 cursor-pointer hover:opacity-50"
               onClick={() => onReasonSelect(reason)}
+              key={`${reason.id}-${index}`}
               >
                 <div className="w-20 h-20">{icon}</div>
                 <h4 className=" text-gray-900 dark:text-white">{label}</h4>

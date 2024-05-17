@@ -28,8 +28,8 @@ function PaymentsTable({goBackHeading, goBackLink, cancelLink, switchLink, chang
       {
         subscriptions ?
         
-        subscriptions.map((subscription) => (
-    <div className="mb-8">
+        subscriptions.map((subscription, i) => (
+    <div className="mb-8"key={`${subscription.id}-${i}`}>
           <SubscriptionInfo key={subscription.id} subscription={subscription} cancelLink={cancelLink} switchLink={switchLink} changePaymentLink={changePaymentLink} />
           </div>
         ))

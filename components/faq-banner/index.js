@@ -28,7 +28,7 @@ const FaqBanner = (props: Props): React.Node => {
     const last = isLast(i)
 
     return (
-      <>
+      <div key={`${item.question}-${i}`}>
         <h2 id={`accordion-collapse-heading-${i}`}>
           <button type="button"
                   onClick={() => setActive(i)}
@@ -38,7 +38,7 @@ const FaqBanner = (props: Props): React.Node => {
             <span>{item.question}</span>
             <svg data-accordion-icon className="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                     d="M9 5 5 1 1 5"/>
             </svg>
           </button>
@@ -48,7 +48,7 @@ const FaqBanner = (props: Props): React.Node => {
             __html: item.answer
           }}/>
         </div>
-      </>
+        </div>
     );
   });
 

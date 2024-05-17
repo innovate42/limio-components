@@ -33,8 +33,8 @@ return (
     </div>
     <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 ">
     {filteredOffers.length > 0 ? (
-          filteredOffers.map((offer) => (
-              <Offer key={offer.path + "/parent"} 
+          filteredOffers.map((offer, i) => (
+              <Offer key={`${offer.path}/parent-${i}`} 
               offer={offer} 
               subscription={subscription}
               showImage={showImage} 

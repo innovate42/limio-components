@@ -71,8 +71,8 @@ export const AddressEditor = ({setEditAddress, handleAddressFieldChange, handleS
             <label htmlFor="country" className="block text-gray-700 dark:text-white  mb-2">Country</label>
         <select className="w-full  px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dark:text-black" id="country" name="country"
         onChange={(e) => handleAddressFieldChange(e)}>
-        {countryDataJSON.map((country) => (
-            <option value={country["alpha-2"]}>{country.name}</option>
+        {countryDataJSON.map((country, i) => (
+            <option value={country["alpha-2"]} key={`${country.name}-${i}`}>{country.name}</option>
             
         ))}
         </select>
