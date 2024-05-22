@@ -3,7 +3,7 @@ import React from "react";
 import { sanitizeString, formatDisplayPrice } from "../../source/utils/string";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { handleSubmitSwitch } from "../requests";
-import { DateTime } from "luxon"
+import { DateTime } from "@limio/date"
 import {useUser} from "@limio/sdk"
 
 
@@ -30,7 +30,7 @@ const Offer = ({ offer, subscription, showImage, confirmationOk, confirmationCan
     const attachments = offer.data.attachments ? offer.data.attachments.filter(x => x.type.includes("image")) : []
     const hasAttachments = attachments.length > 0
     const [showConfirm, setShowConfirm] = React.useState(false)
-    const { id} = subscription
+   const id = subscription?.id
     const effectiveDate = offer?.data?.attributes?.switch_date__limio === "immediate" ? DateTime.utc().toISO() : nextSchedule?.data?.schedule_date || subscription?.data?.termEndDate
     const {
         display_name__limio,
@@ -72,7 +72,7 @@ const Offer = ({ offer, subscription, showImage, confirmationOk, confirmationCan
 
 
     return (
-        <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+        <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white lg:min-w-full">
                  {showConfirm && (
                <ConfirmDialog 
                offer={offer}

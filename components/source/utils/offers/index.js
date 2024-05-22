@@ -1,6 +1,5 @@
 // @flow
 import * as R from "ramda";
-import { DateTime } from "luxon"
 import type {
     LimioObject,
     CatalogItem,
@@ -143,11 +142,11 @@ export function groupOffers(
     return period
   }
 
-  export function checkActiveOffers(offers = [], includeFuture = false) {
+  export function checkActiveOffers(offers: LimioObject<Offer>[] = [], includeFuture: boolean = false): LimioObject<Offer>[] {
     const sortedOffers = offers.sort((a, b) => new Date(a.data.start) - new Date(b.data.start))
-    const currentDate = DateTime.utc().toISO()
+    const currentDate = new Date()
     // currentDate takes in the current date and time i.e. 2021-12-15T22:42:08.588Z
-    let currentActiveOffers = sortedOffers.filter(relatedOffer => !relatedOffer.data?.end || DateTime.fromISO(relatedOffer.data?.end).toString() >= currentDate)
+    let currentActiveOffers = sortedOffers.filter(relatedOffer => !relatedOffer.data?.end || new Date(relatedOffer.data?.end) >= currentDate)
     //The end date is currently in the format 2021-12-15
     //Its a current active offer if there is no end date in the offer data or the currentDate is > or = to the end date (2021-12-15T00:00:00.000+00:00)
   

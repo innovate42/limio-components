@@ -8,13 +8,13 @@ export const AddressEditor = ({setEditAddress, handleAddressFieldChange, handleS
 
 
     return(
-        <form className=" bg-white  dark:bg-gray-800 dark:text-white flex flex-col items-center px-8 py-5  mb-2 opacity-90 w-full"
+        <form className=" bg-white  dark:bg-gray-800 dark:text-white flex flex-col items-center px-8 py-5  mb-2 dark:opacity-90 w-full"
        
         onSubmit={(e) => handleSubmit(e)}
         > 
             {loading ?
             <div className="flex justify-center items-center h-full">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-white"></div>
+            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-black dark:border-white"></div>
           </div>
           :
         <div className="w-full">

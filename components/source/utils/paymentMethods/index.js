@@ -41,6 +41,10 @@ export function getCurrentPayment(payments) {
     return `•••• •••• •••• ${last4 || "••••"}`
   }
 
+  function extractLast4Digits(maskedNumber) {
+    return maskedNumber?.substr(-4) || "••••"
+  }
+
   export function processPaymentMethod(paymentMethod) {
     const paymentMethodData = R.path(["data", paymentMethod.type, "result"], paymentMethod)
     const integrationData = R.path(["data", "integrationData"], paymentMethod)

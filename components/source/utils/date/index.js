@@ -1,4 +1,4 @@
-import { DateTime } from "luxon"
+import { DateTime } from "@limio/date"
 
 export function formatDate(date, format) {
     let formattedDate

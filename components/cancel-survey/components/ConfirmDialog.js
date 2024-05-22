@@ -1,4 +1,3 @@
-import { set } from "core-js/core/dict";
 import * as React from "react";
 
 export const ConfirmDialog = ({heading, body, confirmText, cancelText, onCancel, onConfirm, redirectUrl, setSelectedReason}) => {
@@ -20,7 +19,7 @@ export const ConfirmDialog = ({heading, body, confirmText, cancelText, onCancel,
                 <p className="mb-6">{body}</p>
                 {loading ?
                 <div className="flex justify-center items-center h-1/2">
-                <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-white"></div>
+                <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-black dark:border-white"></div>
               </div> 
               :
               <div className="flex  flex-col md:flex-row md:justify-center mb-4 w-full">

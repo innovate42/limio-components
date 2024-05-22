@@ -29,7 +29,7 @@ const FaqBanner = (props: Props): React.Node => {
 
     return (
       <div key={`${item.question}-${i}`}>
-        <h2 id={`accordion-collapse-heading-${i}`}>
+        <h2 id={`accordion-collapse-heading-${!active}`}>
           <button type="button"
                   onClick={() => setActive(i)}
                   className={(last && !expanded ? "rounded-b-xl " : "border-b-0 ") + (i === 0 ? "rounded-t-xl " : "") + "flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"}

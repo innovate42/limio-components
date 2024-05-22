@@ -9,7 +9,10 @@
   },
   "author": "",
   "license": "UNLICENSED",
-  "dependencies": {},
+  "dependencies": {
+    "luxon": "^2.4.0",
+    "@limio/internal-checkout-sdk": "workspace:^"
+  },
   "devDependencies": {},
   "peerDependencies": {
     "react": "*"

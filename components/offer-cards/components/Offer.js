@@ -36,7 +36,7 @@ const Offer = ({ offer, showImage }) => {
     } = offer.data.attributes;
 
     return (
-        <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+        <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white lg:min-w-full">
           <h3 className="mb-4 text-2xl font-semibold">{display_name__limio}</h3>
             {(showImage && hasAttachments) && (
                 <div className="flex flex-row justify-center">

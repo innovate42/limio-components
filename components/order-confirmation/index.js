@@ -7,13 +7,12 @@ import { getPeriodForOffer } from "../source/utils/offers";
 import { formatDate, getTermDates } from "../source/utils/date";
 import { getAppConfigValue } from "@limio/shop/src/shop/appConfig.js"
 import { useSubscriptions } from "@limio/sdk"
-import { DateTime } from "luxon"
+import { DateTime } from "@limio/date"
 
 type Props = {
   title: String,
-  message: String
+  message: String,
   messageTitle: String
-
 }
 
 function OrderConfirmation({title, message, messageTitle }: Props): React.Node {
@@ -45,7 +44,7 @@ const {customerDetails, billingDetails} = order
       <table className=" bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white">
      {order.orderItems.map((orderItem, i) => 
      <tbody key={`${order.id}-${i}`} className="flex flex-col md:flex-row justify-evenly py-8">
-          <tr className="dark:text-white text-left flex flex-row md:flex-col ">
+          <tr className="dark:text-white text-left flex flex-row sm:flex-col ">
             <th className="px-4 py-2 w-40 md:w-auto  text-sm ">Description</th>
             <td className="px-4 py-2  text-sm">{orderItem.offer.data.attributes.group__limio}</td>
           </tr>

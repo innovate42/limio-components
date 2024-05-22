@@ -1,7 +1,7 @@
 import * as React from "react";
 import { formatCurrency } from "../../source/currency";
 import { getAppConfigValue } from "@limio/shop/src/shop/appConfig.js"
-import { DateTime } from "luxon"
+import { DateTime } from "@limio/date"
 import {formatDate} from "../../source/utils/date"
 import {  getCurrentAddress, addressSummary } from "../../source/utils/address";
 import { mutateCacheById } from "@limio/shop/src/components/helpers.js"
@@ -152,7 +152,7 @@ const handleAddressFieldChange = (e) => {
             {loading ?
             
             <div className="flex justify-center items-center h-full">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-white"></div>
+            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-black dark:border-white"></div>
           </div> 
           :
         

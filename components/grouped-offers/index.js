@@ -2,8 +2,8 @@
 import * as React from "react";
 import { useMemo, useState } from "react";
 import { useCampaign, useBasket } from "@limio/sdk";
-import { groupOffers } from "@limio/utils/offers";
-import { sanitizeString, formatDisplayPrice } from "@limio/utils/string";
+import { groupOffers } from "../source/utils/offers";
+import { sanitizeString, formatDisplayPrice } from "../source/utils/string";
 
 type Props = {
   componentId: string,
@@ -47,7 +47,7 @@ const Offer = ({ offer }) => {
   const { addToBasket } = useBasket();
 
   return (
-      <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+      <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white lg:min-w-full">
         <h3 className="mb-4 text-2xl font-semibold">{display_name__limio}</h3>
         <div className="flex justify-center items-baseline my-4">
               <span className="mr-2 text-3xl font-extrabold"
@@ -94,7 +94,7 @@ export function GroupedOffers({ heading, subheading, groupLabels = [], component
           </div>
           <div className="flex p-6 mx-auto max-w-xs text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-4 dark:bg-gray-800 dark:text-white">
               {offerGroups.map((offerGroup, i) => (
-                  <button onClick={() => setSelectedGroup(offerGroup.id)}   key={`${offerGroup.id}-${i}`} className={`whitespace-nowrap py-2.5 px-1.5 sm:px-3.5 mx-auto drop-shadow-md dark:bg-gray-600 hover:bg-gray-500 text-white hover:text-white rounded-md text-xs sm:text-lg  ${selectedGroup === offerGroup.id ? "dark:bg-gray-400  text-white border" : ""}`}>
+                  <button onClick={() => setSelectedGroup(offerGroup.id)}   key={`${offerGroup.id}-${i}`} className={`whitespace-nowrap py-2.5 px-1.5 sm:px-3.5 mx-auto drop-shadow-md  dark:bg-gray-600 hover:bg-gray-500 dark:text-white hover:text-white rounded-md text-xs sm:text-lg  ${selectedGroup === offerGroup.id ? "dark:bg-gray-400  dark:text-white border" : ""}`}>
                       {offerGroup.label}
                   </button>
               ))}

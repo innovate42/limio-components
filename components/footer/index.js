@@ -17,8 +17,8 @@ function Footer({
   const currentYear = new Date().getFullYear()
 
   return (
-    <div className="flex p-2 sm:p-4 dark:bg-gray-900">
-      <div className="w-full flex flex-col">
+    <div className="flex p-2 sm:p-10 dark:bg-gray-900 justify-center">
+      <div className="max-w-screen-xl w-full flex flex-col">
         <div className="w-full flex pb-0  flex-col sm:flex-row">
           <div className="w-full flex justify-center sm:w-1/2 sm:justify-start">
           

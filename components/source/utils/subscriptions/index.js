@@ -1,5 +1,5 @@
 
-import { DateTime } from "luxon"
+import { DateTime } from "@limio/date"
 import {getCurrentOffer} from "../offers"
 import {formatCurrency} from "../../currency"
 import { getAppConfigValue } from "@limio/shop/src/shop/appConfig.js"

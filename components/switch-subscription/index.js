@@ -16,8 +16,8 @@ function switchSubscription({heading, subheading, filterSameTerm, showImage, con
   const {subscriptions} = useSubscriptions()
   const params = new URL(window.location).searchParams
   const subIdParam = params.get("subId") || ""
-  const subscription = subscriptions?.find(sub => sub.id === subIdParam)
-  const {schedule} = subscription
+  const subscription = subscriptions?.find(sub => sub?.id === subIdParam)
+  const schedule = subscription?.schedule
   const {addresses, revalidate} = useLimioUserSubscriptionAddresses(subIdParam)
   const { payment_methods } = useLimioUserSubscriptionPaymentMethods(subIdParam)
   const nextSchedule = checkCurrentSchedule(schedule)
