@@ -3,8 +3,6 @@ import React, { useState } from "react"
 import "../source/style/style.css"
 
 export function NavHeader({ logo, logoHref, logoText, items, componentId }) {
-    const [expanded, setExpanded] = useState(expanded)
-export function NavHeader({ logo, logoHref, logoText, items, componentId }) {
     const [expanded, setExpanded] = useState(false)
 
     return (

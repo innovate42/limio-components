@@ -3,9 +3,6 @@ import React from "react";
 import { sanitizeString, formatDisplayPrice } from "../../source/utils/string";
 import { AddToBasketButton } from "./AddToBasketButton";
 import { useBasket } from "@limio/sdk"
-import { sanitizeString, formatDisplayPrice } from "../../source/utils/string";
-import { AddToBasketButton } from "./AddToBasketButton";
-import { useBasket } from "@limio/sdk"
 
 const formatBulletPoints = (string) => {
     const sanitised = sanitizeString(string)
