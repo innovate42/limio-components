@@ -11,7 +11,7 @@ type Props = {
     image: string,
     header: string,
     text:  string,
-    showButton: boolean,
+    showButton__limio_boolean: boolean,
     buttonText: string,
     buttonLink: string
   }>,
@@ -46,7 +46,7 @@ export const Features = ({
               ) : null}
                 <h3 className="mb-2 text-xl font-bold dark:text-white">{feature.header}</h3>
                 <p className="text-gray-500 dark:text-gray-400">{feature.text}</p>
-                {feature.showButton && feature.buttonLink && (
+                {feature.showButton__limio_boolean && feature.buttonLink && (
                     <a onClick={() => (window.location = feature.buttonLink + window.location.search)}>
                       <button type="button"
                               className="mt-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
