@@ -1,5 +1,6 @@
 // @flow
 import React, { useState } from "react";
+import "../source/style/style.css"
 
 type Props = {
   headline: String,
@@ -14,9 +15,6 @@ type Props = {
 const FaqBanner = (props: Props): React.Node => {
   const { headline, subline, faqItems = [], componentId } = props;
   const [active, setActive] = useState()
-  const [userName, setUserName] = useState()
-
- 
 
   function isLast(index) {
     return index === faqItems.length - 1;

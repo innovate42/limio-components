@@ -1,6 +1,7 @@
 // @flow
 import React from "react";
-import { StaticImage } from "@limio/sdk/src/components";
+import { StaticImage } from "../source/components";
+import "../source/style/style.css"
 
 type Props = {
   header: string,
