@@ -2384,6 +2384,7 @@ __metadata:
     jwt-decode: "npm:^2.2.0"
     less: "npm:^4.1.2"
     less-loader: "npm:^10.2.0"
+    luxon: "npm:^3.4.4"
     mini-css-extract-plugin: "npm:^2.4.5"
     path-browserify: "npm:^1.0.1"
     postcss: "npm:^8.4.4"
@@ -2416,6 +2417,7 @@ __metadata:
     webpack-dev-server: "npm:^4.7.4"
     webpack-manifest-plugin: "npm:^4.1.1"
     workbox-webpack-plugin: "npm:^6.4.1"
+    xss: "npm:^1.0.15"
   languageName: unknown
   linkType: soft
 
@@ -14705,7 +14707,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"luxon@npm:^3.3.0":
+"luxon@npm:^3.3.0, luxon@npm:^3.4.4":
   version: 3.4.4
   resolution: "luxon@npm:3.4.4"
   checksum: 10/c14164bc338987349075a08e63ea3ff902866735f7f5553a355b27be22667919765ff96fde4d3413d0e9a0edc4ff9e2e74ebcb8f86eae0ce8b14b27330d87d6e
@@ -21981,7 +21983,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xss@npm:^1.0.8":
+"xss@npm:^1.0.15, xss@npm:^1.0.8":
   version: 1.0.15
   resolution: "xss@npm:1.0.15"
   dependencies:

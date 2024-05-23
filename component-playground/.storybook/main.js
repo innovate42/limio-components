@@ -68,6 +68,10 @@ const config = {
           __dirname,
           path.join("..", "packages", "limio", "ui")
       ),
+      "@limio/date": path.resolve(
+        __dirname,
+        path.join("..", "packages", "limio", "date")
+    ),
     };
 
     return config;

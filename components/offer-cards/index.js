@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useCampaign } from "@limio/sdk";
 import Offer from "./components/Offer.js";
 import "../source/style/style.css"
+import "../source/style/style.css"
 
 type Props = {
   heading: string,
@@ -25,8 +26,8 @@ export const OfferCards = ({heading, subheading, showImage, componentId}: Props)
           </div>
           <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
           {offers.length > 0 ? (
-                offers.map((offer) => (
-                    <Offer key={offer.path + "/parent"} offer={offer} showImage={showImage}/>
+                offers.map((offer, i) => (
+                    <Offer key={`${offer.path}/parent-${i}`} offer={offer} showImage={showImage}/>
                 ))
             ) : (
                 <p>No offers to display...</p>

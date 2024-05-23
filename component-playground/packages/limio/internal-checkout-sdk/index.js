@@ -1,4 +1,6 @@
 import { basketItems } from "../data/basket";
+import {addresses} from "../data/address";
+import { paymentMethods } from "../data/paymentMethods";
 
 function useCheckout() {
   const basket = {
@@ -21,6 +23,12 @@ function useCheckout() {
           "success": true,
           "paymentGateway": "Test Gateway",
         }
+      },
+      billingDetails: {
+        address1: "Unit 13.1.1, THE LEATHER MARKET, 11-13 Weston Stt",
+        city: "London",
+        region: "",
+        postalCode: "SE1 3ER",
       }
     },
     paidSchedule: {
@@ -58,11 +66,11 @@ function useCheckout() {
           productName: "Physical - All Access",
         }
       ],
-      amount: "50.00",
+      amount: "20.00",
       quantity: 1,
       description: "Physical All Access Now ",
-      currency: "CAD",
-      unit_amount: "50.00",
+      currency: "GBP",
+      unit_amount: "20.00",
       schedule_date: "2023-11-27T00:00:00.000",
       type: "payment",
       taxAmount: 0
@@ -80,4 +88,25 @@ function useCheckout() {
   return { useCheckoutSelector }
 }
 
-export { useCheckout }
+
+function useLimioUserSubscriptionAddresses(subId) {
+  const revalidate = () => {
+    console.log("addresses revalidated")
+  }
+  return { addresses: addresses, revalidate }
+}
+
+
+const useLimioUserSubscriptionPaymentMethods  = (subId) => {
+  const revalidate = () => {
+    console.log("payment method revalidated")
+  }
+
+  return  { payment_methods: paymentMethods, revalidate }
+
+}
+
+export { useCheckout, useLimioUserSubscriptionAddresses, useLimioUserSubscriptionPaymentMethods }
+
+
+

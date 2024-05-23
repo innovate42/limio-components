@@ -25,7 +25,7 @@ export const groupedOffers = [
         },
         checkout__limio: {
           checkout_type: "external",
-          external_url: "https://sit-theeconomist.cs122.force.com/economist/s/authentication?starturl=https%3A%2F%2Feconomist-sit-shop.dev.limio.com%2Fcheckout"
+          external_url: "https://limio.cs122.force.com/limio/s/authentication?starturl=https%3A%2F%2Flimio.dev.limio.com%2Fcheckout"
         },
         display_name__limio: "2 year digital",
         display_price__limio: "Two years for £319",
@@ -93,7 +93,8 @@ export const groupedOffers = [
           type: "item",
           attributes: {
             product_code__limio: "TE.DIGITALPREM",
-            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>"
+            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>",
+            "has_delivery__limio": true,
           },
           created: "2020-09-11T10:36:21+00:00",
           modified: "2020-10-08T14:09:58+00:00",
@@ -139,7 +140,7 @@ export const groupedOffers = [
         },
         checkout__limio: {
           checkout_type: "external",
-          external_url: "https://sit-theeconomist.cs122.force.com/economist/s/authentication?starturl=https%3A%2F%2Feconomist-sit-shop.dev.limio.com%2Fcheckout"
+          external_url: "https://limio.cs122.force.com/limio/s/authentication?starturl=https%3A%2F%2Flimio.dev.limio.com%2Fcheckout"
         },
         display_price__limio: "Three years for £429",
         display_name__limio: "3 years digital",
@@ -207,7 +208,8 @@ export const groupedOffers = [
           type: "item",
           attributes: {
             product_code__limio: "TE.DIGITALPREM",
-            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>"
+            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>",
+            "has_delivery__limio": true,
           },
           created: "2020-09-11T10:36:21+00:00",
           modified: "2020-10-08T14:09:58+00:00",
@@ -253,7 +255,7 @@ export const groupedOffers = [
         },
         checkout__limio: {
           checkout_type: "external",
-          external_url: "https://sit-theeconomist.cs122.force.com/economist/s/authentication?starturl=https%3A%2F%2Feconomist-sit-shop.dev.limio.com%2Fcheckout"
+          external_url: "https://limio.cs122.force.com/limio/s/authentication?starturl=https%3A%2F%2Flimio.dev.limio.com%2Fcheckout"
         },
         cta_text__limio: "Buy now",
         display_name__limio: "Annual bundle subscription",
@@ -321,8 +323,9 @@ export const groupedOffers = [
           record_type: "product",
           type: "item",
           attributes: {
-            product_code__limio: "TE.DIGITALPREM",
-            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>"
+            product_code__limio: "limio",
+            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>",
+            "has_delivery__limio": true,
           },
           created: "2020-09-11T10:36:21+00:00",
           modified: "2020-10-08T14:09:58+00:00",
@@ -369,7 +372,7 @@ export const groupedOffers = [
         },
         checkout__limio: {
           checkout_type: "external",
-          external_url: "https://sit-theeconomist.cs122.force.com/economist/s/authentication?starturl=https%3A%2F%2Feconomist-sit-shop.dev.limio.com%2Fcheckout"
+          external_url: "https://limio.cs122.force.com/limio/s/authentication?starturl=https%3A%2F%2Flimio.dev.limio.com%2Fcheckout"
         },
         cta_text__limio: "Buy now",
         display_name__limio: "Annual monthly",
@@ -437,8 +440,9 @@ export const groupedOffers = [
           record_type: "product",
           type: "item",
           attributes: {
-            product_code__limio: "TE.DIGITALPREM",
-            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>"
+            product_code__limio: "limio",
+            description__limio: "<p>The Limio apps&nbsp;</p><p>Limio.com</p><p>Audio edition and podcasts</p>",
+            "has_delivery__limio": true,
           },
           created: "2020-09-11T10:36:21+00:00",
           modified: "2020-10-08T14:09:58+00:00",

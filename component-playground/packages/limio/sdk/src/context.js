@@ -11,7 +11,9 @@ import type {
 } from "../../../../types";
 import { groupedOffers } from "../../data/offers";
 import { basketItems } from "../../data/basket";
-import { docUser } from "../../data/user";
+import { user } from "../../data/user";
+import { order, paidSchedule } from "../../data/useCheckout/index"
+import { useSub } from "../../data/userSubscription/userSub";
 
 const LimioContext = React.createContext<LimioContextType>({});
 export const ComponentContext: LimioComponentContext = React.createContext<LimioComponentContext>({});
@@ -77,7 +79,9 @@ export function useSubscriptions(): UseSubscriptions {
   if (context === undefined) {
     throw new Error("useSubscriptions must be used within a LimioProvider");
   }
-  return { subscriptions: docUser.subscriptions };
+
+  const { subscriptions } = dummyContext
+  return { subscriptions };
 }
 
 export function useUser(): User {
@@ -85,7 +89,7 @@ export function useUser(): User {
   if (context === undefined) {
     throw new Error("useUser must be used within a LimioProvider");
   }
-  return docUser;
+  return user;
 }
 
 type LimioProviderProps = {
@@ -118,6 +122,14 @@ export function useComponentProps<T>(defaultProps: $Shape<T>): T {
   return componentProps;
 }
 
+
+export function useCheckout() {
+  const useCheckoutSelector = () => dummyState
+
+  return { useCheckoutSelector }
+}
+
+
 const dummyContext = {
   pageBuilder__limio: false,
   shop: {
@@ -136,5 +148,11 @@ const dummyContext = {
       console.log("Item added to basket:", offer);
     },
   },
-  user: docUser
+  user: user,
+  subscriptions: useSub,
 };
+
+const dummyState = {
+  order: order,
+  paidSchedule: paidSchedule
+}
