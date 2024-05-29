@@ -112,7 +112,7 @@ const handleAddressFieldChange = (e) => {
     const params = new URL(window.location).searchParams
 
     setLoading(true)
-    console.log("loading", loading)
+ 
 
     await onConfirm(addresses.deliveryAddress)
     setLoading(false)

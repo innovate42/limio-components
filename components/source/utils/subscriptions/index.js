@@ -64,6 +64,9 @@ export function getPriceForUserSubscription(userSubscription) {
     const currentDate = DateTime.utc().toISO()
   
     const sortedSchedules = activeSchedules.sort((a, b) => new Date(a.data.date) - new Date(b.data.date))
+
+
+
     let nextSchedule = sortedSchedules.find(schedule => schedule.data.date > currentDate && ["active", "pending", "pending-external"].includes(schedule.status))
   
     if (!nextSchedule && allowCancelled) {

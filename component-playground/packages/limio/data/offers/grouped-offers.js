@@ -3,13 +3,18 @@ export const groupedOffers = [
     item_id: "12cb89b3ef6bf4d8004b742ef9f90b107bd66fc1",
     segment_id: "931ce6c8216105ec66eded99aef3af2e57c682bd",
     id: "12cb89b3ef6bf4d8004b742ef9f90b107bd66fc1.931ce6c8216105ec66eded99aef3af2e57c682bd",
-    path_parts: ["offers", "The Limio Digital - UK-UK", "2 Year"],
+    path_parts: ["offers", "The Limio Digital -monthly"],
     parent_path: "/offers/The Limio Digital - UK-UK",
     path: "/offers/The Limio Digital - UK-UK/2 Year",
-    name: "2 Year",
+    name: "Monthly",
     type: "item",
     data: {
       attributes: {
+        "discount__limio": {
+          "termLength": "1",
+          "termType": "months",
+          "value": "30"
+         },
         primary_color__limio: "#f47c24",
         secondary_color__limio: "#0e4f1b",
         tertiary_color__limio: "#020109",
@@ -20,15 +25,15 @@ export const groupedOffers = [
         allowed_countries__limio: ["GB"],
         push_to_checkout__limio: true,
         term__limio: {
-          length: 2,
-          type: "years"
+          length: 1,
+          type: "months"
         },
         checkout__limio: {
           checkout_type: "external",
           external_url: "https://limio.cs122.force.com/limio/s/authentication?starturl=https%3A%2F%2Flimio.dev.limio.com%2Fcheckout"
         },
-        display_name__limio: "2 year digital",
-        display_price__limio: "Two years for £319",
+        display_name__limio: "Digital Monthly",
+        display_price__limio: "£29.99 per month",
         offer_features__limio:
           '<p><span style="background-color: transparent; color: rgb(0, 0, 0);">Daily analysis on Limio.com</span></p><p><span style="background-color: transparent; color: rgb(0, 0, 0);">The weekly newspaper, digitally</span></p><p><span style="background-color: transparent; color: rgb(0, 0, 0);">The Limio app</span></p><p><span style="background-color: transparent; color: rgb(0, 0, 0);">Exclusive newsletters</span></p>',
         cta_text__limio: "Buy now",
@@ -37,24 +42,24 @@ export const groupedOffers = [
           {
             name: "charge_1",
             label: "Charge 1",
-            value: "319.00",
+            value: "29.99",
             currencyCode: "GBP",
             type: "recurring",
             trigger: "subscription_start",
-            repeat_interval: 2,
-            repeat_interval_type: "years",
+            repeat_interval: 1,
+            repeat_interval_type: "months",
             repeat_count: 1,
             delay_interval: null,
             subscription_start_day: null,
             attributes: [],
-            delay_interval_type: "years"
+            delay_interval_type: "months"
           }
         ],
-        rate_plan__zuora: "UK-UK A 2 Year",
+        rate_plan__zuora: "digital monthly",
         detailed_display_price__limio: "Cancel at any time",
         group__limio: "digital"
       },
-      name: "2 Year",
+      name: "1 month",
       headline: "Limio helps you to sell subscriptions. This campaign shows how....",
       description:
         '<p><strong>Campaigns</strong> help you to deliver subscription conversion experiences, for example landing pages from ads or offer displays. This campaign will show how you can build them in <a href="https://sandbox.dev.limio.com/landing/index.html" target="_blank">Limio</a>.</p>',
@@ -67,9 +72,8 @@ export const groupedOffers = [
       validFrom: "2019-07-27T03:30:00.000Z",
       segments: ["/segments/regions/UK/UK/GB"],
       subline: "àáâãämåçèéêëìíîðñòôõöö",
-      duplicatedFrom: "/offers/Example Campaign_v2",
       parent_path: "/offers/The Limio Digital - UK-UK",
-      path: "/offers/The Limio Digital - UK-UK/2 Year",
+      path: "/offers/The Limio Digital - monthly",
       type: "item",
       modified: "2020-10-12T10:16:10+00:00",
       familyName: "offers",

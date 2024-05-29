@@ -47,7 +47,7 @@ const Offer = ({ offer, subscription, showImage, confirmationOk, confirmationCan
     const onCancel = () =>  setShowConfirm(false)
 
     const onConfirm = async () => {
-        console.log("Confirming")
+ 
         setShowConfirm(false)
     }
 

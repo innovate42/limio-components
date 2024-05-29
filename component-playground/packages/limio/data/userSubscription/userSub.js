@@ -828,7 +828,7 @@ export const useSub =
               },
               {
                   "data": {
-                      "date": "2024-04-29T00:00:00.000",
+                      "date": "2024-08-29T00:00:00.000",
                       "amountWithoutTax": "17.50",
                       "lineItems": [
                           {
@@ -846,7 +846,7 @@ export const useSub =
                       "description": "Monthly Offer",
                       "currency": "GBP",
                       "unit_amount": "17.50",
-                      "schedule_date": "2024-04-29T00:00:00.000",
+                      "schedule_date": "2024-08-29T00:00:00.000",
                       "type": "payment",
                       "taxAmount": 0
                   },

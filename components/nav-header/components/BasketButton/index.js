@@ -19,9 +19,7 @@ function BasketButton({ mobile, basketColor__limio_color }: Props): React.Node {
     }
   }, [basketItems])
 
-  console.log("basket open", basketOpen)
 
-  console.log("basketColor__limio_color", basketColor__limio_color)
   return (
     <div className="relative" style={{border:"1px red solid"}}>
       <button
