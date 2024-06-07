@@ -14,6 +14,7 @@ import { basketItems } from "../../data/basket";
 import { user } from "../../data/user";
 import { order, paidSchedule } from "../../data/useCheckout/index"
 import { useSub } from "../../data/userSubscription/userSub";
+import { addOns } from "../../data/offers/add-ons"
 
 const LimioContext = React.createContext<LimioContextType>({});
 export const ComponentContext: LimioComponentContext = React.createContext<LimioComponentContext>({});
@@ -29,8 +30,8 @@ export function useCampaign(): UseCampaign {
   if (context === undefined) {
     throw new Error("useBasket must be used within a LimioProvider");
   }
-  const { campaign, offers } = dummyContext.shop;
-  return { campaign, offers };
+  const { campaign, offers, addOns } = dummyContext.shop;
+  return { campaign, offers, addOns };
 }
 
 // Selection of LimioContextShop properties
@@ -141,6 +142,7 @@ const dummyContext = {
       },
     },
     offers: groupedOffers,
+    addOns: addOns,
     tag: "/tags/limio",
     location: { pathname: "/default" },
     basketItems: basketItems,

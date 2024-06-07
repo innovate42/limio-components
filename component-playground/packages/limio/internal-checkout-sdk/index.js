@@ -106,7 +106,149 @@ const useLimioUserSubscriptionPaymentMethods  = (subId) => {
 
 }
 
-export { useCheckout, useLimioUserSubscriptionAddresses, useLimioUserSubscriptionPaymentMethods }
+const useOrderPreview = (order) => {
+  const orderPreview = {
+    "preview": {
+        "success": true,
+        "previewResult": {
+            "invoices": [
+                {
+                    "amount": 42.5,
+                    "amountWithoutTax": 42.5,
+                    "taxAmount": 0,
+                    "targetDate": "2024-08-10",
+                    "invoiceItems": [
+                        {
+                            "serviceStartDate": "2024-06-10",
+                            "serviceEndDate": "2024-07-09",
+                            "amountWithoutTax": -7.5,
+                            "taxAmount": 0,
+                            "chargeDescription": "",
+                            "chargeName": "Discount",
+                            "chargeNumber": null,
+                            "processingType": "Discount",
+                            "productName": "Limio Digital",
+                            "productRatePlanChargeId": "2c92c0f8778bf8e90177aa5632fc7ada",
+                            "unitPrice": 30,
+                            "subscriptionNumber": "JBJHUT24BQO0",
+                            "orderLineItemNumber": null,
+                            "appliedToChargeNumber": "C-00276052",
+                            "additionalInfo": {
+                                "quantity": 1,
+                                "unitOfMeasure": "",
+                                "numberOfDeliveries": 0
+                            }
+                        },
+                        {
+                            "serviceStartDate": "2024-06-10",
+                            "serviceEndDate": "2024-07-09",
+                            "amountWithoutTax": 25,
+                            "taxAmount": 0,
+                            "chargeDescription": "",
+                            "chargeName": "Monthly",
+                            "chargeNumber": "C-00276052",
+                            "processingType": "Charge",
+                            "productName": "Limio Physical",
+                            "productRatePlanChargeId": "2c92c0f8778bf8e90177aa78dd567a7b",
+                            "unitPrice": 25,
+                            "subscriptionNumber": "JBJHUT24BQO0",
+                            "orderLineItemNumber": null,
+                            "additionalInfo": {
+                                "quantity": 1,
+                                "unitOfMeasure": "",
+                                "numberOfDeliveries": 0
+                            }
+                        },
+                        {
+                            "serviceStartDate": "2024-07-10",
+                            "serviceEndDate": "2024-08-09",
+                            "amountWithoutTax": 25,
+                            "taxAmount": 0,
+                            "chargeDescription": "",
+                            "chargeName": "Monthly",
+                            "chargeNumber": "C-00276052",
+                            "processingType": "Charge",
+                            "productName": "Limio Physical",
+                            "productRatePlanChargeId": "2c92c0f8778bf8e90177aa78dd567a7b",
+                            "unitPrice": 25,
+                            "subscriptionNumber": "JBJHUT24BQO0",
+                            "orderLineItemNumber": null,
+                            "additionalInfo": {
+                                "quantity": 1,
+                                "unitOfMeasure": "",
+                                "numberOfDeliveries": 0
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "schedule": [
+        {
+            "date": "2024-06-10T00:00:00.000",
+            "schedule_date": "2024-06-10T00:00:00.000",
+            "type": "payment",
+            "description": "Print Monthly UK",
+            "amount": "12.25",
+            "taxAmount": 0,
+            "amountWithoutTax": "17.50",
+            "currency": "GBP",
+            "unit_amount": "17.50",
+            "quantity": 1,
+            "lineItems": [
+                {
+                    "amountWithoutTax": "-7.50",
+                    "taxAmount": "0.00",
+                    "chargeDescription": "",
+                    "processingType": "Discount",
+                    "chargeName": "Discount",
+                    "productName": "Limio Digital",
+                    "quantity": 1
+                },
+                {
+                    "amountWithoutTax": "25.00",
+                    "taxAmount": "0.00",
+                    "chargeDescription": "",
+                    "processingType": "Charge",
+                    "chargeName": "Monthly",
+                    "productName": "Limio Physical",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "date": "2024-07-10T00:00:00.000",
+            "schedule_date": "2024-07-10T00:00:00.000",
+            "type": "payment",
+            "description": "Print Monthly UK",
+            "amount": "25.00",
+            "taxAmount": 0,
+            "amountWithoutTax": "25.00",
+            "currency": "GBP",
+            "unit_amount": "25.00",
+            "quantity": 1,
+            "lineItems": [
+                {
+                    "amountWithoutTax": "25.00",
+                    "taxAmount": "0.00",
+                    "chargeDescription": "",
+                    "processingType": "Charge",
+                    "chargeName": "Monthly",
+                    "productName": "Limio Physical",
+                    "quantity": 1
+                }
+            ]
+        }
+    ]
+}
+return(orderPreview)
+
+}
+
+
+
+export { useCheckout, useLimioUserSubscriptionAddresses, useLimioUserSubscriptionPaymentMethods, useOrderPreview }
 
 
 

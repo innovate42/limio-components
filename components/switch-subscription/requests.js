@@ -14,7 +14,7 @@ export async function handleSubmitSwitch(context, subscriptionId, order) {
       ...order
     }
 
-    console.log("Switch order", switchOrder)
+
   
     return sendOrder(switchOrder)
   }

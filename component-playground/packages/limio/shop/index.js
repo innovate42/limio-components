@@ -11,6 +11,13 @@ export function useStore(){
     }
 }
 
+export function useSelector(callback){
+    return callback(getState())
+}
+
+
+
+
 function getState(){
     const state = {
         appConfig: {
