@@ -36,3 +36,10 @@ export const Main: Story = {
     type: "text"
   }
 }
+
+export const Invalid: Story = {
+  args: {
+    placeholder: "Placeholder",
+    required: true,
+  },
+}

@@ -1715,6 +1715,22 @@ body {
   color: hsl(var(--muted-foreground));
 }
 
+.invalid\:border-destructive:invalid {
+  border-color: hsl(var(--destructive));
+}
+
+.invalid\:\!ring-offset-destructive:invalid {
+  --tw-ring-offset-color: hsl(var(--destructive)) !important;
+}
+
+.invalid\:\!ring-offset-destructive\/50:invalid {
+  --tw-ring-offset-color: hsl(var(--destructive) / 0.5) !important;
+}
+
+.invalid\:ring-offset-destructive:invalid {
+  --tw-ring-offset-color: hsl(var(--destructive));
+}
+
 .hover\:bg-accent:hover {
   background-color: hsl(var(--accent));
 }
@@ -1855,6 +1871,10 @@ body {
   --tw-ring-offset-width: 2px;
 }
 
+.invalid\:focus-visible\:ring-offset-destructive:focus-visible:invalid {
+  --tw-ring-offset-color: hsl(var(--destructive));
+}
+
 .disabled\:pointer-events-none:disabled {
   pointer-events: none;
 }
@@ -1892,6 +1912,26 @@ body {
 
 .peer\/input:disabled ~ .peer-disabled\/input\:opacity-50 {
   opacity: 0.5;
+}
+
+.aria-\[invalid\=true\]\:border-destructive[aria-invalid="true"] {
+  border-color: hsl(var(--destructive));
+}
+
+.aria-\[invalid\=true\]\:\!ring-offset-destructive[aria-invalid="true"] {
+  --tw-ring-offset-color: hsl(var(--destructive)) !important;
+}
+
+.aria-\[invalid\=true\]\:\!ring-offset-destructive\/50[aria-invalid="true"] {
+  --tw-ring-offset-color: hsl(var(--destructive) / 0.5) !important;
+}
+
+.aria-\[invalid\=true\]\:ring-offset-destructive[aria-invalid="true"] {
+  --tw-ring-offset-color: hsl(var(--destructive));
+}
+
+.aria-\[invalid\=true\]\:focus-visible\:ring-offset-destructive:focus-visible[aria-invalid="true"] {
+  --tw-ring-offset-color: hsl(var(--destructive));
 }
 
 .data-\[disabled\]\:pointer-events-none[data-disabled] {
