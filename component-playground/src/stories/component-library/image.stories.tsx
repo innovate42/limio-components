@@ -8,9 +8,11 @@ const meta: Meta<typeof Image> = {
   argTypes: {
     variant: {
       options: ['default', 'rounded'],
-      control: {type: 'radio'},
-      default: "default"
+      control: {type: 'inline-radio'},
     }
+  },
+  args: {
+    variant: "default"
   }
 };
 export default meta;

@@ -7,20 +7,26 @@ const meta: Meta<typeof Button> = {
   component: Button,
   argTypes: {
     variant: {
-      options: ['primary', 'destructive', 'outline', 'secondary', 'text', 'link'],
-      control: { type: 'radio' },
-      default: "primary"
+      options: ['primary', 'danger', 'outline', 'secondary', 'text', 'link'],
+      control: { type: 'inline-radio' },
     },
     size: {
       options: ['default', 'sm', 'lg', 'icon'],
-      control: {type: 'radio'},
-      default: "default"
+      control: { type: 'inline-radio' },
+    },
+    disabled: {
+      control: { type: 'boolean' },
     },
     asChild: {
       table: {
         disable: true
       }
     }
+  },
+  args: {
+    variant: "primary",
+    size: "default",
+    disabled: false
   }
 };
 export default meta;
