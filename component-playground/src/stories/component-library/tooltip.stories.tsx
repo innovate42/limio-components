@@ -1,8 +1,11 @@
-import * as React from "react"
-import type { Meta, StoryObj } from '@storybook/react';
-import { Tooltip, TooltipProvider } from '../../../../components/component-library/Tooltip/Tooltip';
-import { Icon } from '../../../../components/component-library/Icon/Icon';
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons"
+import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import {
+  Tooltip,
+  TooltipProvider,
+} from "../../../../components/component-library/Tooltip/Tooltip";
+import { Icon } from "../../../../components/component-library/Icon/Icon";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
 const meta: Meta<typeof Tooltip> = {
   title: "Component Library/Tooltip",
@@ -21,7 +24,11 @@ const meta: Meta<typeof Tooltip> = {
       },
     },
   },
-  render: (args) => <TooltipProvider><Tooltip {...args} /></TooltipProvider>,
+  render: args => (
+    <TooltipProvider>
+      <Tooltip {...args} />
+    </TooltipProvider>
+  ),
 };
 export default meta;
 
@@ -33,4 +40,4 @@ export const Main: Story = {
     side: "top",
     children: <Icon icon={faCircleInfo} />,
   },
-}
+};

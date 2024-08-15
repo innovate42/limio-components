@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['../components/**/*.{html,js,jsx,ts,tsx}', './src/stories/**/*.{jsx,tsx}'],
+  content: [
+    "../components/**/*.{html,js,jsx,ts,tsx}",
+    "./src/stories/**/*.{jsx,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -44,7 +47,7 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
           secondary: "hsl(var(--card-secondary))",
-          secondaryForeground: "hsl(var(--card-secondary-foreground))"
+          secondaryForeground: "hsl(var(--card-secondary-foreground))",
         },
       },
       borderRadius: {
@@ -53,13 +56,13 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontSize: {
-        "3xl": '1.5rem',
-        "2xl": '1.25rem',
-        xl: '1.125rem',
-        lg: '1rem',
-        md: '0.875rem',
-        base: '0.875rem',
-        sm: '0.8125rem'
+        "3xl": "1.5rem",
+        "2xl": "1.25rem",
+        xl: "1.125rem",
+        lg: "1rem",
+        md: "0.875rem",
+        base: "0.875rem",
+        sm: "0.8125rem",
       },
       keyframes: {
         "accordion-down": {
@@ -78,5 +81,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
-
+};

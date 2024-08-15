@@ -4,19 +4,17 @@
   "description": "",
   "main": "./index.ts",
   "scripts": {
-      "build": "yarn component:webpack",
-      "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "yarn component:webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "UNLICENSED",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {
     "react": "*",
     "@types/react": "*",
     "class-variance-authority": "*"
   },
-  "limioProps": [
-  ]
+  "limioProps": []
 }

@@ -1,7 +1,7 @@
-import * as React from "react"
-import type { Meta, StoryObj } from '@storybook/react';
-import { Separator } from '../../../../components/component-library/Separator/Separator';
-import { Card } from '../../../../components/component-library/Card/Card';
+import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { Separator } from "../../../../components/component-library/Separator/Separator";
+import { Card } from "../../../../components/component-library/Card/Card";
 
 const meta: Meta<typeof Separator> = {
   title: "Component Library/Separator",
@@ -9,11 +9,11 @@ const meta: Meta<typeof Separator> = {
   argTypes: {
     size: {
       options: ["regular", "lg"],
-      control: { type: 'inline-radio' }
-    }
+      control: { type: "inline-radio" },
+    },
   },
   args: {
-    size: "regular"
+    size: "regular",
   },
 };
 export default meta;
@@ -21,17 +21,17 @@ export default meta;
 type Story = StoryObj<typeof Separator>;
 
 export const Main: Story = {
-  render: (args) => (
+  render: args => (
     <div className="w-full h-screen flex items-center justify-center">
       <div className="w-1/4">
         <Separator {...args} />
       </div>
     </div>
-  )
-}
+  ),
+};
 
 export const InPractice: Story = {
-  render: (args) => (
+  render: args => (
     <div className="w-full h-screen flex items-center justify-center">
       <div className="w-1/4">
         <Card>
@@ -47,5 +47,5 @@ export const InPractice: Story = {
         </Card>
       </div>
     </div>
-  )
-}
+  ),
+};

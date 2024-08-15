@@ -96,7 +96,7 @@ const RAW_RUNTIME_STATE =
           ["mini-css-extract-plugin", "virtual:da37fa12ec7c57f64d776faf1243a3ba8c0a4011e4b1d80a7de915a2d0a0754a6820b0e583864b11e5a7084fbba587301b78f55e2defdd1445ddb8bd1dec2a78#npm:1.6.2"],\
           ["msw", "virtual:da37fa12ec7c57f64d776faf1243a3ba8c0a4011e4b1d80a7de915a2d0a0754a6820b0e583864b11e5a7084fbba587301b78f55e2defdd1445ddb8bd1dec2a78#npm:0.47.4"],\
           ["path-browserify", "npm:1.0.1"],\
-          ["prettier", "npm:2.8.8"],\
+          ["prettier", "npm:3.3.3"],\
           ["prop-types", "npm:15.8.1"],\
           ["ramda", "npm:0.28.0"],\
           ["react", "npm:18.2.0"],\
@@ -5812,7 +5812,7 @@ const RAW_RUNTIME_STATE =
           ["mini-css-extract-plugin", "virtual:da37fa12ec7c57f64d776faf1243a3ba8c0a4011e4b1d80a7de915a2d0a0754a6820b0e583864b11e5a7084fbba587301b78f55e2defdd1445ddb8bd1dec2a78#npm:1.6.2"],\
           ["msw", "virtual:da37fa12ec7c57f64d776faf1243a3ba8c0a4011e4b1d80a7de915a2d0a0754a6820b0e583864b11e5a7084fbba587301b78f55e2defdd1445ddb8bd1dec2a78#npm:0.47.4"],\
           ["path-browserify", "npm:1.0.1"],\
-          ["prettier", "npm:2.8.8"],\
+          ["prettier", "npm:3.3.3"],\
           ["prop-types", "npm:15.8.1"],\
           ["ramda", "npm:0.28.0"],\
           ["react", "npm:18.2.0"],\
@@ -24588,17 +24588,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["prettier", [\
-      ["npm:2.8.8", {\
-        "packageLocation": "../.yarn/berry/cache/prettier-npm-2.8.8-430828a36c-10c0.zip/node_modules/prettier/",\
-        "packageDependencies": [\
-          ["prettier", "npm:2.8.8"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:3.2.5", {\
         "packageLocation": "./.yarn/unplugged/prettier-npm-3.2.5-6859110d6a/node_modules/prettier/",\
         "packageDependencies": [\
           ["prettier", "npm:3.2.5"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:3.3.3", {\
+        "packageLocation": "./.yarn/unplugged/prettier-npm-3.3.3-e811f023f3/node_modules/prettier/",\
+        "packageDependencies": [\
+          ["prettier", "npm:3.3.3"]\
         ],\
         "linkType": "HARD"\
       }]\

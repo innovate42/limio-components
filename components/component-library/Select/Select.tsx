@@ -1,69 +1,75 @@
-import * as React from "react"
-import * as SelectPrimitive from "@radix-ui/react-select"
-import { faChevronDown, faChevronUp, faCheck } from "@fortawesome/free-solid-svg-icons"
-import { cva } from "class-variance-authority"
+import * as React from "react";
+import * as SelectPrimitive from "@radix-ui/react-select";
+import {
+  faChevronDown,
+  faChevronUp,
+  faCheck,
+} from "@fortawesome/free-solid-svg-icons";
+import { cva } from "class-variance-authority";
 
-import { Icon } from "../Icon/Icon"
-import { cn } from "../util"
+import { Icon } from "../Icon/Icon";
+import { cn } from "../util";
 
-interface SelectProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Root> {
-  size?: "default" | "small"
+interface SelectProps
+  extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Root> {
+  size?: "default" | "small";
 }
 
 type SelectContextValue = {
-  size: "default" | "small"
-}
+  size: "default" | "small";
+};
 
-const SelectContext = React.createContext<SelectContextValue | null>(null)
+const SelectContext = React.createContext<SelectContextValue | null>(null);
 
 const useSelectContext = () => {
-  const context = React.useContext(SelectContext)
+  const context = React.useContext(SelectContext);
 
-  if(context === null) {
-    throw new Error("useSelectContext must be used within a SelectProvider")
+  if (context === null) {
+    throw new Error("useSelectContext must be used within a SelectProvider");
   }
 
-  return context
-}
+  return context;
+};
 
-const Root = ({children, size = "default", ...props}: SelectProps) => (
-  <SelectContext.Provider value={React.useMemo(() => ({size}), [size])}>
+const Root = ({ children, size = "default", ...props }: SelectProps) => (
+  <SelectContext.Provider value={React.useMemo(() => ({ size }), [size])}>
     <SelectPrimitive.Root {...props}>{children}</SelectPrimitive.Root>
   </SelectContext.Provider>
-)
+);
 
-Root.displayName = "Select"
+Root.displayName = "Select";
 
-const Group = SelectPrimitive.Group
-Group.displayName = "Select.Group"
+const Group = SelectPrimitive.Group;
+Group.displayName = "Select.Group";
 
-const Value = SelectPrimitive.Value
-Value.displayName = "Select.Value"
+const Value = SelectPrimitive.Value;
+Value.displayName = "Select.Value";
 
 const selectTriggerVariants = cva(
   cn(
-    "flex w-full items-center justify-between", 
-    "rounded-sm border border-border bg-background ring-offset-background placeholder:text-muted-foreground", 
-    "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2", 
+    "flex w-full items-center justify-between",
+    "rounded-sm border border-border bg-background ring-offset-background placeholder:text-muted-foreground",
+    "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
     "disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1"
-  ), 
+  ),
   {
     variants: {
       size: {
         default: "h-10 px-3 py-2 text-sm",
-        small: "h-7 px-2 py-1 text-xs"
-      }
-    }
+        small: "h-7 px-2 py-1 text-xs",
+      },
+    },
   }
-)
+);
 
-interface SelectTriggerProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> {}
+interface SelectTriggerProps
+  extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> {}
 
 const Trigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   SelectTriggerProps
->(({ className, children, ...props }, ref) => { 
-  const { size } = useSelectContext()
+>(({ className, children, ...props }, ref) => {
+  const { size } = useSelectContext();
 
   return (
     <SelectPrimitive.Trigger
@@ -72,13 +78,13 @@ const Trigger = React.forwardRef<
       {...props}
     >
       {children}
-      <SelectPrimitive.Icon asChild> 
+      <SelectPrimitive.Icon asChild>
         <Icon icon={faChevronDown} className="h-3 w-3 opacity-50" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
-  )
-})
-Trigger.displayName = "Select.Trigger"
+  );
+});
+Trigger.displayName = "Select.Trigger";
 
 const ScrollUpButton = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.ScrollUpButton>,
@@ -94,8 +100,8 @@ const ScrollUpButton = React.forwardRef<
   >
     <Icon icon={faChevronUp} className="h-4 w-4" />
   </SelectPrimitive.ScrollUpButton>
-))
-ScrollUpButton.displayName = "Select.ScrollUpButton"
+));
+ScrollUpButton.displayName = "Select.ScrollUpButton";
 
 const ScrollDownButton = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.ScrollDownButton>,
@@ -111,8 +117,8 @@ const ScrollDownButton = React.forwardRef<
   >
     <Icon icon={faChevronDown} className="h-4 w-4" />
   </SelectPrimitive.ScrollDownButton>
-))
-Trigger.displayName = "Select.ScrollDownButton"
+));
+Trigger.displayName = "Select.ScrollDownButton";
 
 const Content = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
@@ -122,13 +128,13 @@ const Content = React.forwardRef<
     <SelectPrimitive.Content
       ref={ref}
       className={cn(
-        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden", 
+        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden",
         "rounded-md border bg-popover text-popover-foreground shadow-md",
         "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
         "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
-        "data-[side=bottom]:slide-in-from-top-2", 
-        "data-[side=left]:slide-in-from-right-2", 
-        "data-[side=right]:slide-in-from-left-2", 
+        "data-[side=bottom]:slide-in-from-top-2",
+        "data-[side=left]:slide-in-from-right-2",
+        "data-[side=right]:slide-in-from-left-2",
         "data-[side=top]:slide-in-from-bottom-2",
         position === "popper" &&
           "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
@@ -150,8 +156,8 @@ const Content = React.forwardRef<
       <ScrollDownButton />
     </SelectPrimitive.Content>
   </SelectPrimitive.Portal>
-))
-Content.displayName = "Select.Content"
+));
+Content.displayName = "Select.Content";
 
 const Label = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Label>,
@@ -162,8 +168,8 @@ const Label = React.forwardRef<
     className={cn("py-1.5 pl-8 pr-2 text-sm font-semibold", className)}
     {...props}
   />
-))
-Label.displayName = "Select.Label"
+));
+Label.displayName = "Select.Label";
 
 const Item = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Item>,
@@ -172,9 +178,9 @@ const Item = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-sm", 
-      "py-1.5 pl-8 pr-2 text-sm outline-none", 
-      "focus:bg-accent focus:text-accent-foreground", 
+      "relative flex w-full cursor-default select-none items-center rounded-sm",
+      "py-1.5 pl-8 pr-2 text-sm outline-none",
+      "focus:bg-accent focus:text-accent-foreground",
       "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
     )}
@@ -188,8 +194,8 @@ const Item = React.forwardRef<
 
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
   </SelectPrimitive.Item>
-))
-Item.displayName = "Select.Item"
+));
+Item.displayName = "Select.Item";
 
 const Separator = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Separator>,
@@ -200,8 +206,8 @@ const Separator = React.forwardRef<
     className={cn("-mx-1 my-1 h-px bg-muted", className)}
     {...props}
   />
-))
-Separator.displayName = "Select.Separator"
+));
+Separator.displayName = "Select.Separator";
 
 const Select = Object.assign(Root, {
   Group,
@@ -212,7 +218,7 @@ const Select = Object.assign(Root, {
   Item,
   Separator,
   ScrollUpButton,
-  ScrollDownButton
-})
+  ScrollDownButton,
+});
 
-export { Select }
+export { Select };

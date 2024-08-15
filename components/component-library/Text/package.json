@@ -4,13 +4,12 @@
   "description": "",
   "main": "./index.ts",
   "scripts": {
-      "build": "yarn component:webpack",
-      "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "yarn component:webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "UNLICENSED",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {
     "react": "*",
@@ -18,6 +17,5 @@
     "class-variance-authority": "*",
     "@radix-ui/react-slot": "*"
   },
-  "limioProps": [
-  ]
+  "limioProps": []
 }

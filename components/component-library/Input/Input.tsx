@@ -1,12 +1,12 @@
-import * as React from "react"
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
+import * as React from "react";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-import { cva } from "class-variance-authority"
-import type { VariantProps } from "class-variance-authority"
+import { cva } from "class-variance-authority";
+import type { VariantProps } from "class-variance-authority";
 
-import { Icon } from "../Icon/Icon"
+import { Icon } from "../Icon/Icon";
 
-import { cn } from "../util/"
+import { cn } from "../util/";
 
 const inputVariants = cva(
   cn(
@@ -29,14 +29,15 @@ const inputVariants = cva(
       size: "default",
     },
   }
-)
+);
 
 interface InputProps
   extends VariantProps<typeof inputVariants>,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {}
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, type, size = "default", ...props}: InputProps, ref) => {
-    const isSearch = type === "search"
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, size = "default", ...props }: InputProps, ref) => {
+    const isSearch = type === "search";
 
     return (
       <div className="relative">
@@ -69,9 +70,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, type,
           </div>
         )}
       </div>
-    )
+    );
   }
-)
-Input.displayName = "Input"
+);
+Input.displayName = "Input";
 
-export { Input }
+export { Input };

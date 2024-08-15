@@ -1,7 +1,7 @@
-import * as React from "react"
-import * as TooltipPrimitive from "@radix-ui/react-tooltip"
+import * as React from "react";
+import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
-import { cn } from "../util"
+import { cn } from "../util";
 
 interface TooltipProps
   extends Omit<TooltipPrimitive.TooltipContentProps, "content" | "onClick">,
@@ -9,10 +9,10 @@ interface TooltipProps
       TooltipPrimitive.TooltipProps,
       "open" | "defaultOpen" | "onOpenChange" | "delayDuration"
     > {
-  content: React.ReactNode
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
-  side?: "bottom" | "left" | "top" | "right"
-  maxWidth?: number
+  content: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  side?: "bottom" | "left" | "top" | "right";
+  maxWidth?: number;
 }
 
 const Tooltip = ({
@@ -46,9 +46,9 @@ const Tooltip = ({
           align="center"
           className={cn(
             "z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5",
-            "text-xs text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95", 
+            "text-xs text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95",
             "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
-            "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2", 
+            "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2",
             "data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
             className
           )}
@@ -59,18 +59,26 @@ const Tooltip = ({
         </TooltipPrimitive.Content>
       </TooltipPrimitive.Portal>
     </TooltipPrimitive.Root>
-  )
-}
+  );
+};
 
 interface TooltipProviderProps extends TooltipPrimitive.TooltipProviderProps {}
 
-const TooltipProvider = ({ children, delayDuration = 100, skipDelayDuration = 300, ...props }: TooltipProviderProps) => {
+const TooltipProvider = ({
+  children,
+  delayDuration = 100,
+  skipDelayDuration = 300,
+  ...props
+}: TooltipProviderProps) => {
   return (
-    <TooltipPrimitive.TooltipProvider delayDuration={delayDuration} skipDelayDuration={skipDelayDuration} {...props}>
+    <TooltipPrimitive.TooltipProvider
+      delayDuration={delayDuration}
+      skipDelayDuration={skipDelayDuration}
+      {...props}
+    >
       {children}
     </TooltipPrimitive.TooltipProvider>
-  )
-}
+  );
+};
 
-
-export { Tooltip, TooltipProvider }
+export { Tooltip, TooltipProvider };
