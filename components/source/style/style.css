@@ -1843,6 +1843,10 @@ body {
   --tw-ring-offset-width: 2px;
 }
 
+.invalid\:focus-visible\:ring-destructive:focus-visible:invalid {
+  --tw-ring-color: hsl(var(--destructive));
+}
+
 .disabled\:pointer-events-none:disabled {
   pointer-events: none;
 }
@@ -1861,6 +1865,10 @@ body {
 
 .aria-\[invalid\=true\]\:border-destructive[aria-invalid="true"] {
   border-color: hsl(var(--destructive));
+}
+
+.aria-\[invalid\=true\]\:focus-visible\:ring-destructive:focus-visible[aria-invalid="true"] {
+  --tw-ring-color: hsl(var(--destructive));
 }
 
 .data-\[disabled\]\:pointer-events-none[data-disabled] {
