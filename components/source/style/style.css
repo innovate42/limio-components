@@ -758,6 +758,10 @@ body {
   margin-top: auto;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -1593,6 +1597,14 @@ body {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-destructive {
+  color: hsl(var(--destructive));
+}
+
+.text-muted {
+  color: hsl(var(--muted));
 }
 
 .underline-offset-4 {
