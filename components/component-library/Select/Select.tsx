@@ -68,7 +68,7 @@ const Trigger = React.forwardRef<
   return (
     <SelectPrimitive.Trigger
       ref={ref}
-      className={cn(selectTriggerVariants({ size }), className)}
+      className={cn(selectTriggerVariants({ size, className }))}
       {...props}
     >
       {children}
