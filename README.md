@@ -78,7 +78,7 @@ As you develop your Custom Component, please keep the following guidelines in mi
 }
 ```
   
-Once your changes have been pushed and the component has been built, you should then bable to see your new custom subcomponent when managing a Form component on a page.
+Once your changes have been pushed and the component has been built, you should then be able to see your new custom subcomponent when managing a Form component on a page.
 
 <div align="center">
   <div style="display: flex;">
