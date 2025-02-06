@@ -8,11 +8,11 @@
 
 ## Description
 
-Limio Components is a repository which provides a library of open source Limio Shop Components and a Component Playground to edit these components and build new Custom Components with a set of tools to access Limio Subscription and User data. 
+Limio Components is a repository which provides a library of open source Limio Components. You can use those as a foundation to create new Custom Components. The repository also includes a Component Playground to edit the components you are building. The Component Playground also includes a set of tools to access Limio Subscription and User data. 
 
 ## Quickstart Guide
 
-Limio components are React components. Anything that you can package up into a React component can be used in Limio. This guide will walk you through the steps to create your first Limio Custom Component using the playground, powered by Storybook. Follow these instructions to get started.
+Custom Components are React components, so you only need React knowledge to create a custom component in Limio. This guide will walk you through the steps to create your first Limio Custom Component using the playground, powered by Storybook. Follow these instructions to get started.
 
 ### Prerequisites
 
@@ -54,7 +54,7 @@ The main file of your component where you'll export your React component.
 Contains your component's dependencies and Limio Props. This file is essential for managing your component's needs and integrating with the Limio ecosystem.
 
 ##### Component Development Guidelines
-As you develop your custom component, please keep the following guidelines in mind:
+As you develop your Custom Component, please keep the following guidelines in mind:
 
 * **Modular Structure**: You can structure your component across many files in multiple directories or just in a single file. This flexibility allows you to organize your component in a way that best suits your development style.
 * **Styling**: Only .css files are supported for styling. Ensure that your component's visual design is implemented using CSS.
@@ -85,6 +85,7 @@ Once your changes have been pushed and the component has been built, you should 
     <img src="https://developers.limio.com/~gitbook/image?url=https%3A%2F%2F2254146468-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-L_ITRAhJRCD176zw_Pu%252Fuploads%252Fj51gv4SNIwlI3kR0npKp%252Fcustom-subcomponent.png%3Falt%3Dmedia%26token%3Df95d7f83-0290-4407-afcf-dcb7a3cf3532&width=768&dpr=1&quality=100&sign=c01f299b380b6236e45710b28948934b2c6d5d5be8a6b417e94a1e3f3ee8defe" />
    </div>
 </div>
+
 #### Step 2: Viewing Your Component in Storybook
 After creating your component, you can immediately see it in action within the Limio Component Playground. To do so:
 
