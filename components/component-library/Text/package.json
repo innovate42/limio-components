@@ -1,0 +1,21 @@
+{
+  "name": "component-library-text",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.ts",
+  "scripts": {
+    "build": "yarn component:webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": "*",
+    "@types/react": "*",
+    "class-variance-authority": "*",
+    "@radix-ui/react-slot": "*"
+  },
+  "limioProps": []
+}
