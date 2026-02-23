@@ -24,6 +24,18 @@ const [selectedReason, setSelectedReason] = React.useState(null)
 const [feedback, setFeedback] = React.useState({})
 const [showDialog, setShowDialog] = React.useState(false)
 
+// Pre-select reason from URL parameter if provided
+React.useEffect(() => {
+  const params = new URL(window.location).searchParams
+  const reasonFromUrl = params.get("cancelReason")
+  if (reasonFromUrl && reasons && !selectedReason) {
+    const matchingReason = reasons.find(r => r.id === reasonFromUrl)
+    if (matchingReason) {
+      setSelectedReason(matchingReason)
+    }
+  }
+}, [reasons])
+
 const onReasonSelect = (reason) => {
 setSelectedReason(reason)
 }
